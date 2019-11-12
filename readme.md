@@ -1,2 +1,2 @@
-# BouwBit-Mobile
-Mobile version of the BouwBit platform
+# Flutter Website
+Playing around with flutter web
