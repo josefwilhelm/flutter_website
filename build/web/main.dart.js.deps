@@ -21,7 +21,9 @@ file:///Users/joe/development/flutter/.pub-cache/hosted/pub.dartlang.org/collect
 file:///Users/joe/development/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.14.11/lib/src/unmodifiable_wrappers.dart
 file:///Users/joe/development/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.14.11/lib/src/utils.dart
 file:///Users/joe/development/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.14.11/lib/src/wrappers.dart
+file:///Users/joe/development/flutter/.pub-cache/hosted/pub.dartlang.org/get_it-3.0.3/lib/get_it.dart
 file:///Users/joe/development/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.1.8/lib/meta.dart
+file:///Users/joe/development/flutter/.pub-cache/hosted/pub.dartlang.org/parallax_image-0.3.1+1/lib/parallax_image.dart
 file:///Users/joe/development/flutter/.pub-cache/hosted/pub.dartlang.org/responsive_builder-0.1.4/lib/responsive_builder.dart
 file:///Users/joe/development/flutter/.pub-cache/hosted/pub.dartlang.org/typed_data-1.1.6/lib/typed_buffers.dart
 file:///Users/joe/development/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.0.8/lib/hash.dart
@@ -609,9 +611,13 @@ file:///Users/joe/development/flutter/packages/flutter/lib/widgets.dart
 file:///Users/joe/development/flutter_website/.dart_tool/flutter_build/c60501128bb0a1f1eb3f9a42f488b299/main.dart
 file:///Users/joe/development/flutter_website/.packages
 file:///Users/joe/development/flutter_website/lib/main.dart
+file:///Users/joe/development/flutter_website/lib/routing.dart
+file:///Users/joe/development/flutter_website/lib/screens/about.dart
 file:///Users/joe/development/flutter_website/lib/screens/base.dart
 file:///Users/joe/development/flutter_website/lib/screens/home.dart
 file:///Users/joe/development/flutter_website/lib/screens/portfolio.dart
+file:///Users/joe/development/flutter_website/lib/service_locator.dart
+file:///Users/joe/development/flutter_website/lib/services/navigation_service.dart
 file:///Users/joe/development/flutter_website/lib/styles.dart
 file:///Users/joe/development/flutter_website/lib/util.dart
 file:///Users/joe/development/flutter_website/lib/widgets/centered_view.dart

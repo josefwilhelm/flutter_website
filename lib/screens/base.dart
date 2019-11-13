@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_website/routing.dart';
+import 'package:flutter_website/service_locator.dart';
+import 'package:flutter_website/services/navigation_service.dart';
 import 'package:flutter_website/styles.dart';
 import 'package:flutter_website/widgets/centered_view.dart';
 import 'package:flutter_website/widgets/nav_drawer.dart';
@@ -8,10 +11,6 @@ import 'package:responsive_builder/responsive_builder.dart';
 import '../util.dart';
 
 class BaseView extends StatefulWidget {
-  const BaseView({Key key, @required this.body}) : super(key: key);
-
-  final Widget body;
-
   @override
   _BaseViewState createState() => _BaseViewState();
 }
@@ -64,7 +63,12 @@ class _BaseViewState extends State<BaseView>
               child: Column(
                 children: <Widget>[
                   NavigationBar(),
-                  Expanded(child: widget.body),
+                  Expanded(
+                      child: Navigator(
+                    key: locator<NavigationService>().navigatorKey,
+                    onGenerateRoute: generateRoute,
+                    initialRoute: HomeRoute,
+                  )),
                 ],
               ),
             ),

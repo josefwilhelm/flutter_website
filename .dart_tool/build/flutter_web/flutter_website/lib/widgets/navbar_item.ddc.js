@@ -1,11 +1,10 @@
-define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/src/painting/_network_image_web', 'packages/flutter_website/styles', 'packages/flutter/material'], function(dart_sdk, packages__flutter__src__widgets__actions, packages__flutter__src__painting___network_image_web, packages__flutter_website__styles, packages__flutter__material) {
+define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/src/painting/_network_image_web', 'packages/flutter_website/styles', 'packages/flutter/material', 'packages/flutter_website/service_locator', 'packages/flutter_website/services/navigation_service'], function(dart_sdk, packages__flutter__src__widgets__actions, packages__flutter__src__painting___network_image_web, packages__flutter_website__styles, packages__flutter__material, packages__flutter_website__service_locator, packages__flutter_website__services__navigation_service) {
   'use strict';
   const core = dart_sdk.core;
   const async = dart_sdk.async;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
   const container = packages__flutter__src__widgets__actions.src__widgets__container;
-  const navigator = packages__flutter__src__widgets__actions.src__widgets__navigator;
   const text = packages__flutter__src__widgets__actions.src__widgets__text;
   const widget_inspector = packages__flutter__src__widgets__actions.src__widgets__widget_inspector;
   const framework = packages__flutter__src__widgets__actions.src__widgets__framework;
@@ -14,9 +13,10 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/sr
   const borders = packages__flutter__src__painting___network_image_web.src__painting__borders;
   const styles = packages__flutter_website__styles.styles;
   const flat_button = packages__flutter__material.src__material__flat_button;
+  const service_locator = packages__flutter_website__service_locator.service_locator;
+  const navigation_service = packages__flutter_website__services__navigation_service.services__navigation_service;
   const navbar_item = Object.create(dart.library);
-  let FutureOfObject = () => (FutureOfObject = dart.constFn(async.Future$(core.Object)))();
-  let VoidToFutureOfObject = () => (VoidToFutureOfObject = dart.constFn(dart.fnType(FutureOfObject(), [])))();
+  let VoidToFuture = () => (VoidToFuture = dart.constFn(dart.fnType(async.Future, [])))();
   const CT = Object.create(null);
   dart.defineLazy(CT, {
     get C2() {
@@ -25,7 +25,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/sr
         [_Location_parameterLocations]: null,
         [_Location_name]: "data",
         [_Location_column]: 11,
-        [_Location_line]: 19,
+        [_Location_line]: 21,
         [_Location_file]: null
       });
     },
@@ -35,7 +35,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/sr
         [_Location_parameterLocations]: null,
         [_Location_name]: "style",
         [_Location_column]: 11,
-        [_Location_line]: 20,
+        [_Location_line]: 22,
         [_Location_file]: null
       });
     },
@@ -48,7 +48,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/sr
         [_Location_parameterLocations]: C1 || CT.C1,
         [_Location_name]: null,
         [_Location_column]: 16,
-        [_Location_line]: 18,
+        [_Location_line]: 20,
         [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/navbar_item.dart"
       });
     },
@@ -58,7 +58,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/sr
         [_Location_parameterLocations]: null,
         [_Location_name]: "hoverColor",
         [_Location_column]: 9,
-        [_Location_line]: 16,
+        [_Location_line]: 18,
         [_Location_file]: null
       });
     },
@@ -68,7 +68,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/sr
         [_Location_parameterLocations]: null,
         [_Location_name]: "onPressed",
         [_Location_column]: 9,
-        [_Location_line]: 17,
+        [_Location_line]: 19,
         [_Location_file]: null
       });
     },
@@ -78,7 +78,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/sr
         [_Location_parameterLocations]: null,
         [_Location_name]: "child",
         [_Location_column]: 9,
-        [_Location_line]: 18,
+        [_Location_line]: 20,
         [_Location_file]: null
       });
     },
@@ -91,7 +91,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/sr
         [_Location_parameterLocations]: C5 || CT.C5,
         [_Location_name]: null,
         [_Location_column]: 14,
-        [_Location_line]: 15,
+        [_Location_line]: 17,
         [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/navbar_item.dart"
       });
     },
@@ -101,7 +101,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/sr
         [_Location_parameterLocations]: null,
         [_Location_name]: "decoration",
         [_Location_column]: 7,
-        [_Location_line]: 13,
+        [_Location_line]: 15,
         [_Location_file]: null
       });
     },
@@ -111,7 +111,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/sr
         [_Location_parameterLocations]: null,
         [_Location_name]: "child",
         [_Location_column]: 7,
-        [_Location_line]: 15,
+        [_Location_line]: 17,
         [_Location_file]: null
       });
     },
@@ -124,7 +124,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/sr
         [_Location_parameterLocations]: C10 || CT.C10,
         [_Location_name]: null,
         [_Location_column]: 12,
-        [_Location_line]: 12,
+        [_Location_line]: 14,
         [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/navbar_item.dart"
       });
     }
@@ -163,7 +163,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/sr
       super.route = value;
     }
     build(context) {
-      return new container.Container.new({decoration: new box_decoration.BoxDecoration.new({border: new box_border.Border.new({bottom: new borders.BorderSide.new({color: styles.textColor})})}), child: new flat_button.FlatButton.new({hoverColor: styles.textColor.withOpacity(0.4), onPressed: dart.fn(() => navigator.Navigator.pushNamed(core.Object, context, this.route), VoidToFutureOfObject()), child: new text.Text.new(this.title, {style: styles.navBarItemStyle, $creationLocationd_0dea112b090073317d4: C0 || CT.C0}), $creationLocationd_0dea112b090073317d4: C4 || CT.C4}), $creationLocationd_0dea112b090073317d4: C9 || CT.C9});
+      return new container.Container.new({decoration: new box_decoration.BoxDecoration.new({border: new box_border.Border.new({bottom: new borders.BorderSide.new({color: styles.textColor})})}), child: new flat_button.FlatButton.new({hoverColor: styles.textColor.withOpacity(0.4), onPressed: dart.fn(() => service_locator.locator.call(navigation_service.NavigationService).navigateTo(this.route), VoidToFuture()), child: new text.Text.new(this.title, {style: styles.navBarItemStyle, $creationLocationd_0dea112b090073317d4: C0 || CT.C0}), $creationLocationd_0dea112b090073317d4: C4 || CT.C4}), $creationLocationd_0dea112b090073317d4: C9 || CT.C9});
     }
   };
   (navbar_item.NavBarItem.new = function(title, route, opts) {
@@ -187,7 +187,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/sr
   dart.trackLibraries("packages/flutter_website/widgets/navbar_item", {
     "package:flutter_website/widgets/navbar_item.dart": navbar_item
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["navbar_item.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAKe;;;;;;IACA;;;;;;UAIa;AACxB,YAAO,0CAED,8CAAsB,mCAAe,mCAAkB,+BACpD,4CACO,AAAU,6BAAY,iBACvB,cAAgB,2CAAU,OAAO,EAAE,6CACvC,kBACL,oBACO;IAIf;;yCAhBsB,OAAY;;IAAZ;IAAY;AAA5B;;EAAkC","file":"navbar_item.ddc.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["navbar_item.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAOe;;;;;;IACA;;;;;;UAIa;AACxB,YAAO,0CAED,8CAAsB,mCAAe,mCAAkB,+BACpD,4CACO,AAAU,6BAAY,iBACvB,cAAM,AAAO,AAAsB,8EAAW,qCAClD,kBACL,oBACO;IAIf;;yCAhBsB,OAAY;;IAAZ;IAAY;AAA5B;;EAAkC","file":"navbar_item.ddc.js"}');
   // Exports:
   return {
     widgets__navbar_item: navbar_item

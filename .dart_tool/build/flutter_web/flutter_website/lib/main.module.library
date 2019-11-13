@@ -1,1 +1,1 @@
-{"isEntrypoint":true,"deps":["flutter|lib/material.dart","flutter_website|lib/screens/home.dart","flutter_website|lib/screens/portfolio.dart","flutter_website|lib/util.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":[],"hasMain":true}
+{"isEntrypoint":true,"deps":["flutter|lib/material.dart","flutter_website|lib/screens/base.dart","flutter_website|lib/screens/home.dart","flutter_website|lib/screens/portfolio.dart","flutter_website|lib/service_locator.dart","flutter_website|lib/util.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":[],"hasMain":true}

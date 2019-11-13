@@ -24,6 +24,10 @@ dependencies:
 
   auto_size_text: ^2.1.0
 
+  get_it: ^3.0.3
+
+  parallax_image: ^0.3.1+1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -44,6 +48,12 @@ flutter:
     - assets/ic_logo_transparent.png
     - assets/ic_logo_bright.png
     - assets/ic_logo_full.png
+    - assets/images/portfolio1.jpg
+    - assets/images/portfolio2.jpg
+    - assets/images/portfolio3.jpg
+    - assets/images/portfolio4.jpg
+    - assets/images/portfolio5.jpg
+
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

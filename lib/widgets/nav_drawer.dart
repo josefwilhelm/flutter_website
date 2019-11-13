@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_website/routing.dart';
 import 'package:flutter_website/styles.dart';
 import 'package:flutter_website/widgets/nav_drawer_item.dart';
 
@@ -14,8 +15,8 @@ class NavigationDrawer extends StatelessWidget {
           boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 16)]),
       child: Column(
         children: <Widget>[
-          DrawerItem('Portfolio', Icons.camera),
-          DrawerItem('About', Icons.help),
+          DrawerItem('Portfolio', Icons.camera, PortFolioRoute),
+          DrawerItem('About', Icons.help, AboutRoute),
         ],
       ),
     );

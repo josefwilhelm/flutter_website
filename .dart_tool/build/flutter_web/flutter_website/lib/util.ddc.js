@@ -49,16 +49,6 @@ define(['dart_sdk', 'packages/flutter_website/styles', 'packages/flutter/src/wid
   }).prototype = util.Util.prototype;
   dart.addTypeTests(util.Util);
   dart.setLibraryUri(util.Util, "package:flutter_website/util.dart");
-  dart.defineLazy(util.Util, {
-    /*util.Util.route_start*/get route_start() {
-      return "/";
-    },
-    set route_start(_) {},
-    /*util.Util.route_portfolio*/get route_portfolio() {
-      return "/portfolio";
-    },
-    set route_portfolio(_) {}
-  });
   const Widget_key = dart.privateName(framework, "Widget.key");
   const SingleChildRenderObjectWidget_child = dart.privateName(framework, "SingleChildRenderObjectWidget.child");
   const SizedBox_height = dart.privateName(basic, "SizedBox.height");
@@ -76,7 +66,7 @@ define(['dart_sdk', 'packages/flutter_website/styles', 'packages/flutter/src/wid
   dart.trackLibraries("packages/flutter_website/util", {
     "package:flutter_website/util.dart": util
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["util.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;wBASkC;AAC1B,kBAAQ,AAAS,0BAAQ,AAAW;AACpC,qBAAW,AAAU,yBAAC,KAAK;AAC/B,aAAO;AACL,yBAAI,QAAQ,EAAI,YAAY;AAC1B,gBAAO,AAAU,0BAAC,KAAK;;AAEoB,UAA3C,QAAQ,AAAS,0BAAQ,AAAW;AACR,UAA5B,WAAW,AAAU,yBAAC,KAAK;;IAEjC;;;;EACF;;;;MAda,qBAAW;YAAG;;;MACd,yBAAe;YAAG;;;;;;;;;;;MAezB,eAAU;;;MACV,aAAQ","file":"util.ddc.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["util.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;wBAMkC;AAC1B,kBAAQ,AAAS,0BAAQ,AAAW;AACpC,qBAAW,AAAU,yBAAC,KAAK;AAC/B,aAAO;AACL,yBAAI,QAAQ,EAAI,YAAY;AAC1B,gBAAO,AAAU,0BAAC,KAAK;;AAEoB,UAA3C,QAAQ,AAAS,0BAAQ,AAAW;AACR,UAA5B,WAAW,AAAU,yBAAC,KAAK;;IAEjC;;;;EACF;;;;;;;;;;MAEM,eAAU;;;MACV,aAAQ","file":"util.ddc.js"}');
   // Exports:
   return {
     util: util

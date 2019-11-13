@@ -1,1 +1,1 @@
-{"isEntrypoint":true,"deps":["flutter|lib/material.dart","flutter_website|lib/styles.dart","flutter_website|lib/util.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":[],"hasMain":false}
+{"isEntrypoint":true,"deps":["flutter|lib/material.dart","flutter_website|lib/service_locator.dart","flutter_website|lib/services/navigation_service.dart","flutter_website|lib/styles.dart","flutter_website|lib/util.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":[],"hasMain":false}

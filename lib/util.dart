@@ -4,9 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_website/styles.dart';
 
 class Util {
-  static var route_start = '/';
-  static var route_portfolio = '/portfolio';
-
   static Color getNextColor(Color currentColor) {
     var index = Random().nextInt(colorArray.length);
     var newColor = colorArray[index];
