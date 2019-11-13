@@ -1,0 +1,1 @@
+{"isEntrypoint":true,"deps":["auto_size_text|lib/auto_size_text.dart","flutter|lib/material.dart","flutter_website|lib/styles.dart","flutter_website|lib/util.dart","flutter_website|lib/widgets/contact.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":[],"hasMain":false}

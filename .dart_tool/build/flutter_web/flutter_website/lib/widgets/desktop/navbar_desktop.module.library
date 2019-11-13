@@ -1,0 +1,1 @@
+{"isEntrypoint":true,"deps":["flutter|lib/material.dart","flutter_website|lib/util.dart","flutter_website|lib/widgets/desktop/navbar_logo_desktop.dart","flutter_website|lib/widgets/navbar_item.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":[],"hasMain":false}
