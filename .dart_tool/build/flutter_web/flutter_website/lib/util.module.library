@@ -1,1 +1,1 @@
-{"isEntrypoint":true,"deps":["flutter|lib/material.dart","flutter_website|lib/styles.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":["math"],"hasMain":false}
+{"isEntrypoint":true,"deps":["flutter|lib/material.dart","flutter_website|lib/service_locator.dart","flutter_website|lib/services/color_service.dart","flutter_website|lib/styles.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":["math"],"hasMain":false}

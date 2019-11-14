@@ -6205,7 +6205,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
         canvas.drawRect(outerRect, paint);
       }
       return true;
-    }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/debug.dart", 228, 10, "ect(innerRect);\n  final Paint paint = Paint()\n    ..color = color;\n  canvas.drawPath(path, paint);\n}\n\n/// Paint a diagram showing the given area as padding.\n///\n/// Called by [RenderPadding.debugPaintSize] when [debugPaintSizeEnabled] is\n/// true.\nvoid debugPaintPadding(Canvas canvas, Rect outerRect, Rect innerRect, { double outlineWidth = 2.0 }) {\n  assert(() {\n    if (innerRect != null && !innerRect.isEmpty) {\n      _d");
+    }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/debug.dart", 228, 10, "() {\n    if (innerRect != null && !innerRect.isEmpty) {\n      _debugDrawDoubleRect(canvas, outerRect, innerRect, const Color(0x900090FF));\n      _debugDrawDoubleRect(canvas, innerRect.inflate(outlineWidth).intersect(outerRect), innerRect, const Color(0xFF0090FF));\n    } else {\n      final Paint paint = Paint()\n        ..color = const Color(0x90909090);\n      canvas.drawRect(outerRect, paint);\n    }\n    return true;\n  }()");
   };
   debug$0.debugAssertAllRenderVarsUnset = function debugAssertAllRenderVarsUnset(reason, opts) {
     let debugCheckIntrinsicSizesOverride = opts && 'debugCheckIntrinsicSizesOverride' in opts ? opts.debugCheckIntrinsicSizesOverride : false;
@@ -6214,7 +6214,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
         dart.throw(assertions.FlutterError.new(reason));
       }
       return true;
-    }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/debug.dart", 253, 10, "a complete\n/// list.\n///\n/// The `debugCheckIntrinsicSizesOverride` argument can be provided to override\n/// the expected value for [debugCheckIntrinsicSizes]. (This exists because the\n/// test framework itself overrides this value in some cases.)\nbool debugAssertAllRenderVarsUnset(String reason, { bool debugCheckIntrinsicSizesOverride = false }) {\n  assert(() {\n    if (debugPaintSizeEnabled ||\n        debugPaintBaselinesEnabled ||\n        debugPaintLayerBordersEnabled ||\n        debugPaintPointersEnabled ||\n        debugRepaintRainbowEnabled ||\n        debugRepaintTextRainbowEnabled ||\n        debugCurrentRepaintCol");
+    }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/debug.dart", 253, 10, "() {\n    if (debugPaintSizeEnabled ||\n        debugPaintBaselinesEnabled ||\n        debugPaintLayerBordersEnabled ||\n        debugPaintPointersEnabled ||\n        debugRepaintRainbowEnabled ||\n        debugRepaintTextRainbowEnabled ||\n        debugCurrentRepaintColor != _kDebugDefaultRepaintColor ||\n        debugPrintMarkNeedsLayoutStacks ||\n        debugPrintMarkNeedsPaintStacks ||\n        debugPrintLayouts ||\n        debugCheckIntrinsicSizes != debugCheckIntrinsicSizesOverride ||\n        debugProfilePaintsEnabled ||\n        debugOnProfilePaint != null) {\n      throw FlutterError(reason);\n    }\n    return true;\n  }()");
     return true;
   };
   const HSVColor_value = dart.privateName(colors, "HSVColor.value");
@@ -6703,7 +6703,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           dart.throw(new assertions.FlutterError.fromParts(JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("The height argument to getMaxIntrinsicWidth was negative."), new assertions.ErrorDescription.new("The argument to getMaxIntrinsicWidth must not be negative or null."), new assertions.ErrorHint.new("If you perform computations on another height before passing it to " + "getMaxIntrinsicWidth, consider using math.max() or double.clamp() " + "to force the value into the valid range.")])));
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1461, 12, "ssert(() {\n      if (height == null) {\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('The height argument to getMaxIntrinsicWidth was null.'),\n          ErrorDescription('The argument to getMaxIntrinsicWidth must not be negative or null.'),\n          ErrorHint('If you do not have a specific height in mind, then pass double.infinity instead.'),\n        ]);\n      }\n      if (height < 0.0) {\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('The height argument to getMaxIntrinsicWidth was negative.'),\n          ErrorDescription('The argument to getMaxIntrinsicWidth must not be negative or null.'),\n          ErrorHint(\n            'If you perform computations on another height before passing it to '\n            'getMaxIntrinsicWidth, consider using math.max() or double.clamp() '\n            'to force the value into the valid range.'\n          ),\n        ]);\n      }\n      return true;\n ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1461, 12, "() {\n      if (height == null) {\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('The height argument to getMaxIntrinsicWidth was null.'),\n          ErrorDescription('The argument to getMaxIntrinsicWidth must not be negative or null.'),\n          ErrorHint('If you do not have a specific height in mind, then pass double.infinity instead.'),\n        ]);\n      }\n      if (height < 0.0) {\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('The height argument to getMaxIntrinsicWidth was negative.'),\n          ErrorDescription('The argument to getMaxIntrinsicWidth must not be negative or null.'),\n          ErrorHint(\n            'If you perform computations on another height before passing it to '\n            'getMaxIntrinsicWidth, consider using math.max() or double.clamp() '\n            'to force the value into the valid range.'\n          ),\n        ]);\n      }\n      return true;\n    }()");
       return this[_computeIntrinsicDimension](box._IntrinsicDimension.maxWidth, height, dart.bind(this, 'computeMaxIntrinsicWidth'));
     }
     computeMaxIntrinsicWidth(height) {
@@ -6718,7 +6718,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           dart.throw(new assertions.FlutterError.fromParts(JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("The width argument to getMinIntrinsicHeight was negative."), new assertions.ErrorDescription.new("The argument to getMinIntrinsicHeight must not be negative or null."), new assertions.ErrorHint.new("If you perform computations on another width before passing it to " + "getMinIntrinsicHeight, consider using math.max() or double.clamp() " + "to force the value into the valid range.")])));
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1539, 12, "ssert(() {\n      if (width == null) {\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('The width argument to getMinIntrinsicHeight was null.'),\n          ErrorDescription('The argument to getMinIntrinsicHeight must not be negative or null.'),\n          ErrorHint('If you do not have a specific width in mind, then pass double.infinity instead.'),\n        ]);\n      }\n      if (width < 0.0) {\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('The width argument to getMinIntrinsicHeight was negative.'),\n          ErrorDescription('The argument to getMinIntrinsicHeight must not be negative or null.'),\n          ErrorHint(\n            'If you perform computations on another width before passing it to '\n            'getMinIntrinsicHeight, consider using math.max() or double.clamp() '\n            'to force the value into the valid range.'\n          ),\n        ]);\n      }\n      return true;\n ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1539, 12, "() {\n      if (width == null) {\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('The width argument to getMinIntrinsicHeight was null.'),\n          ErrorDescription('The argument to getMinIntrinsicHeight must not be negative or null.'),\n          ErrorHint('If you do not have a specific width in mind, then pass double.infinity instead.'),\n        ]);\n      }\n      if (width < 0.0) {\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('The width argument to getMinIntrinsicHeight was negative.'),\n          ErrorDescription('The argument to getMinIntrinsicHeight must not be negative or null.'),\n          ErrorHint(\n            'If you perform computations on another width before passing it to '\n            'getMinIntrinsicHeight, consider using math.max() or double.clamp() '\n            'to force the value into the valid range.'\n          ),\n        ]);\n      }\n      return true;\n    }()");
       return this[_computeIntrinsicDimension](box._IntrinsicDimension.minHeight, width, dart.bind(this, 'computeMinIntrinsicHeight'));
     }
     computeMinIntrinsicHeight(width) {
@@ -6733,7 +6733,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           dart.throw(new assertions.FlutterError.fromParts(JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("The width argument to getMaxIntrinsicHeight was negative."), new assertions.ErrorDescription.new("The argument to getMaxIntrinsicHeight must not be negative or null."), new assertions.ErrorHint.new("If you perform computations on another width before passing it to " + "getMaxIntrinsicHeight, consider using math.max() or double.clamp() " + "to force the value into the valid range.")])));
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1614, 12, "ssert(() {\n      if (width == null) {\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('The width argument to getMaxIntrinsicHeight was null.'),\n          ErrorDescription('The argument to getMaxIntrinsicHeight must not be negative or null.'),\n          ErrorHint('If you do not have a specific width in mind, then pass double.infinity instead.'),\n        ]);\n      }\n      if (width < 0.0) {\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('The width argument to getMaxIntrinsicHeight was negative.'),\n          ErrorDescription('The argument to getMaxIntrinsicHeight must not be negative or null.'),\n          ErrorHint(\n            'If you perform computations on another width before passing it to '\n            'getMaxIntrinsicHeight, consider using math.max() or double.clamp() '\n            'to force the value into the valid range.'\n          ),\n        ]);\n      }\n      return true;\n ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1614, 12, "() {\n      if (width == null) {\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('The width argument to getMaxIntrinsicHeight was null.'),\n          ErrorDescription('The argument to getMaxIntrinsicHeight must not be negative or null.'),\n          ErrorHint('If you do not have a specific width in mind, then pass double.infinity instead.'),\n        ]);\n      }\n      if (width < 0.0) {\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('The width argument to getMaxIntrinsicHeight was negative.'),\n          ErrorDescription('The argument to getMaxIntrinsicHeight must not be negative or null.'),\n          ErrorHint(\n            'If you perform computations on another width before passing it to '\n            'getMaxIntrinsicHeight, consider using math.max() or double.clamp() '\n            'to force the value into the valid range.'\n          ),\n        ]);\n      }\n      return true;\n    }()");
       return this[_computeIntrinsicDimension](box._IntrinsicDimension.maxHeight, width, dart.bind(this, 'computeMaxIntrinsicHeight'));
     }
     computeMaxIntrinsicHeight(width) {
@@ -6743,29 +6743,29 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_size$] != null;
     }
     get size() {
-      if (!dart.test(this.hasSize)) dart.assertFailed("RenderBox was not laid out: " + dart.str(this.toString()), "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1687, 12, "ssert(h");
+      if (!dart.test(this.hasSize)) dart.assertFailed("RenderBox was not laid out: " + dart.str(this.toString()), "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1687, 12, "hasSize");
       if (!dart.test(dart.fn(() => {
         if (box._DebugSize.is(this[_size$])) {
           let _size = box._DebugSize._check(this[_size$]);
-          if (!dart.equals(_size[_owner$0], this)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1691, 16, "ssert(_size._owner =");
+          if (!dart.equals(_size[_owner$0], this)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1691, 16, "_size._owner == this");
           if (object$.RenderObject.debugActiveLayout != null) {
-            if (!(dart.test(this.debugDoingThisResize) || dart.test(this.debugDoingThisLayout) || dart.equals(object$.RenderObject.debugActiveLayout, this.parent) && dart.test(_size[_canBeUsedByParent$]))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1698, 18, "ssert(debugDoingThisResize || debugDoingThisLayout ||\n                 (RenderObject.debugActiveLayout == parent && _size._canBeUsedByP");
+            if (!(dart.test(this.debugDoingThisResize) || dart.test(this.debugDoingThisLayout) || dart.equals(object$.RenderObject.debugActiveLayout, this.parent) && dart.test(_size[_canBeUsedByParent$]))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1698, 18, "debugDoingThisResize || debugDoingThisLayout ||\n                 (RenderObject.debugActiveLayout == parent && _size._canBeUsedByParent)");
           }
-          if (!dart.equals(_size, this[_size$])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1701, 16, "ssert(_size == this");
+          if (!dart.equals(_size, this[_size$])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1701, 16, "_size == this._size");
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1688, 12, "ssert(() {\n      if (_size is _DebugSize) {\n        final _DebugSize _size = this._size;\n        assert(_size._owner == this);\n        if (RenderObject.debugActiveLayout != null) {\n          // We are always allowed to access our own size (for print debugging\n          // and asserts if nothing else). Other than us, the only object that's\n          // allowed to read our size is our parent, if they've said they will.\n          // If you hit this assert trying to access a child's size, pass\n          // \"parentUsesSize: true\" to that child's layout().\n          assert(debugDoingThisResize || debugDoingThisLayout ||\n                 (RenderObject.debugActiveLayout == parent && _size._canBeUsedByParent));\n        }\n        assert(_size == this._size);\n      }\n      return true;\n ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1688, 12, "() {\n      if (_size is _DebugSize) {\n        final _DebugSize _size = this._size;\n        assert(_size._owner == this);\n        if (RenderObject.debugActiveLayout != null) {\n          // We are always allowed to access our own size (for print debugging\n          // and asserts if nothing else). Other than us, the only object that's\n          // allowed to read our size is our parent, if they've said they will.\n          // If you hit this assert trying to access a child's size, pass\n          // \"parentUsesSize: true\" to that child's layout().\n          assert(debugDoingThisResize || debugDoingThisLayout ||\n                 (RenderObject.debugActiveLayout == parent && _size._canBeUsedByParent));\n        }\n        assert(_size == this._size);\n      }\n      return true;\n    }()");
       return this[_size$];
     }
     set size(value) {
-      if (!!(dart.test(this.debugDoingThisResize) && dart.test(this.debugDoingThisLayout))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1713, 12, "ssert(!(debugDoingThisResize && debugDoingThisL");
-      if (!(dart.test(this.sizedByParent) || !dart.test(this.debugDoingThisResize))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1714, 12, "ssert(sizedByParent || !debugDoingThis");
+      if (!!(dart.test(this.debugDoingThisResize) && dart.test(this.debugDoingThisLayout))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1713, 12, "!(debugDoingThisResize && debugDoingThisLayout)");
+      if (!(dart.test(this.sizedByParent) || !dart.test(this.debugDoingThisResize))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1714, 12, "sizedByParent || !debugDoingThisResize");
       if (!dart.test(dart.fn(() => {
         if (dart.test(this.sizedByParent) && dart.test(this.debugDoingThisResize) || !dart.test(this.sizedByParent) && dart.test(this.debugDoingThisLayout)) return true;
-        if (!!dart.test(this.debugDoingThisResize)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1719, 14, "ssert(!debugDoingThis");
+        if (!!dart.test(this.debugDoingThisResize)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1719, 14, "!debugDoingThisResize");
         let information = JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("RenderBox size setter called incorrectly.")]);
         if (dart.test(this.debugDoingThisLayout)) {
-          if (!dart.test(this.sizedByParent)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1724, 16, "ssert(sizedBy");
+          if (!dart.test(this.sizedByParent)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1724, 16, "sizedByParent");
           information[$add](new assertions.ErrorDescription.new("It appears that the size setter was called from performLayout()."));
         } else {
           information[$add](new assertions.ErrorDescription.new("The size setter was called from outside layout (neither performResize() nor performLayout() were being run for this object)."));
@@ -6776,16 +6776,16 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
         else
           information[$add](new assertions.ErrorDescription.new("Because this RenderBox has sizedByParent set to false, it must set its size in performLayout()."));
         dart.throw(new assertions.FlutterError.fromParts(information));
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1715, 12, "ssert(() {\n      if ((sizedByParent && debugDoingThisResize) ||\n          (!sizedByParent && debugDoingThisLayout))\n        return true;\n      assert(!debugDoingThisResize);\n      final List<DiagnosticsNode> information = <DiagnosticsNode>[\n        ErrorSummary('RenderBox size setter called incorrectly.'),\n      ];\n      if (debugDoingThisLayout) {\n        assert(sizedByParent);\n        information.add(ErrorDescription('It appears that the size setter was called from performLayout().'));\n      } else {\n        information.add(ErrorDescription(\n          'The size setter was called from outside layout (neither performResize() nor performLayout() were being run for this object).'\n        ));\n        if (owner != null && owner.debugDoingLayout)\n          information.add(ErrorDescription('Only the object itself can set its size. It is a contract violation for other objects to set it.'));\n      }\n      if (sizedByParent)\n        information.add(ErrorDescription('Because this RenderBox has sizedByParent set to true, it must set its size in performResize().'));\n      else\n        information.add(ErrorDescription('Because this RenderBox has sizedByParent set to false, it must set its size in performLayout().'));\n      throw FlutterError.fromParts(information);\n ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1715, 12, "() {\n      if ((sizedByParent && debugDoingThisResize) ||\n          (!sizedByParent && debugDoingThisLayout))\n        return true;\n      assert(!debugDoingThisResize);\n      final List<DiagnosticsNode> information = <DiagnosticsNode>[\n        ErrorSummary('RenderBox size setter called incorrectly.'),\n      ];\n      if (debugDoingThisLayout) {\n        assert(sizedByParent);\n        information.add(ErrorDescription('It appears that the size setter was called from performLayout().'));\n      } else {\n        information.add(ErrorDescription(\n          'The size setter was called from outside layout (neither performResize() nor performLayout() were being run for this object).'\n        ));\n        if (owner != null && owner.debugDoingLayout)\n          information.add(ErrorDescription('Only the object itself can set its size. It is a contract violation for other objects to set it.'));\n      }\n      if (sizedByParent)\n        information.add(ErrorDescription('Because this RenderBox has sizedByParent set to true, it must set its size in performResize().'));\n      else\n        information.add(ErrorDescription('Because this RenderBox has sizedByParent set to false, it must set its size in performLayout().'));\n      throw FlutterError.fromParts(information);\n    }()");
       if (!dart.test(dart.fn(() => {
         value = this.debugAdoptSize(value);
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1739, 12, "ssert(() {\n      value = debugAdoptSize(value);\n      return true;\n ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1739, 12, "() {\n      value = debugAdoptSize(value);\n      return true;\n    }()");
       this[_size$] = value;
       if (!dart.test(dart.fn(() => {
         this.debugAssertDoesMeetConstraints();
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1744, 12, "ssert(() {\n      debugAssertDoesMeetConstraints();\n      return true;\n ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1744, 12, "() {\n      debugAssertDoesMeetConstraints();\n      return true;\n    }()");
     }
     debugAdoptSize(value) {
       let result = value;
@@ -6802,7 +6802,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
         }
         result = new box._DebugSize.new(value, this, this.debugCanParentUseSize);
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1765, 12, "ssert(() {\n      if (value is _DebugSize) {\n        if (value._owner != this) {\n          if (value._owner.parent != this) {\n            throw FlutterError.fromParts(<DiagnosticsNode>[\n              ErrorSummary('The size property was assigned a size inappropriately.'),\n              describeForError('The following render object'),\n              value._owner.describeForError('...was assigned a size obtained from'),\n              ErrorDescription(\n                'However, this second render object is not, or is no longer, a '\n                'child of the first, and it is therefore a violation of the '\n                'RenderBox layout protocol to use that size in the layout of the '\n                'first render object.'\n              ),\n              ErrorHint(\n                'If the size was obtained at a time where it was valid to read '\n                'the size (because the second render object above was a child '\n                'of the first at the time), then it should be adopted using '\n                'debugAdoptSize at that time.'\n              ),\n              ErrorHint(\n                'If the size comes from a grandchild or a render object from an '\n                'entirely different part of the render tree, then there is no '\n                'way to be notified when the size changes and therefore attempts '\n                'to read that size are almost certainly a source of bugs. A different '\n                'approach should be used.'\n              ),\n            ]);\n          }\n          if (!value._canBeUsedByParent) {\n            throw FlutterError.fromParts(<DiagnosticsNode>[\n              ErrorSummary('A child\\'s size was used without setting parentUsesSize.'),\n              describeForError('The following render object'),\n              value._owner.describeForError('...was assigned a size obtained from its child'),\n              ErrorDescription(\n                'However, when the child was laid out, the parentUsesSize argument '\n                'was not set or set to false. Subsequently this transpired to be '\n                'inaccurate: the size was nonetheless used by the parent.\\n'\n                'It is important to tell the framework if the size will be used or not '\n                'as several important performance optimizations can be made if the '\n                'size will not be used by the parent.'\n              ),\n            ]);\n          }\n        }\n      }\n      result = _DebugSize(value, this, debugCanParentUseSize);\n      return true;\n ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1765, 12, "() {\n      if (value is _DebugSize) {\n        if (value._owner != this) {\n          if (value._owner.parent != this) {\n            throw FlutterError.fromParts(<DiagnosticsNode>[\n              ErrorSummary('The size property was assigned a size inappropriately.'),\n              describeForError('The following render object'),\n              value._owner.describeForError('...was assigned a size obtained from'),\n              ErrorDescription(\n                'However, this second render object is not, or is no longer, a '\n                'child of the first, and it is therefore a violation of the '\n                'RenderBox layout protocol to use that size in the layout of the '\n                'first render object.'\n              ),\n              ErrorHint(\n                'If the size was obtained at a time where it was valid to read '\n                'the size (because the second render object above was a child '\n                'of the first at the time), then it should be adopted using '\n                'debugAdoptSize at that time.'\n              ),\n              ErrorHint(\n                'If the size comes from a grandchild or a render object from an '\n                'entirely different part of the render tree, then there is no '\n                'way to be notified when the size changes and therefore attempts '\n                'to read that size are almost certainly a source of bugs. A different '\n                'approach should be used.'\n              ),\n            ]);\n          }\n          if (!value._canBeUsedByParent) {\n            throw FlutterError.fromParts(<DiagnosticsNode>[\n              ErrorSummary('A child\\'s size was used without setting parentUsesSize.'),\n              describeForError('The following render object'),\n              value._owner.describeForError('...was assigned a size obtained from its child'),\n              ErrorDescription(\n                'However, when the child was laid out, the parentUsesSize argument '\n                'was not set or set to false. Subsequently this transpired to be '\n                'inaccurate: the size was nonetheless used by the parent.\\n'\n                'It is important to tell the framework if the size will be used or not '\n                'as several important performance optimizations can be made if the '\n                'size will not be used by the parent.'\n              ),\n            ]);\n          }\n        }\n      }\n      result = _DebugSize(value, this, debugCanParentUseSize);\n      return true;\n    }()");
       return result;
     }
     get semanticBounds() {
@@ -6817,39 +6817,39 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     }
     getDistanceToBaseline(baseline, opts) {
       let onlyReal = opts && 'onlyReal' in opts ? opts.onlyReal : false;
-      if (!!dart.test(box.RenderBox._debugDoingBaseline)) dart.assertFailed("Please see the documentation for computeDistanceToActualBaseline for the required calling conventions of this method.", "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1850, 12, "ssert(!_debugDoingBa");
-      if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1851, 12, "ssert(!debugNeeds");
+      if (!!dart.test(box.RenderBox._debugDoingBaseline)) dart.assertFailed("Please see the documentation for computeDistanceToActualBaseline for the required calling conventions of this method.", "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1850, 12, "!_debugDoingBaseline");
+      if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1851, 12, "!debugNeedsLayout");
       if (!dart.test(dart.fn(() => {
         let parent = object$.RenderObject._check(this.parent);
         if (dart.test(this.owner.debugDoingLayout)) return dart.equals(object$.RenderObject.debugActiveLayout, parent) && dart.test(parent.debugDoingThisLayout);
         if (dart.test(this.owner.debugDoingPaint)) return dart.equals(object$.RenderObject.debugActivePaint, parent) && dart.test(parent.debugDoingThisPaint) || dart.equals(object$.RenderObject.debugActivePaint, this) && dart.test(this.debugDoingThisPaint);
-        if (!dart.equals(parent, this.parent)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1859, 14, "ssert(parent == this.");
+        if (!dart.equals(parent, this.parent)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1859, 14, "parent == this.parent");
         return false;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1852, 12, "ssert(() {\n      final RenderObject parent = this.parent;\n      if (owner.debugDoingLayout)\n        return (RenderObject.debugActiveLayout == parent) && parent.debugDoingThisLayout;\n      if (owner.debugDoingPaint)\n        return ((RenderObject.debugActivePaint == parent) && parent.debugDoingThisPaint) ||\n               ((RenderObject.debugActivePaint == this) && debugDoingThisPaint);\n      assert(parent == this.parent);\n      return false;\n ");
-      if (!dart.test(box.RenderBox._debugSetDoingBaseline(true))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1862, 12, "ssert(_debugSetDoingBaseline");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1852, 12, "() {\n      final RenderObject parent = this.parent;\n      if (owner.debugDoingLayout)\n        return (RenderObject.debugActiveLayout == parent) && parent.debugDoingThisLayout;\n      if (owner.debugDoingPaint)\n        return ((RenderObject.debugActivePaint == parent) && parent.debugDoingThisPaint) ||\n               ((RenderObject.debugActivePaint == this) && debugDoingThisPaint);\n      assert(parent == this.parent);\n      return false;\n    }()");
+      if (!dart.test(box.RenderBox._debugSetDoingBaseline(true))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1862, 12, "_debugSetDoingBaseline(true)");
       let result = this.getDistanceToActualBaseline(baseline);
-      if (!dart.test(box.RenderBox._debugSetDoingBaseline(false))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1864, 12, "ssert(_debugSetDoingBaseline(");
+      if (!dart.test(box.RenderBox._debugSetDoingBaseline(false))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1864, 12, "_debugSetDoingBaseline(false)");
       if (result == null && !dart.test(onlyReal)) return this.size.height;
       return result;
     }
     getDistanceToActualBaseline(baseline) {
-      if (!dart.test(box.RenderBox._debugDoingBaseline)) dart.assertFailed("Please see the documentation for computeDistanceToActualBaseline for the required calling conventions of this method.", "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1878, 12, "ssert(_debugDoingBa");
+      if (!dart.test(box.RenderBox._debugDoingBaseline)) dart.assertFailed("Please see the documentation for computeDistanceToActualBaseline for the required calling conventions of this method.", "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1878, 12, "_debugDoingBaseline");
       this[_cachedBaselines] == null ? this[_cachedBaselines] = new (LinkedMapOfTextBaseline$double()).new() : null;
       this[_cachedBaselines][$putIfAbsent](baseline, dart.fn(() => this.computeDistanceToActualBaseline(baseline), VoidTodouble()));
       return this[_cachedBaselines][$_get](baseline);
     }
     computeDistanceToActualBaseline(baseline) {
-      if (!dart.test(box.RenderBox._debugDoingBaseline)) dart.assertFailed("Please see the documentation for computeDistanceToActualBaseline for the required calling conventions of this method.", "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1910, 12, "ssert(_debugDoingBa");
+      if (!dart.test(box.RenderBox._debugDoingBaseline)) dart.assertFailed("Please see the documentation for computeDistanceToActualBaseline for the required calling conventions of this method.", "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1910, 12, "_debugDoingBaseline");
       return null;
     }
     get constraints() {
       return box.BoxConstraints._check(super.constraints);
     }
     debugAssertDoesMeetConstraints() {
-      if (!(this.constraints != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1920, 12, "ssert(constraints !");
+      if (!(this.constraints != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1920, 12, "constraints != null");
       if (!dart.test(dart.fn(() => {
         if (!dart.test(this.hasSize)) {
-          if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1923, 16, "ssert(!debugNeeds");
+          if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1923, 16, "!debugNeedsLayout");
           let contract = null;
           if (dart.test(this.sizedByParent))
             contract = new assertions.ErrorDescription.new("Because this RenderBox has sizedByParent set to true, it must set its size in performResize().");
@@ -6885,7 +6885,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           dart.throw(new assertions.FlutterError.fromParts(JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new(dart.str(this[$runtimeType]) + " does not meet its constraints."), new (DiagnosticsPropertyOfBoxConstraints()).new("Constraints", this.constraints, {style: diagnostics.DiagnosticsTreeStyle.errorProperty}), new (DiagnosticsPropertyOfSize()).new("Size", this[_size$], {style: diagnostics.DiagnosticsTreeStyle.errorProperty}), new assertions.ErrorHint.new("If you are not writing your own RenderBox subclass, then this is not " + "your fault. Contact support: https://github.com/flutter/flutter/issues/new?template=BUG.md")])));
         }
         if (dart.test(debug$0.debugCheckIntrinsicSizes)) {
-          if (!!dart.test(object$.RenderObject.debugCheckingIntrinsics)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1981, 16, "ssert(!RenderObject.debugCheckingIntr");
+          if (!!dart.test(object$.RenderObject.debugCheckingIntrinsics)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1981, 16, "!RenderObject.debugCheckingIntrinsics");
           object$.RenderObject.debugCheckingIntrinsics = true;
           let failures = JSArrayOfDiagnosticsNode().of([]);
           function testIntrinsic($function, name, constraint) {
@@ -6925,7 +6925,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           }
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1921, 12, "ssert(() {\n      if (!hasSize) {\n        assert(!debugNeedsLayout); // this is called in the size= setter during layout, but in that case we have a size\n        DiagnosticsNode contract;\n        if (sizedByParent)\n          contract = ErrorDescription('Because this RenderBox has sizedByParent set to true, it must set its size in performResize().');\n        else\n          contract = ErrorDescription('Because this RenderBox has sizedByParent set to false, it must set its size in performLayout().');\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('RenderBox did not set its size during layout.'),\n          contract,\n          ErrorDescription('It appears that this did not happen; layout completed, but the size property is still null.'),\n          DiagnosticsProperty<RenderBox>('The RenderBox in question is', this, style: DiagnosticsTreeStyle.errorProperty),\n        ]);\n      }\n      // verify that the size is not infinite\n      if (!_size.isFinite) {\n        final List<DiagnosticsNode> information = <DiagnosticsNode>[\n          ErrorSummary('$runtimeType object was given an infinite size during layout.'),\n          ErrorDescription(\n            'This probably means that it is a render object that tries to be '\n            'as big as possible, but it was put inside another render object '\n            'that allows its children to pick their own size.'\n          ),\n        ];\n        if (!constraints.hasBoundedWidth) {\n          RenderBox node = this;\n          while (!node.constraints.hasBoundedWidth && node.parent is RenderBox)\n            node = node.parent;\n\n          information.add(node.describeForError('The nearest ancestor providing an unbounded width constraint is'));\n        }\n        if (!constraints.hasBoundedHeight) {\n          RenderBox node = this;\n          while (!node.constraints.hasBoundedHeight && node.parent is RenderBox)\n            node = node.parent;\n\n          information.add(node.describeForError('The nearest ancestor providing an unbounded height constraint is'));\n        }\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ...information,\n          DiagnosticsProperty<BoxConstraints>('The constraints that applied to the $runtimeType were', constraints, style: DiagnosticsTreeStyle.errorProperty),\n          DiagnosticsProperty<Size>('The exact size it was given was', _size, style: DiagnosticsTreeStyle.errorProperty),\n          ErrorHint('See https://flutter.dev/docs/development/ui/layout/box-constraints for more information.'),\n        ]);\n     }\n      // verify that the size is within the constraints\n      if (!constraints.isSatisfiedBy(_size)) {\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('$runtimeType does not meet its constraints.'),\n          DiagnosticsProperty<BoxConstraints>('Constraints', constraints, style: DiagnosticsTreeStyle.errorProperty),\n          DiagnosticsProperty<Size>('Size', _size, style: DiagnosticsTreeStyle.errorProperty),\n          ErrorHint(\n            'If you are not writing your own RenderBox subclass, then this is not '\n            'your fault. Contact support: https://github.com/flutter/flutter/issues/new?template=BUG.md'\n          ),\n        ]);\n      }\n      if (debugCheckIntrinsicSizes) {\n        // verify that the intrinsics are sane\n        assert(!RenderObject.debugCheckingIntrinsics);\n        RenderObject.debugCheckingIntrinsics = true;\n        final List<DiagnosticsNode> failures = <DiagnosticsNode>[];\n\n        double testIntrinsic(double function(double extent), String name, double constraint) {\n          final double result = function(constraint);\n          if (result < 0) {\n            failures.add(ErrorDescription(' * $name($constraint) returned a negative value: $result'));\n          }\n          if (!result.isFinite) {\n            failures.add(ErrorDescription(' * $name($constraint) returned a non-finite value: $result'));\n          }\n          return result;\n        }\n\n        void testIntrinsicsForValues(double getMin(double extent), double getMax(double extent), String name, double constraint) {\n          final double min = testIntrinsic(getMin, 'getMinIntrinsic$name', constraint);\n          final double max = testIntrinsic(getMax, 'getMaxIntrinsic$name', constraint);\n          if (min > max) {\n            failures.add(ErrorDescription(' * getMinIntrinsic$name($constraint) returned a larger value ($min) than getMaxIntrinsic$name($constraint) ($max)'));\n          }\n        }\n\n        testIntrinsicsForValues(getMinIntrinsicWidth, getMaxIntrinsicWidth, 'Width', double.infinity);\n        testIntrinsicsForValues(getMinIntrinsicHeight, getMaxIntrinsicHeight, 'Height', double.infinity);\n        if (constraints.hasBoundedWidth)\n          testIntrinsicsForValues(getMinIntrinsicWidth, getMaxIntrinsicWidth, 'Width', constraints.maxHeight);\n        if (constraints.hasBoundedHeight)\n          testIntrinsicsForValues(getMinIntrinsicHeight, getMaxIntrinsicHeight, 'Height', constraints.maxWidth);\n\n        // TODO(ianh): Test that values are internally consistent in more ways than the above.\n\n        RenderObject.debugCheckingIntrinsics = false;\n        if (failures.isNotEmpty) {\n          // TODO(jacobr): consider nesting the failures object so it is collapsible.\n          throw FlutterError.fromParts(<DiagnosticsNode>[\n            ErrorSummary('The intrinsic dimension methods of the $runtimeType class returned values that violate the intrinsic protocol contract.'),\n            ErrorDescription('The following ${failures.length > 1 ? \"failures\" : \"failure\"} was detected:'), // should this be tagged as an error or not?\n            ...failures,\n            ErrorHint(\n              'If you are not writing your own RenderBox subclass, then this is not\\n'\n              'your fault. Contact support: https://github.com/flutter/flutter/issues/new?template=BUG.md'\n            ),\n          ]);\n        }\n      }\n      return true;\n ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 1921, 12, "() {\n      if (!hasSize) {\n        assert(!debugNeedsLayout); // this is called in the size= setter during layout, but in that case we have a size\n        DiagnosticsNode contract;\n        if (sizedByParent)\n          contract = ErrorDescription('Because this RenderBox has sizedByParent set to true, it must set its size in performResize().');\n        else\n          contract = ErrorDescription('Because this RenderBox has sizedByParent set to false, it must set its size in performLayout().');\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('RenderBox did not set its size during layout.'),\n          contract,\n          ErrorDescription('It appears that this did not happen; layout completed, but the size property is still null.'),\n          DiagnosticsProperty<RenderBox>('The RenderBox in question is', this, style: DiagnosticsTreeStyle.errorProperty),\n        ]);\n      }\n      // verify that the size is not infinite\n      if (!_size.isFinite) {\n        final List<DiagnosticsNode> information = <DiagnosticsNode>[\n          ErrorSummary('$runtimeType object was given an infinite size during layout.'),\n          ErrorDescription(\n            'This probably means that it is a render object that tries to be '\n            'as big as possible, but it was put inside another render object '\n            'that allows its children to pick their own size.'\n          ),\n        ];\n        if (!constraints.hasBoundedWidth) {\n          RenderBox node = this;\n          while (!node.constraints.hasBoundedWidth && node.parent is RenderBox)\n            node = node.parent;\n\n          information.add(node.describeForError('The nearest ancestor providing an unbounded width constraint is'));\n        }\n        if (!constraints.hasBoundedHeight) {\n          RenderBox node = this;\n          while (!node.constraints.hasBoundedHeight && node.parent is RenderBox)\n            node = node.parent;\n\n          information.add(node.describeForError('The nearest ancestor providing an unbounded height constraint is'));\n        }\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ...information,\n          DiagnosticsProperty<BoxConstraints>('The constraints that applied to the $runtimeType were', constraints, style: DiagnosticsTreeStyle.errorProperty),\n          DiagnosticsProperty<Size>('The exact size it was given was', _size, style: DiagnosticsTreeStyle.errorProperty),\n          ErrorHint('See https://flutter.dev/docs/development/ui/layout/box-constraints for more information.'),\n        ]);\n     }\n      // verify that the size is within the constraints\n      if (!constraints.isSatisfiedBy(_size)) {\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('$runtimeType does not meet its constraints.'),\n          DiagnosticsProperty<BoxConstraints>('Constraints', constraints, style: DiagnosticsTreeStyle.errorProperty),\n          DiagnosticsProperty<Size>('Size', _size, style: DiagnosticsTreeStyle.errorProperty),\n          ErrorHint(\n            'If you are not writing your own RenderBox subclass, then this is not '\n            'your fault. Contact support: https://github.com/flutter/flutter/issues/new?template=BUG.md'\n          ),\n        ]);\n      }\n      if (debugCheckIntrinsicSizes) {\n        // verify that the intrinsics are sane\n        assert(!RenderObject.debugCheckingIntrinsics);\n        RenderObject.debugCheckingIntrinsics = true;\n        final List<DiagnosticsNode> failures = <DiagnosticsNode>[];\n\n        double testIntrinsic(double function(double extent), String name, double constraint) {\n          final double result = function(constraint);\n          if (result < 0) {\n            failures.add(ErrorDescription(' * $name($constraint) returned a negative value: $result'));\n          }\n          if (!result.isFinite) {\n            failures.add(ErrorDescription(' * $name($constraint) returned a non-finite value: $result'));\n          }\n          return result;\n        }\n\n        void testIntrinsicsForValues(double getMin(double extent), double getMax(double extent), String name, double constraint) {\n          final double min = testIntrinsic(getMin, 'getMinIntrinsic$name', constraint);\n          final double max = testIntrinsic(getMax, 'getMaxIntrinsic$name', constraint);\n          if (min > max) {\n            failures.add(ErrorDescription(' * getMinIntrinsic$name($constraint) returned a larger value ($min) than getMaxIntrinsic$name($constraint) ($max)'));\n          }\n        }\n\n        testIntrinsicsForValues(getMinIntrinsicWidth, getMaxIntrinsicWidth, 'Width', double.infinity);\n        testIntrinsicsForValues(getMinIntrinsicHeight, getMaxIntrinsicHeight, 'Height', double.infinity);\n        if (constraints.hasBoundedWidth)\n          testIntrinsicsForValues(getMinIntrinsicWidth, getMaxIntrinsicWidth, 'Width', constraints.maxHeight);\n        if (constraints.hasBoundedHeight)\n          testIntrinsicsForValues(getMinIntrinsicHeight, getMaxIntrinsicHeight, 'Height', constraints.maxWidth);\n\n        // TODO(ianh): Test that values are internally consistent in more ways than the above.\n\n        RenderObject.debugCheckingIntrinsics = false;\n        if (failures.isNotEmpty) {\n          // TODO(jacobr): consider nesting the failures object so it is collapsible.\n          throw FlutterError.fromParts(<DiagnosticsNode>[\n            ErrorSummary('The intrinsic dimension methods of the $runtimeType class returned values that violate the intrinsic protocol contract.'),\n            ErrorDescription('The following ${failures.length > 1 ? \"failures\" : \"failure\"} was detected:'), // should this be tagged as an error or not?\n            ...failures,\n            ErrorHint(\n              'If you are not writing your own RenderBox subclass, then this is not\\n'\n              'your fault. Contact support: https://github.com/flutter/flutter/issues/new?template=BUG.md'\n            ),\n          ]);\n        }\n      }\n      return true;\n    }()");
     }
     markNeedsLayout() {
       let t8, t8$;
@@ -6943,7 +6943,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     }
     performResize() {
       this.size = this.constraints.smallest;
-      if (!dart.test(this.size.isFinite)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2054, 12, "ssert(size.is");
+      if (!dart.test(this.size.isFinite)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2054, 12, "size.isFinite");
     }
     performLayout() {
       if (!dart.test(dart.fn(() => {
@@ -6951,7 +6951,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           dart.throw(new assertions.FlutterError.fromParts(JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new(dart.str(this[$runtimeType]) + " did not implement performLayout()."), new assertions.ErrorHint.new("RenderBox subclasses need to either override performLayout() to " + "set a size and lay out any children, or, set sizedByParent to true " + "so that performResize() sizes the render object.")])));
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2059, 12, "ssert(() {\n      if (!sizedByParent) {\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('$runtimeType did not implement performLayout().'),\n          ErrorHint(\n            'RenderBox subclasses need to either override performLayout() to '\n            'set a size and lay out any children, or, set sizedByParent to true '\n            'so that performResize() sizes the render object.'\n          ),\n        ]);\n      }\n      return true;\n ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2059, 12, "() {\n      if (!sizedByParent) {\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('$runtimeType did not implement performLayout().'),\n          ErrorHint(\n            'RenderBox subclasses need to either override performLayout() to '\n            'set a size and lay out any children, or, set sizedByParent to true '\n            'so that performResize() sizes the render object.'\n          ),\n        ]);\n      }\n      return true;\n    }()");
     }
     hitTest(result, opts) {
       let position = opts && 'position' in opts ? opts.position : null;
@@ -6963,7 +6963,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           dart.throw(new assertions.FlutterError.fromParts(JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("Cannot hit test a render box with no size."), this.describeForError("The hitTest() method was called on this RenderBox"), new assertions.ErrorDescription.new("Although this node is not marked as needing layout, " + "its size is not set."), new assertions.ErrorHint.new("A RenderBox object must have an " + "explicit size before it can be hit-tested. Make sure " + "that the RenderBox in question sets its size during layout.")])));
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2099, 12, "ssert(() {\n      if (!hasSize) {\n        if (debugNeedsLayout) {\n          throw FlutterError.fromParts(<DiagnosticsNode>[\n            ErrorSummary('Cannot hit test a render box that has never been laid out.'),\n            describeForError('The hitTest() method was called on this RenderBox'),\n            ErrorDescription(\n              'Unfortunately, this object\\'s geometry is not known at this time, '\n              'probably because it has never been laid out. '\n              'This means it cannot be accurately hit-tested.'\n            ),\n            ErrorHint(\n              'If you are trying '\n              'to perform a hit test during the layout phase itself, make sure '\n              'you only hit test nodes that have completed layout (e.g. the node\\'s '\n              'children, after their layout() method has been called).'\n            ),\n          ]);\n        }\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('Cannot hit test a render box with no size.'),\n          describeForError('The hitTest() method was called on this RenderBox'),\n          ErrorDescription(\n            'Although this node is not marked as needing layout, '\n            'its size is not set.'\n          ),\n          ErrorHint(\n            'A RenderBox object must have an '\n            'explicit size before it can be hit-tested. Make sure '\n            'that the RenderBox in question sets its size during layout.'\n          ),\n        ]);\n      }\n      return true;\n ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2099, 12, "() {\n      if (!hasSize) {\n        if (debugNeedsLayout) {\n          throw FlutterError.fromParts(<DiagnosticsNode>[\n            ErrorSummary('Cannot hit test a render box that has never been laid out.'),\n            describeForError('The hitTest() method was called on this RenderBox'),\n            ErrorDescription(\n              'Unfortunately, this object\\'s geometry is not known at this time, '\n              'probably because it has never been laid out. '\n              'This means it cannot be accurately hit-tested.'\n            ),\n            ErrorHint(\n              'If you are trying '\n              'to perform a hit test during the layout phase itself, make sure '\n              'you only hit test nodes that have completed layout (e.g. the node\\'s '\n              'children, after their layout() method has been called).'\n            ),\n          ]);\n        }\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('Cannot hit test a render box with no size.'),\n          describeForError('The hitTest() method was called on this RenderBox'),\n          ErrorDescription(\n            'Although this node is not marked as needing layout, '\n            'its size is not set.'\n          ),\n          ErrorHint(\n            'A RenderBox object must have an '\n            'explicit size before it can be hit-tested. Make sure '\n            'that the RenderBox in question sets its size during layout.'\n          ),\n        ]);\n      }\n      return true;\n    }()");
       if (dart.test(this[_size$].contains(position))) {
         if (dart.test(this.hitTestChildren(result, {position: position})) || dart.test(this.hitTestSelf(position))) {
           result.add(new box.BoxHitTestEntry.new(this, position));
@@ -6981,14 +6981,14 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     }
     applyPaintTransform(child, transform) {
       object$.RenderObject._check(child);
-      if (!(child != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2191, 12, "ssert(child !");
-      if (!dart.equals(child.parent, this)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2192, 12, "ssert(child.parent =");
+      if (!(child != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2191, 12, "child != null");
+      if (!dart.equals(child.parent, this)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2192, 12, "child.parent == this");
       if (!dart.test(dart.fn(() => {
         if (!box.BoxParentData.is(child.parentData)) {
           dart.throw(new assertions.FlutterError.fromParts(JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new(dart.str(this[$runtimeType]) + " does not implement applyPaintTransform."), this.describeForError("The following " + dart.str(this[$runtimeType]) + " object"), child.describeForError("...did not use a BoxParentData class for the parentData field of the following child"), new assertions.ErrorDescription.new("The " + dart.str(this[$runtimeType]) + " class inherits from RenderBox."), new assertions.ErrorHint.new("The default applyPaintTransform implementation provided by RenderBox assumes that the " + "children all use BoxParentData objects for their parentData field. " + "Since " + dart.str(this[$runtimeType]) + " does not in fact use that ParentData class for its children, it must " + "provide an implementation of applyPaintTransform that supports the specific ParentData " + "subclass used by its children (which apparently is " + dart.str(dart.runtimeType(child.parentData)) + ").")])));
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2193, 12, "ssert(() {\n      if (child.parentData is! BoxParentData) {\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('$runtimeType does not implement applyPaintTransform.'),\n          describeForError('The following $runtimeType object'),\n          child.describeForError('...did not use a BoxParentData class for the parentData field of the following child'),\n          ErrorDescription('The $runtimeType class inherits from RenderBox.'),\n          ErrorHint(\n            'The default applyPaintTransform implementation provided by RenderBox assumes that the '\n            'children all use BoxParentData objects for their parentData field. '\n            'Since $runtimeType does not in fact use that ParentData class for its children, it must '\n            'provide an implementation of applyPaintTransform that supports the specific ParentData '\n            'subclass used by its children (which apparently is ${child.parentData.runtimeType}).'\n          ),\n        ]);\n      }\n      return true;\n ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2193, 12, "() {\n      if (child.parentData is! BoxParentData) {\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('$runtimeType does not implement applyPaintTransform.'),\n          describeForError('The following $runtimeType object'),\n          child.describeForError('...did not use a BoxParentData class for the parentData field of the following child'),\n          ErrorDescription('The $runtimeType class inherits from RenderBox.'),\n          ErrorHint(\n            'The default applyPaintTransform implementation provided by RenderBox assumes that the '\n            'children all use BoxParentData objects for their parentData field. '\n            'Since $runtimeType does not in fact use that ParentData class for its children, it must '\n            'provide an implementation of applyPaintTransform that supports the specific ParentData '\n            'subclass used by its children (which apparently is ${child.parentData.runtimeType}).'\n          ),\n        ]);\n      }\n      return true;\n    }()");
       let childParentData = box.BoxParentData._check(child.parentData);
       let offset = childParentData.offset;
       transform.translate(offset.dx, offset.dy);
@@ -7027,7 +7027,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           this.markNeedsPaint();
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2322, 12, "ssert(() {\n      if (debugPaintPointersEnabled) {\n        if (event is PointerDownEvent) {\n          _debugActivePointers += 1;\n        } else if (event is PointerUpEvent || event is PointerCancelEvent) {\n          _debugActivePointers -= 1;\n        }\n        markNeedsPaint();\n      }\n      return true;\n ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2322, 12, "() {\n      if (debugPaintPointersEnabled) {\n        if (event is PointerDownEvent) {\n          _debugActivePointers += 1;\n        } else if (event is PointerUpEvent || event is PointerCancelEvent) {\n          _debugActivePointers -= 1;\n        }\n        markNeedsPaint();\n      }\n      return true;\n    }()");
       return true;
     }
     debugPaint(context, offset) {
@@ -7036,7 +7036,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
         if (dart.test(debug$0.debugPaintBaselinesEnabled)) this.debugPaintBaselines(context, offset);
         if (dart.test(debug$0.debugPaintPointersEnabled)) this.debugPaintPointers(context, offset);
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2338, 12, "ssert(() {\n      if (debugPaintSizeEnabled)\n        debugPaintSize(context, offset);\n      if (debugPaintBaselinesEnabled)\n        debugPaintBaselines(context, offset);\n      if (debugPaintPointersEnabled)\n        debugPaintPointers(context, offset);\n      return true;\n ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2338, 12, "() {\n      if (debugPaintSizeEnabled)\n        debugPaintSize(context, offset);\n      if (debugPaintBaselinesEnabled)\n        debugPaintBaselines(context, offset);\n      if (debugPaintPointersEnabled)\n        debugPaintPointers(context, offset);\n      return true;\n    }()");
     }
     debugPaintSize(context, offset) {
       if (!dart.test(dart.fn(() => {
@@ -7044,7 +7044,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
         let paint = (t8 = new ui.Paint.new(), t8.style = ui.PaintingStyle.stroke, t8.strokeWidth = 1.0, t8.color = C19 || CT.C19, t8);
         context.canvas.drawRect(offset['&'](this.size).deflate(0.5), paint);
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2354, 12, "ssert(() {\n      final Paint paint = Paint()\n       ..style = PaintingStyle.stroke\n       ..strokeWidth = 1.0\n       ..color = const Color(0xFF00FFFF);\n      context.canvas.drawRect((offset & size).deflate(0.5), paint);\n      return true;\n ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2354, 12, "() {\n      final Paint paint = Paint()\n       ..style = PaintingStyle.stroke\n       ..strokeWidth = 1.0\n       ..color = const Color(0xFF00FFFF);\n      context.canvas.drawRect((offset & size).deflate(0.5), paint);\n      return true;\n    }()");
     }
     debugPaintBaselines(context, offset) {
       if (!dart.test(dart.fn(() => {
@@ -7068,7 +7068,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           context.canvas.drawPath(path, paint);
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2369, 12, "ssert(() {\n      final Paint paint = Paint()\n       ..style = PaintingStyle.stroke\n       ..strokeWidth = 0.25;\n      Path path;\n      // ideographic baseline\n      final double baselineI = getDistanceToBaseline(TextBaseline.ideographic, onlyReal: true);\n      if (baselineI != null) {\n        paint.color = const Color(0xFFFFD000);\n        path = Path();\n        path.moveTo(offset.dx, offset.dy + baselineI);\n        path.lineTo(offset.dx + size.width, offset.dy + baselineI);\n        context.canvas.drawPath(path, paint);\n      }\n      // alphabetic baseline\n      final double baselineA = getDistanceToBaseline(TextBaseline.alphabetic, onlyReal: true);\n      if (baselineA != null) {\n        paint.color = const Color(0xFF00FF00);\n        path = Path();\n        path.moveTo(offset.dx, offset.dy + baselineA);\n        path.lineTo(offset.dx + size.width, offset.dy + baselineA);\n        context.canvas.drawPath(path, paint);\n      }\n      return true;\n ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2369, 12, "() {\n      final Paint paint = Paint()\n       ..style = PaintingStyle.stroke\n       ..strokeWidth = 0.25;\n      Path path;\n      // ideographic baseline\n      final double baselineI = getDistanceToBaseline(TextBaseline.ideographic, onlyReal: true);\n      if (baselineI != null) {\n        paint.color = const Color(0xFFFFD000);\n        path = Path();\n        path.moveTo(offset.dx, offset.dy + baselineI);\n        path.lineTo(offset.dx + size.width, offset.dy + baselineI);\n        context.canvas.drawPath(path, paint);\n      }\n      // alphabetic baseline\n      final double baselineA = getDistanceToBaseline(TextBaseline.alphabetic, onlyReal: true);\n      if (baselineA != null) {\n        paint.color = const Color(0xFF00FF00);\n        path = Path();\n        path.moveTo(offset.dx, offset.dy + baselineA);\n        path.lineTo(offset.dx + size.width, offset.dy + baselineA);\n        context.canvas.drawPath(path, paint);\n      }\n      return true;\n    }()");
     }
     debugPaintPointers(context, offset) {
       if (!dart.test(dart.fn(() => {
@@ -7078,7 +7078,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           context.canvas.drawRect(offset['&'](this.size), paint);
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2405, 12, "ssert(() {\n      if (_debugActivePointers > 0) {\n        final Paint paint = Paint()\n         ..color = Color(0x00BBBB | ((0x04000000 * depth) & 0xFF000000));\n        context.canvas.drawRect(offset & size, paint);\n      }\n      return true;\n ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2405, 12, "() {\n      if (_debugActivePointers > 0) {\n        final Paint paint = Paint()\n         ..color = Color(0x00BBBB | ((0x04000000 * depth) & 0xFF000000));\n        context.canvas.drawRect(offset & size, paint);\n      }\n      return true;\n    }()");
     }
     debugFillProperties(properties) {
       super.debugFillProperties(properties);
@@ -7938,7 +7938,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     class RenderBoxContainerDefaultsMixin extends core.Object {}
     RenderBoxContainerDefaultsMixin[dart.mixinOn] = Object => class RenderBoxContainerDefaultsMixin extends Object {
       defaultComputeDistanceToFirstActualBaseline(baseline) {
-        if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2434, 12, "ssert(!debugNeeds");
+        if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2434, 12, "!debugNeedsLayout");
         let child = this.firstChild;
         while (child != null) {
           let childParentData = ParentDataType._check(child.parentData);
@@ -7949,7 +7949,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
         return null;
       }
       defaultComputeDistanceToHighestActualBaseline(baseline) {
-        if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2451, 12, "ssert(!debugNeeds");
+        if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2451, 12, "!debugNeedsLayout");
         let result = null;
         let child = this.firstChild;
         while (child != null) {
@@ -7972,7 +7972,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
         while (child != null) {
           let childParentData = ParentDataType._check(child.parentData);
           let isHit = result.addWithPaintOffset({offset: childParentData.offset, position: position, hitTest: dart.fn((result, transformed) => {
-              if (!dart.equals(transformed, position['-'](childParentData.offset))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2487, 18, "ssert(transformed == position - childParentData.");
+              if (!dart.equals(transformed, position['-'](childParentData.offset))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/box.dart", 2487, 18, "transformed == position - childParentData.offset");
               return child.hitTest(result, {position: transformed});
             }, BoxHitTestResultAndOffsetTobool())});
           if (dart.test(isHit)) return true;
@@ -8667,7 +8667,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       if (!dart.test(dart.fn(() => {
         this[_overflowReportNeeded] = true;
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/debug_overflow_indicator.dart", 317, 12, "ert(() {\n      _overflowReportNeeded = true;\n      return true;\n   ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/debug_overflow_indicator.dart", 317, 12, "() {\n      _overflowReportNeeded = true;\n      return true;\n    }()");
     }
   };
   (debug_overflow_indicator.DebugOverflowIndicatorMixin[dart.mixinNew] = function() {
@@ -10142,7 +10142,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_textPainter].textWidthBasis;
     }
     set textWidthBasis(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 270, 12, "t(value != nu");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 270, 12, "value != null");
       if (dart.equals(this[_textPainter].textWidthBasis, value)) return;
       this[_textPainter].textWidthBasis = value;
       this[_overflowShader] = null;
@@ -10179,9 +10179,9 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_computeIntrinsicHeight](width);
     }
     computeDistanceToActualBaseline(baseline) {
-      if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 319, 12, "t(!debugNeedsLayo");
-      if (!(this.constraints != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 320, 12, "t(constraints != nu");
-      if (!dart.test(this.constraints.debugAssertIsValid())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 321, 12, "t(constraints.debugAssertIsValid");
+      if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 319, 12, "!debugNeedsLayout");
+      if (!(this.constraints != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 320, 12, "constraints != null");
+      if (!dart.test(this.constraints.debugAssertIsValid())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 321, 12, "constraints.debugAssertIsValid()");
       this[_layoutTextWithConstraints](this.constraints);
       return this[_textPainter].computeDistanceToActualBaseline(ui.TextBaseline.alphabetic);
     }
@@ -10193,7 +10193,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           case C69 || CT.C69:
           {
             {
-              if (!dart.test(object$.RenderObject.debugCheckingIntrinsics)) dart.assertFailed("Intrinsics are not available for PlaceholderAlignment.baseline, " + "PlaceholderAlignment.aboveBaseline, or PlaceholderAlignment.belowBaseline,", "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 341, 18, "t(RenderObject.debugCheckingIntrinsi");
+              if (!dart.test(object$.RenderObject.debugCheckingIntrinsics)) dart.assertFailed("Intrinsics are not available for PlaceholderAlignment.baseline, " + "PlaceholderAlignment.aboveBaseline, or PlaceholderAlignment.belowBaseline,", "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 341, 18, "RenderObject.debugCheckingIntrinsics");
               return false;
             }
           }
@@ -10260,7 +10260,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
             if (!dart.test(dart.fn(() => {
               let manualPosition = position['-'](textParentData.offset)['/'](textParentData.scale);
               return (dart.notNull(transformed.dx) - dart.notNull(manualPosition.dx))[$abs]() < 1e-10 && (dart.notNull(transformed.dy) - dart.notNull(manualPosition.dy))[$abs]() < 1e-10;
-            }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 431, 18, "t(() {\n            final Offset manualPosition = (position - textParentData.offset) / textParentData.scale;\n            return (transformed.dx - manualPosition.dx).abs() < precisionErrorTolerance\n              && (transformed.dy - manualPosition.dy).abs() < precisionErrorTolerance;\n          }");
+            }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 431, 18, "() {\n            final Offset manualPosition = (position - textParentData.offset) / textParentData.scale;\n            return (transformed.dx - manualPosition.dx).abs() < precisionErrorTolerance\n              && (transformed.dy - manualPosition.dy).abs() < precisionErrorTolerance;\n          }()");
             return child.hitTest(result, {position: transformed});
           }, BoxHitTestResultAndOffsetTobool())});
         if (dart.test(isHit)) {
@@ -10273,7 +10273,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     handleEvent(event, entry) {
       let t14;
       box.BoxHitTestEntry._check(entry);
-      if (!dart.test(this.debugHandleEvent(event, entry))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 449, 12, "t(debugHandleEvent(event, entr");
+      if (!dart.test(this.debugHandleEvent(event, entry))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 449, 12, "debugHandleEvent(event, entry)");
       if (!events.PointerDownEvent.is(event)) return;
       this[_layoutTextWithConstraints](this.constraints);
       let offset = entry.localPosition;
@@ -10375,7 +10375,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           }
           case C57 || CT.C57:
           {
-            if (!(this.textDirection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 599, 18, "t(textDirection != nu");
+            if (!(this.textDirection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 599, 18, "textDirection != null");
             this[_needsClipping] = true;
             let fadeSizePainter = (t14 = new text_painter.TextPainter.new({text: new text_span.TextSpan.new({style: this[_textPainter].text.style, text: "…"}), textDirection: this.textDirection, textScaleFactor: this.textScaleFactor, locale: this.locale}), t14.layout(), t14);
             if (didOverflowWidth) {
@@ -10419,7 +10419,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           context.canvas.drawRect(offset['&'](this.size), paint);
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 655, 12, "t(() {\n      if (debugRepaintTextRainbowEnabled) {\n        final Paint paint = Paint()\n          ..color = debugCurrentRepaintColor.toColor();\n        context.canvas.drawRect(offset & size, paint);\n      }\n      return true;\n    }");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 655, 12, "() {\n      if (debugRepaintTextRainbowEnabled) {\n        final Paint paint = Paint()\n          ..color = debugCurrentRepaintColor.toColor();\n        context.canvas.drawRect(offset & size, paint);\n      }\n      return true;\n    }()");
       if (dart.test(this[_needsClipping])) {
         let bounds = offset['&'](this.size);
         if (this[_overflowShader] != null) {
@@ -10451,32 +10451,32 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       }
     }
     getOffsetForCaret(position, caretPrototype) {
-      if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 717, 12, "t(!debugNeedsLayo");
+      if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 717, 12, "!debugNeedsLayout");
       this[_layoutTextWithConstraints](this.constraints);
       return this[_textPainter].getOffsetForCaret(position, caretPrototype);
     }
     getBoxesForSelection(selection) {
-      if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 730, 12, "t(!debugNeedsLayo");
+      if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 730, 12, "!debugNeedsLayout");
       this[_layoutTextWithConstraints](this.constraints);
       return this[_textPainter].getBoxesForSelection(selection);
     }
     getPositionForOffset(offset) {
-      if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 739, 12, "t(!debugNeedsLayo");
+      if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 739, 12, "!debugNeedsLayout");
       this[_layoutTextWithConstraints](this.constraints);
       return this[_textPainter].getPositionForOffset(offset);
     }
     getWordBoundary(position) {
-      if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 754, 12, "t(!debugNeedsLayo");
+      if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 754, 12, "!debugNeedsLayout");
       this[_layoutTextWithConstraints](this.constraints);
       return this[_textPainter].getWordBoundary(position);
     }
     get textSize() {
-      if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 769, 12, "t(!debugNeedsLayo");
+      if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 769, 12, "!debugNeedsLayout");
       return this[_textPainter].size;
     }
     [_combineSemanticsInfo]() {
       let t14;
-      if (!(this[_semanticsInfo] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 780, 12, "t(_semanticsInfo != nu");
+      if (!(this[_semanticsInfo] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 780, 12, "_semanticsInfo != null");
       let combined = JSArrayOfInlineSpanSemanticsInformation().of([]);
       let workingText = "";
       let workingLabel = null;
@@ -10501,7 +10501,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       if (workingText !== null) {
         combined[$add](new inline_span.InlineSpanSemanticsInformation.new(workingText, {semanticsLabel: workingLabel}));
       } else {
-        if (!(workingLabel != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 811, 14, "t(workingLabel != nu");
+        if (!(workingLabel != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 811, 14, "workingLabel != null");
       }
       return combined;
     }
@@ -10523,7 +10523,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     }
     assembleSemanticsNode(node, config, children) {
       let t14, t15, t15$, t14$, t14$0;
-      if (!(this[_semanticsInfo] != null && dart.test(this[_semanticsInfo][$isNotEmpty]))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 836, 12, "t(_semanticsInfo != null && _semanticsInfo.isNotEmp");
+      if (!(this[_semanticsInfo] != null && dart.test(this[_semanticsInfo][$isNotEmpty]))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 836, 12, "_semanticsInfo != null && _semanticsInfo.isNotEmpty");
       let newChildren = JSArrayOfSemanticsNode().of([]);
       let currentDirection = this.textDirection;
       let currentRect = null;
@@ -10563,7 +10563,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
               let recognizer = long_press.LongPressGestureRecognizer._check(info.recognizer);
               configuration.onLongPress = recognizer.onLongPress;
             } else {
-              if (!false) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 902, 20, "t(fal");
+              if (!false) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/paragraph.dart", 902, 20, "false");
             }
           }
           newChildren[$add]((t14$0 = new semantics.SemanticsNode.new(), t14$0.updateWith({config: configuration}), t14$0.rect = currentRect, t14$0));
@@ -11108,7 +11108,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_stepWidth];
     }
     set stepWidth(value) {
-      if (!(value == null || dart.notNull(value) > 0.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 566, 12, "(value == null || value > 0.");
+      if (!(value == null || dart.notNull(value) > 0.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 566, 12, "value == null || value > 0.0");
       if (value == this[_stepWidth]) return;
       this[_stepWidth] = value;
       this.markNeedsLayout();
@@ -11117,13 +11117,13 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_stepHeight];
     }
     set stepHeight(value) {
-      if (!(value == null || dart.notNull(value) > 0.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 579, 12, "(value == null || value > 0.");
+      if (!(value == null || dart.notNull(value) > 0.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 579, 12, "value == null || value > 0.0");
       if (value == this[_stepHeight]) return;
       this[_stepHeight] = value;
       this.markNeedsLayout();
     }
     static _applyStep(input, step) {
-      if (!input[$isFinite]) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 587, 12, "(input.isFinit");
+      if (!input[$isFinite]) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 587, 12, "input.isFinite");
       if (step == null) return input;
       return (dart.notNull(input) / dart.notNull(step))[$ceil]() * dart.notNull(step);
     }
@@ -11138,14 +11138,14 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     computeMinIntrinsicHeight(width) {
       if (this.child == null) return 0.0;
       if (!width[$isFinite]) width = this.computeMaxIntrinsicWidth(1 / 0);
-      if (!width[$isFinite]) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 612, 12, "(width.isFinit");
+      if (!width[$isFinite]) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 612, 12, "width.isFinite");
       let height = this.child.getMinIntrinsicHeight(width);
       return proxy_box.RenderIntrinsicWidth._applyStep(height, this[_stepHeight]);
     }
     computeMaxIntrinsicHeight(width) {
       if (this.child == null) return 0.0;
       if (!width[$isFinite]) width = this.computeMaxIntrinsicWidth(1 / 0);
-      if (!width[$isFinite]) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 623, 12, "(width.isFinit");
+      if (!width[$isFinite]) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 623, 12, "width.isFinite");
       let height = this.child.getMaxIntrinsicHeight(width);
       return proxy_box.RenderIntrinsicWidth._applyStep(height, this[_stepHeight]);
     }
@@ -11154,12 +11154,12 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
         let childConstraints = this.constraints;
         if (!dart.test(childConstraints.hasTightWidth)) {
           let width = this.child.getMaxIntrinsicWidth(childConstraints.maxHeight);
-          if (!width[$isFinite]) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 634, 16, "(width.isFinit");
+          if (!width[$isFinite]) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 634, 16, "width.isFinite");
           childConstraints = childConstraints.tighten({width: proxy_box.RenderIntrinsicWidth._applyStep(width, this[_stepWidth])});
         }
         if (this[_stepHeight] != null) {
           let height = this.child.getMaxIntrinsicHeight(childConstraints.maxWidth);
-          if (!height[$isFinite]) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 639, 16, "(height.isFinit");
+          if (!height[$isFinite]) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 639, 16, "height.isFinite");
           childConstraints = childConstraints.tighten({height: proxy_box.RenderIntrinsicWidth._applyStep(height, this[_stepHeight])});
         }
         this.child.layout(childConstraints, {parentUsesSize: true});
@@ -11178,8 +11178,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     let stepWidth = opts && 'stepWidth' in opts ? opts.stepWidth : null;
     let stepHeight = opts && 'stepHeight' in opts ? opts.stepHeight : null;
     let child = opts && 'child' in opts ? opts.child : null;
-    if (!(stepWidth == null || dart.notNull(stepWidth) > 0.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 554, 15, "(stepWidth == null || stepWidth > 0.");
-    if (!(stepHeight == null || dart.notNull(stepHeight) > 0.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 555, 15, "(stepHeight == null || stepHeight > 0.");
+    if (!(stepWidth == null || dart.notNull(stepWidth) > 0.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 554, 15, "stepWidth == null || stepWidth > 0.0");
+    if (!(stepHeight == null || dart.notNull(stepHeight) > 0.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 555, 15, "stepHeight == null || stepHeight > 0.0");
     this[_stepWidth] = stepWidth;
     this[_stepHeight] = stepHeight;
     proxy_box.RenderIntrinsicWidth.__proto__.new.call(this, child);
@@ -11206,13 +11206,13 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     computeMinIntrinsicWidth(height) {
       if (this.child == null) return 0.0;
       if (!height[$isFinite]) height = this.child.getMaxIntrinsicHeight(1 / 0);
-      if (!height[$isFinite]) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 679, 12, "t(height.isFini");
+      if (!height[$isFinite]) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 679, 12, "height.isFinite");
       return this.child.getMinIntrinsicWidth(height);
     }
     computeMaxIntrinsicWidth(height) {
       if (this.child == null) return 0.0;
       if (!height[$isFinite]) height = this.child.getMaxIntrinsicHeight(1 / 0);
-      if (!height[$isFinite]) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 689, 12, "t(height.isFini");
+      if (!height[$isFinite]) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 689, 12, "height.isFinite");
       return this.child.getMaxIntrinsicWidth(height);
     }
     computeMinIntrinsicHeight(width) {
@@ -11223,7 +11223,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
         let childConstraints = this.constraints;
         if (!dart.test(childConstraints.hasTightHeight)) {
           let height = this.child.getMaxIntrinsicHeight(childConstraints.maxWidth);
-          if (!height[$isFinite]) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 704, 16, "t(height.isFini");
+          if (!height[$isFinite]) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 704, 16, "height.isFinite");
           childConstraints = childConstraints.tighten({height: height});
         }
         this.child.layout(childConstraints, {parentUsesSize: true});
@@ -11251,8 +11251,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_opacity];
     }
     set opacity(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 761, 12, "t(value != nu");
-      if (!(dart.notNull(value) >= 0.0 && dart.notNull(value) <= 1.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 762, 12, "t(value >= 0.0 && value <= 1");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 761, 12, "value != null");
+      if (!(dart.notNull(value) >= 0.0 && dart.notNull(value) <= 1.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 762, 12, "value >= 0.0 && value <= 1.0");
       if (this[_opacity] == value) return;
       let didNeedCompositing = this.alwaysNeedsCompositing;
       let wasVisible = this[_alpha$] !== 0;
@@ -11281,7 +11281,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           context.paintChild(this.child, offset);
           return;
         }
-        if (!dart.test(this.needsCompositing)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 804, 14, "t(needsCompositi");
+        if (!dart.test(this.needsCompositing)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 804, 14, "needsCompositing");
         this.layer = context.pushOpacity(offset, this[_alpha$], dart.bind(this, 'paint', super.paint), {oldLayer: layer$.OpacityLayer._check(this.layer)});
       }
     }
@@ -11298,9 +11298,9 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     let opacity = opts && 'opacity' in opts ? opts.opacity : 1;
     let alwaysIncludeSemantics = opts && 'alwaysIncludeSemantics' in opts ? opts.alwaysIncludeSemantics : false;
     let child = opts && 'child' in opts ? opts.child : null;
-    if (!(opacity != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 735, 15, "t(opacity != nu");
-    if (!(dart.notNull(opacity) >= 0.0 && dart.notNull(opacity) <= 1.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 736, 15, "t(opacity >= 0.0 && opacity <= 1");
-    if (!(alwaysIncludeSemantics != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 737, 15, "t(alwaysIncludeSemantics != nu");
+    if (!(opacity != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 735, 15, "opacity != null");
+    if (!(dart.notNull(opacity) >= 0.0 && dart.notNull(opacity) <= 1.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 736, 15, "opacity >= 0.0 && opacity <= 1.0");
+    if (!(alwaysIncludeSemantics != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 737, 15, "alwaysIncludeSemantics != null");
     this[_opacity] = opacity;
     this[_alwaysIncludeSemantics] = alwaysIncludeSemantics;
     this[_alpha$] = proxy_box._getAlphaFromOpacity(opacity);
@@ -11335,7 +11335,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_opacity];
     }
     set opacity(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 858, 12, "t(value != nu");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 858, 12, "value != null");
       if (dart.equals(this[_opacity], value)) return;
       if (dart.test(this.attached) && this[_opacity] != null) this[_opacity].removeListener(dart.bind(this, _updateOpacity));
       this[_opacity] = value;
@@ -11382,7 +11382,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           context.paintChild(this.child, offset);
           return;
         }
-        if (!dart.test(this.needsCompositing)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 924, 14, "t(needsCompositi");
+        if (!dart.test(this.needsCompositing)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 924, 14, "needsCompositing");
         this.layer = context.pushOpacity(offset, this[_alpha$], dart.bind(this, 'paint', super.paint), {oldLayer: layer$.OpacityLayer._check(this.layer)});
       }
     }
@@ -11402,8 +11402,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     this[_alpha$] = null;
     this[_currentlyNeedsCompositing] = null;
     this[_opacity] = null;
-    if (!(opacity != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 835, 15, "t(opacity != nu");
-    if (!(alwaysIncludeSemantics != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 836, 15, "t(alwaysIncludeSemantics != nu");
+    if (!(opacity != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 835, 15, "opacity != null");
+    if (!(alwaysIncludeSemantics != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 836, 15, "alwaysIncludeSemantics != null");
     this[_alwaysIncludeSemantics] = alwaysIncludeSemantics;
     proxy_box.RenderAnimatedOpacity.__proto__.new.call(this, child);
     this.opacity = opacity;
@@ -11445,7 +11445,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_shaderCallback];
     }
     set shaderCallback(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 978, 12, "t(value != nu");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 978, 12, "value != null");
       if (dart.equals(this[_shaderCallback], value)) return;
       this[_shaderCallback] = value;
       this.markNeedsPaint();
@@ -11454,7 +11454,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_blendMode$];
     }
     set blendMode(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 992, 12, "t(value != nu");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 992, 12, "value != null");
       if (dart.equals(this[_blendMode$], value)) return;
       this[_blendMode$] = value;
       this.markNeedsPaint();
@@ -11465,7 +11465,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     paint(context, offset) {
       let t14;
       if (this.child != null) {
-        if (!dart.test(this.needsCompositing)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1005, 14, "t(needsCompositi");
+        if (!dart.test(this.needsCompositing)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1005, 14, "needsCompositing");
         this.layer == null ? this.layer = new layer$.ShaderMaskLayer.new() : null;
         t14 = this.layer;
         t14.shader = this[_shaderCallback](offset['&'](this.size));
@@ -11482,8 +11482,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     let child = opts && 'child' in opts ? opts.child : null;
     let shaderCallback = opts && 'shaderCallback' in opts ? opts.shaderCallback : null;
     let blendMode = opts && 'blendMode' in opts ? opts.blendMode : C80 || CT.C80;
-    if (!(shaderCallback != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 960, 15, "t(shaderCallback != nu");
-    if (!(blendMode != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 961, 15, "t(blendMode != nu");
+    if (!(shaderCallback != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 960, 15, "shaderCallback != null");
+    if (!(blendMode != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 961, 15, "blendMode != null");
     this[_shaderCallback] = shaderCallback;
     this[_blendMode$] = blendMode;
     proxy_box.RenderShaderMask.__proto__.new.call(this, child);
@@ -11519,7 +11519,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_filter$];
     }
     set filter(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1042, 12, "t(value != nu");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1042, 12, "value != null");
       if (dart.equals(this[_filter$], value)) return;
       this[_filter$] = value;
       this.markNeedsPaint();
@@ -11529,7 +11529,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     }
     paint(context, offset) {
       if (this.child != null) {
-        if (!dart.test(this.needsCompositing)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1055, 14, "t(needsCompositi");
+        if (!dart.test(this.needsCompositing)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1055, 14, "needsCompositing");
         this.layer == null ? this.layer = new layer$.BackdropFilterLayer.new() : null;
         this.layer.filter = this[_filter$];
         context.pushLayer(this.layer, dart.bind(this, 'paint', super.paint), offset);
@@ -11541,7 +11541,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
   (proxy_box.RenderBackdropFilter.new = function(opts) {
     let child = opts && 'child' in opts ? opts.child : null;
     let filter = opts && 'filter' in opts ? opts.filter : null;
-    if (!(filter != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1027, 14, "t(filter != nu");
+    if (!(filter != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1027, 14, "filter != null");
     this[_filter$] = filter;
     proxy_box.RenderBackdropFilter.__proto__.new.call(this, child);
     ;
@@ -11630,7 +11630,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
     this[shape$] = shape;
     this[textDirection$] = textDirection;
-    if (!(shape != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1144, 15, "t(shape != nu");
+    if (!(shape != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1144, 15, "shape != null");
     proxy_box.ShapeBorderClipper.__proto__.new.call(this);
     ;
   }).prototype = proxy_box.ShapeBorderClipper.prototype;
@@ -11676,7 +11676,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
         if (dart.equals(this[_clipper], newClipper)) return;
         let oldClipper = this[_clipper];
         this[_clipper] = newClipper;
-        if (!(newClipper != null || oldClipper != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1189, 12, "t(newClipper != null || oldClipper != nu");
+        if (!(newClipper != null || oldClipper != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1189, 12, "newClipper != null || oldClipper != null");
         if (newClipper == null || oldClipper == null || !dart.equals(dart.runtimeType(newClipper), dart.runtimeType(oldClipper)) || dart.test(newClipper.shouldReclip(oldClipper))) {
           this[_markNeedsClip]();
         }
@@ -11735,7 +11735,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           this[_debugPaint] == null ? this[_debugPaint] = (t14 = new ui.Paint.new(), t14.shader = ui.Gradient.linear(C7 || CT.C7, C40 || CT.C40, JSArrayOfColor().of([C81 || CT.C81, C82 || CT.C82, C82 || CT.C82, C81 || CT.C81]), JSArrayOfdouble().of([0.25, 0.25, 0.75, 0.75]), ui.TileMode.repeated), t14.strokeWidth = 2.0, t14.style = ui.PaintingStyle.stroke, t14) : null;
           this[_debugText] == null ? this[_debugText] = (t14$ = new text_painter.TextPainter.new({text: C83 || CT.C83, textDirection: ui.TextDirection.rtl}), t14$.layout(), t14$) : null;
           return true;
-        }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1252, 12, "t(() {\n      _debugPaint ??= Paint()\n        ..shader = ui.Gradient.linear(\n          const Offset(0.0, 0.0),\n          const Offset(10.0, 10.0),\n          <Color>[const Color(0x00000000), const Color(0xFFFF00FF), const Color(0xFFFF00FF), const Color(0x00000000)],\n          <double>[0.25, 0.25, 0.75, 0.75],\n          TileMode.repeated,\n        )\n        ..strokeWidth = 2.0\n        ..style = PaintingStyle.stroke;\n      _debugText ??= TextPainter(\n        text: const TextSpan(\n          text: '✂',\n          style: TextStyle(\n            color: Color(0xFFFF00FF),\n              fontSize: 14.0,\n            ),\n          ),\n          textDirection: TextDirection.rtl, // doesn't matter, it's one character\n        )\n        ..layout();\n      return true;\n   ");
+        }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1252, 12, "() {\n      _debugPaint ??= Paint()\n        ..shader = ui.Gradient.linear(\n          const Offset(0.0, 0.0),\n          const Offset(10.0, 10.0),\n          <Color>[const Color(0x00000000), const Color(0xFFFF00FF), const Color(0xFFFF00FF), const Color(0x00000000)],\n          <double>[0.25, 0.25, 0.75, 0.75],\n          TileMode.repeated,\n        )\n        ..strokeWidth = 2.0\n        ..style = PaintingStyle.stroke;\n      _debugText ??= TextPainter(\n        text: const TextSpan(\n          text: '✂',\n          style: TextStyle(\n            color: Color(0xFFFF00FF),\n              fontSize: 14.0,\n            ),\n          ),\n          textDirection: TextDirection.rtl, // doesn't matter, it's one character\n        )\n        ..layout();\n      return true;\n    }()");
       }
     }
     (_RenderCustomClip.new = function(opts) {
@@ -11745,7 +11745,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       this[_clip] = null;
       this[_debugPaint] = null;
       this[_debugText] = null;
-      if (!(clipBehavior != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1176, 15, "t(clipBehavior != nu");
+      if (!(clipBehavior != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1176, 15, "clipBehavior != null");
       this[_clipper] = clipper;
       this[_clipBehavior$] = clipBehavior;
       _RenderCustomClip.__proto__.new.call(this, child);
@@ -11789,7 +11789,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       let position = opts && 'position' in opts ? opts.position : null;
       if (this[_clipper] != null) {
         this[_updateClip]();
-        if (!(this[_clip] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1306, 14, "ert(_clip != ");
+        if (!(this[_clip] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1306, 14, "_clip != null");
         if (!dart.test(this[_clip].contains(position))) return false;
       }
       return super.hitTest(result, {position: position});
@@ -11810,15 +11810,15 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           this[_debugText].paint(context.canvas, offset['+'](new ui.Offset.new(dart.notNull(this[_clip].width) / 8.0, -dart.notNull(this[_debugText].text.style.fontSize) * 1.1)));
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1325, 12, "ert(() {\n      if (child != null) {\n        super.debugPaintSize(context, offset);\n        context.canvas.drawRect(_clip.shift(offset), _debugPaint);\n        _debugText.paint(context.canvas, offset + Offset(_clip.width / 8.0, -_debugText.text.style.fontSize * 1.1));\n      }\n      return true;\n   ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1325, 12, "() {\n      if (child != null) {\n        super.debugPaintSize(context, offset);\n        context.canvas.drawRect(_clip.shift(offset), _debugPaint);\n        _debugText.paint(context.canvas, offset + Offset(_clip.width / 8.0, -_debugText.text.style.fontSize * 1.1));\n      }\n      return true;\n    }()");
     }
   };
   (proxy_box.RenderClipRect.new = function(opts) {
     let child = opts && 'child' in opts ? opts.child : null;
     let clipper = opts && 'clipper' in opts ? opts.clipper : null;
     let clipBehavior = opts && 'clipBehavior' in opts ? opts.clipBehavior : C2 || CT.C2;
-    if (!(clipBehavior != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1295, 15, "ert(clipBehavior != ");
-    if (!!dart.equals(clipBehavior, ui.Clip.none)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1296, 15, "ert(clipBehavior != Clip.");
+    if (!(clipBehavior != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1295, 15, "clipBehavior != null");
+    if (!!dart.equals(clipBehavior, ui.Clip.none)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1296, 15, "clipBehavior != Clip.none");
     proxy_box.RenderClipRect.__proto__.new.call(this, {child: child, clipper: clipper, clipBehavior: clipBehavior});
     ;
   }).prototype = proxy_box.RenderClipRect.prototype;
@@ -11842,7 +11842,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_borderRadius];
     }
     set borderRadius(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1371, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1371, 12, "value != null");
       if (dart.equals(this[_borderRadius], value)) return;
       this[_borderRadius] = value;
       this[_markNeedsClip]();
@@ -11854,7 +11854,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       let position = opts && 'position' in opts ? opts.position : null;
       if (this[_clipper] != null) {
         this[_updateClip]();
-        if (!(this[_clip] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1385, 14, "ert(_clip != ");
+        if (!(this[_clip] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1385, 14, "_clip != null");
         if (!dart.test(this[_clip].contains(position))) return false;
       }
       return super.hitTest(result, {position: position});
@@ -11875,7 +11875,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           this[_debugText].paint(context.canvas, offset['+'](new ui.Offset.new(this[_clip].tlRadiusX, -dart.notNull(this[_debugText].text.style.fontSize) * 1.1)));
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1404, 12, "ert(() {\n      if (child != null) {\n        super.debugPaintSize(context, offset);\n        context.canvas.drawRRect(_clip.shift(offset), _debugPaint);\n        _debugText.paint(context.canvas, offset + Offset(_clip.tlRadiusX, -_debugText.text.style.fontSize * 1.1));\n      }\n      return true;\n   ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1404, 12, "() {\n      if (child != null) {\n        super.debugPaintSize(context, offset);\n        context.canvas.drawRRect(_clip.shift(offset), _debugPaint);\n        _debugText.paint(context.canvas, offset + Offset(_clip.tlRadiusX, -_debugText.text.style.fontSize * 1.1));\n      }\n      return true;\n    }()");
     }
   };
   (proxy_box.RenderClipRRect.new = function(opts) {
@@ -11883,11 +11883,11 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     let borderRadius = opts && 'borderRadius' in opts ? opts.borderRadius : C85 || CT.C85;
     let clipper = opts && 'clipper' in opts ? opts.clipper : null;
     let clipBehavior = opts && 'clipBehavior' in opts ? opts.clipBehavior : C2 || CT.C2;
-    if (!(clipBehavior != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1355, 15, "ert(clipBehavior != ");
-    if (!!dart.equals(clipBehavior, ui.Clip.none)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1356, 15, "ert(clipBehavior != Clip.");
+    if (!(clipBehavior != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1355, 15, "clipBehavior != null");
+    if (!!dart.equals(clipBehavior, ui.Clip.none)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1356, 15, "clipBehavior != Clip.none");
     this[_borderRadius] = borderRadius;
     proxy_box.RenderClipRRect.__proto__.new.call(this, {child: child, clipper: clipper, clipBehavior: clipBehavior});
-    if (!(this[_borderRadius] != null || clipper != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1359, 12, "ert(_borderRadius != null || clipper != ");
+    if (!(this[_borderRadius] != null || clipper != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1359, 12, "_borderRadius != null || clipper != null");
   }).prototype = proxy_box.RenderClipRRect.prototype;
   dart.addTypeTests(proxy_box.RenderClipRRect);
   dart.setGetterSignature(proxy_box.RenderClipRRect, () => ({
@@ -11922,7 +11922,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     hitTest(result, opts) {
       let position = opts && 'position' in opts ? opts.position : null;
       this[_updateClip]();
-      if (!(this[_clip] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1452, 12, "ert(_clip != ");
+      if (!(this[_clip] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1452, 12, "_clip != null");
       let center = this[_clip].center;
       let offset = new ui.Offset.new((dart.notNull(position.dx) - dart.notNull(center.dx)) / dart.notNull(this[_clip].width), (dart.notNull(position.dy) - dart.notNull(center.dy)) / dart.notNull(this[_clip].height));
       if (dart.notNull(offset.distanceSquared) > 0.25) return false;
@@ -11944,7 +11944,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           this[_debugText].paint(context.canvas, offset['+'](new ui.Offset.new((dart.notNull(this[_clip].width) - dart.notNull(this[_debugText].width)) / 2.0, -dart.notNull(this[_debugText].text.style.fontSize) * 1.1)));
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1475, 12, "ert(() {\n      if (child != null) {\n        super.debugPaintSize(context, offset);\n        context.canvas.drawPath(_getClipPath(_clip).shift(offset), _debugPaint);\n        _debugText.paint(context.canvas, offset + Offset((_clip.width - _debugText.width) / 2.0, -_debugText.text.style.fontSize * 1.1));\n      }\n      return true;\n   ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1475, 12, "() {\n      if (child != null) {\n        super.debugPaintSize(context, offset);\n        context.canvas.drawPath(_getClipPath(_clip).shift(offset), _debugPaint);\n        _debugText.paint(context.canvas, offset + Offset((_clip.width - _debugText.width) / 2.0, -_debugText.text.style.fontSize * 1.1));\n      }\n      return true;\n    }()");
     }
   };
   (proxy_box.RenderClipOval.new = function(opts) {
@@ -11953,8 +11953,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     let clipBehavior = opts && 'clipBehavior' in opts ? opts.clipBehavior : C2 || CT.C2;
     this[_cachedRect] = null;
     this[_cachedPath] = null;
-    if (!(clipBehavior != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1431, 15, "ert(clipBehavior != ");
-    if (!!dart.equals(clipBehavior, ui.Clip.none)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1432, 15, "ert(clipBehavior != Clip.");
+    if (!(clipBehavior != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1431, 15, "clipBehavior != null");
+    if (!!dart.equals(clipBehavior, ui.Clip.none)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1432, 15, "clipBehavior != Clip.none");
     proxy_box.RenderClipOval.__proto__.new.call(this, {child: child, clipper: clipper, clipBehavior: clipBehavior});
     ;
   }).prototype = proxy_box.RenderClipOval.prototype;
@@ -11984,7 +11984,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       let position = opts && 'position' in opts ? opts.position : null;
       if (this[_clipper] != null) {
         this[_updateClip]();
-        if (!(this[_clip] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1521, 14, "ert(_clip != ");
+        if (!(this[_clip] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1521, 14, "_clip != null");
         if (!dart.test(this[_clip].contains(position))) return false;
       }
       return super.hitTest(result, {position: position});
@@ -12005,15 +12005,15 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           this[_debugText].paint(context.canvas, offset);
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1540, 12, "ert(() {\n      if (child != null) {\n        super.debugPaintSize(context, offset);\n        context.canvas.drawPath(_clip.shift(offset), _debugPaint);\n        _debugText.paint(context.canvas, offset);\n      }\n      return true;\n   ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1540, 12, "() {\n      if (child != null) {\n        super.debugPaintSize(context, offset);\n        context.canvas.drawPath(_clip.shift(offset), _debugPaint);\n        _debugText.paint(context.canvas, offset);\n      }\n      return true;\n    }()");
     }
   };
   (proxy_box.RenderClipPath.new = function(opts) {
     let child = opts && 'child' in opts ? opts.child : null;
     let clipper = opts && 'clipper' in opts ? opts.clipper : null;
     let clipBehavior = opts && 'clipBehavior' in opts ? opts.clipBehavior : C2 || CT.C2;
-    if (!(clipBehavior != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1510, 15, "ert(clipBehavior != ");
-    if (!!dart.equals(clipBehavior, ui.Clip.none)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1511, 15, "ert(clipBehavior != Clip.");
+    if (!(clipBehavior != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1510, 15, "clipBehavior != null");
+    if (!!dart.equals(clipBehavior, ui.Clip.none)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1511, 15, "clipBehavior != Clip.none");
     proxy_box.RenderClipPath.__proto__.new.call(this, {child: child, clipper: clipper, clipBehavior: clipBehavior});
     ;
   }).prototype = proxy_box.RenderClipPath.prototype;
@@ -12033,7 +12033,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
         return this[_elevation$];
       }
       set elevation(value) {
-        if (!(value != null && dart.notNull(value) >= 0.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1583, 12, "ert(value != null && value >=");
+        if (!(value != null && dart.notNull(value) >= 0.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1583, 12, "value != null && value >= 0.0");
         if (this.elevation == value) return;
         let didNeedCompositing = this.alwaysNeedsCompositing;
         this[_elevation$] = value;
@@ -12044,7 +12044,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
         return this[_shadowColor$];
       }
       set shadowColor(value) {
-        if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1597, 12, "ert(value != ");
+        if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1597, 12, "value != null");
         if (dart.equals(this.shadowColor, value)) return;
         this[_shadowColor$] = value;
         this.markNeedsPaint();
@@ -12053,7 +12053,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
         return this[_color$];
       }
       set color(value) {
-        if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1608, 12, "ert(value != ");
+        if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1608, 12, "value != null");
         if (dart.equals(this.color, value)) return;
         this[_color$] = value;
         this.markNeedsPaint();
@@ -12079,10 +12079,10 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       let shadowColor = opts && 'shadowColor' in opts ? opts.shadowColor : null;
       let clipBehavior = opts && 'clipBehavior' in opts ? opts.clipBehavior : C9 || CT.C9;
       let clipper = opts && 'clipper' in opts ? opts.clipper : null;
-      if (!(elevation != null && dart.notNull(elevation) >= 0.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1565, 15, "ert(elevation != null && elevation >=");
-      if (!(color != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1566, 15, "ert(color != ");
-      if (!(shadowColor != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1567, 15, "ert(shadowColor != ");
-      if (!(clipBehavior != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1568, 15, "ert(clipBehavior != ");
+      if (!(elevation != null && dart.notNull(elevation) >= 0.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1565, 15, "elevation != null && elevation >= 0.0");
+      if (!(color != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1566, 15, "color != null");
+      if (!(shadowColor != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1567, 15, "shadowColor != null");
+      if (!(clipBehavior != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1568, 15, "clipBehavior != null");
       this[_elevation$] = elevation;
       this[_color$] = color;
       this[_shadowColor$] = shadowColor;
@@ -12130,7 +12130,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_shape];
     }
     set shape(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1678, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1678, 12, "value != null");
       if (dart.equals(this.shape, value)) return;
       this[_shape] = value;
       this[_markNeedsClip]();
@@ -12145,8 +12145,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     }
     get [_defaultClip]() {
       let t14;
-      if (!dart.test(this.hasSize)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1704, 12, "ert(has");
-      if (!(this[_shape] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1705, 12, "ert(_shape != ");
+      if (!dart.test(this.hasSize)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1704, 12, "hasSize");
+      if (!(this[_shape] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1705, 12, "_shape != null");
       switch (this[_shape]) {
         case C87 || CT.C87:
         {
@@ -12164,7 +12164,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       let position = opts && 'position' in opts ? opts.position : null;
       if (this[_clipper] != null) {
         this[_updateClip]();
-        if (!(this[_clip] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1720, 14, "ert(_clip != ");
+        if (!(this[_clip] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1720, 14, "_clip != null");
         if (!dart.test(this[_clip].contains(position))) return false;
       }
       return super.hitTest(result, {position: position});
@@ -12186,7 +12186,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
             paintShadows = false;
           }
           return true;
-        }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1735, 14, "ert(() {\n        if (debugDisableShadows) {\n          if (elevation > 0.0) {\n            context.canvas.drawRRect(\n              offsetRRect,\n              Paint()\n                ..color = shadowColor\n                ..style = PaintingStyle.stroke\n                ..strokeWidth = elevation * 2.0,\n            );\n          }\n          paintShadows = false;\n        }\n        return true;\n     ");
+        }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1735, 14, "() {\n        if (debugDisableShadows) {\n          if (elevation > 0.0) {\n            context.canvas.drawRRect(\n              offsetRRect,\n              Paint()\n                ..color = shadowColor\n                ..style = PaintingStyle.stroke\n                ..strokeWidth = elevation * 2.0,\n            );\n          }\n          paintShadows = false;\n        }\n        return true;\n      }()");
         this.layer == null ? this.layer = new layer$.PhysicalModelLayer.new() : null;
         t14$ = this.layer;
         t14$.clipPath = offsetRRectAsPath;
@@ -12199,7 +12199,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
         if (!dart.test(dart.fn(() => {
           this.layer.debugCreator = this.debugCreator;
           return true;
-        }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1758, 14, "ert(() {\n        layer.debugCreator = debugCreator;\n        return true;\n     ");
+        }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1758, 14, "() {\n        layer.debugCreator = debugCreator;\n        return true;\n      }()");
       } else {
         this.layer = null;
       }
@@ -12218,11 +12218,11 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     let elevation = opts && 'elevation' in opts ? opts.elevation : 0;
     let color = opts && 'color' in opts ? opts.color : null;
     let shadowColor = opts && 'shadowColor' in opts ? opts.shadowColor : C88 || CT.C88;
-    if (!(shape != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1653, 15, "ert(shape != ");
-    if (!(clipBehavior != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1654, 15, "ert(clipBehavior != ");
-    if (!(elevation != null && dart.notNull(elevation) >= 0.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1655, 15, "ert(elevation != null && elevation >=");
-    if (!(color != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1656, 15, "ert(color != ");
-    if (!(shadowColor != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1657, 15, "ert(shadowColor != ");
+    if (!(shape != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1653, 15, "shape != null");
+    if (!(clipBehavior != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1654, 15, "clipBehavior != null");
+    if (!(elevation != null && dart.notNull(elevation) >= 0.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1655, 15, "elevation != null && elevation >= 0.0");
+    if (!(color != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1656, 15, "color != null");
+    if (!(shadowColor != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1657, 15, "shadowColor != null");
     this[_shape] = shape;
     this[_borderRadius] = borderRadius;
     proxy_box.RenderPhysicalModel.__proto__.new.call(this, {clipBehavior: clipBehavior, child: child, elevation: elevation, color: color, shadowColor: shadowColor});
@@ -12264,7 +12264,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       let position = opts && 'position' in opts ? opts.position : null;
       if (this[_clipper] != null) {
         this[_updateClip]();
-        if (!(this[_clip] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1820, 14, "ert(_clip != ");
+        if (!(this[_clip] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1820, 14, "_clip != null");
         if (!dart.test(this[_clip].contains(position))) return false;
       }
       return super.hitTest(result, {position: position});
@@ -12285,7 +12285,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
             paintShadows = false;
           }
           return true;
-        }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1834, 14, "ert(() {\n        if (debugDisableShadows) {\n          if (elevation > 0.0) {\n            context.canvas.drawPath(\n              offsetPath,\n              Paint()\n                ..color = shadowColor\n                ..style = PaintingStyle.stroke\n                ..strokeWidth = elevation * 2.0,\n            );\n          }\n          paintShadows = false;\n        }\n        return true;\n     ");
+        }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1834, 14, "() {\n        if (debugDisableShadows) {\n          if (elevation > 0.0) {\n            context.canvas.drawPath(\n              offsetPath,\n              Paint()\n                ..color = shadowColor\n                ..style = PaintingStyle.stroke\n                ..strokeWidth = elevation * 2.0,\n            );\n          }\n          paintShadows = false;\n        }\n        return true;\n      }()");
         this.layer == null ? this.layer = new layer$.PhysicalModelLayer.new() : null;
         t14 = this.layer;
         t14.clipPath = offsetPath;
@@ -12298,7 +12298,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
         if (!dart.test(dart.fn(() => {
           this.layer.debugCreator = this.debugCreator;
           return true;
-        }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1857, 14, "ert(() {\n        layer.debugCreator = debugCreator;\n        return true;\n     ");
+        }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1857, 14, "() {\n        layer.debugCreator = debugCreator;\n        return true;\n      }()");
       } else {
         this.layer = null;
       }
@@ -12315,10 +12315,10 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     let elevation = opts && 'elevation' in opts ? opts.elevation : 0;
     let color = opts && 'color' in opts ? opts.color : null;
     let shadowColor = opts && 'shadowColor' in opts ? opts.shadowColor : C88 || CT.C88;
-    if (!(clipper != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1797, 15, "ert(clipper != ");
-    if (!(elevation != null && dart.notNull(elevation) >= 0.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1798, 15, "ert(elevation != null && elevation >=");
-    if (!(color != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1799, 15, "ert(color != ");
-    if (!(shadowColor != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1800, 15, "ert(shadowColor != ");
+    if (!(clipper != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1797, 15, "clipper != null");
+    if (!(elevation != null && dart.notNull(elevation) >= 0.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1798, 15, "elevation != null && elevation >= 0.0");
+    if (!(color != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1799, 15, "color != null");
+    if (!(shadowColor != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1800, 15, "shadowColor != null");
     proxy_box.RenderPhysicalShape.__proto__.new.call(this, {child: child, elevation: elevation, color: color, shadowColor: shadowColor, clipper: clipper, clipBehavior: clipBehavior});
     ;
   }).prototype = proxy_box.RenderPhysicalShape.prototype;
@@ -12370,7 +12370,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     }
     set decoration(value) {
       let t14;
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1912, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1912, 12, "value != null");
       if (dart.equals(value, this[_decoration])) return;
       t14 = this[_painter];
       t14 == null ? null : t14.dispose();
@@ -12382,7 +12382,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_position];
     }
     set position(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1925, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1925, 12, "value != null");
       if (dart.equals(value, this[_position])) return;
       this[_position] = value;
       this.markNeedsPaint();
@@ -12391,7 +12391,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_configuration$];
     }
     set configuration(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1941, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1941, 12, "value != null");
       if (dart.equals(value, this[_configuration$])) return;
       this[_configuration$] = value;
       this.markNeedsPaint();
@@ -12408,8 +12408,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_decoration].hitTest(this.size, position, {textDirection: this.configuration.textDirection});
     }
     paint(context, offset) {
-      if (!(this.size.width != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1968, 12, "ert(size.width != ");
-      if (!(this.size.height != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1969, 12, "ert(size.height != ");
+      if (!(this.size.width != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1968, 12, "size.width != null");
+      if (!(this.size.height != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1969, 12, "size.height != null");
       this[_painter] == null ? this[_painter] = this[_decoration].createBoxPainter(dart.bind(this, 'markNeedsPaint')) : null;
       let filledConfiguration = this.configuration.copyWith({size: this.size});
       if (dart.equals(this.position, proxy_box.DecorationPosition.background)) {
@@ -12417,14 +12417,14 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
         if (!dart.test(dart.fn(() => {
           debugSaveCount = context.canvas.getSaveCount();
           return true;
-        }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1974, 14, "ert(() {\n        debugSaveCount = context.canvas.getSaveCount();\n        return true;\n     ");
+        }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1974, 14, "() {\n        debugSaveCount = context.canvas.getSaveCount();\n        return true;\n      }()");
         this[_painter].paint(context.canvas, offset, filledConfiguration);
         if (!dart.test(dart.fn(() => {
           if (debugSaveCount != context.canvas.getSaveCount()) {
             dart.throw(new assertions.FlutterError.fromParts(JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new(dart.str(dart.runtimeType(this[_decoration])) + " painter had mismatching save and restore calls."), new assertions.ErrorDescription.new("Before painting the decoration, the canvas save count was " + dart.str(debugSaveCount) + ". " + "After painting it, the canvas save count was " + dart.str(context.canvas.getSaveCount()) + ". " + "Every call to save() or saveLayer() must be matched by a call to restore()."), new (DiagnosticsPropertyOfDecoration()).new("The decoration was", this.decoration, {style: diagnostics.DiagnosticsTreeStyle.errorProperty}), new (DiagnosticsPropertyOfBoxPainter()).new("The painter was", this[_painter], {style: diagnostics.DiagnosticsTreeStyle.errorProperty})])));
           }
           return true;
-        }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1979, 14, "ert(() {\n        if (debugSaveCount != context.canvas.getSaveCount()) {\n          throw FlutterError.fromParts(<DiagnosticsNode>[\n            ErrorSummary('${_decoration.runtimeType} painter had mismatching save and restore calls.'),\n            ErrorDescription(\n              'Before painting the decoration, the canvas save count was $debugSaveCount. '\n              'After painting it, the canvas save count was ${context.canvas.getSaveCount()}. '\n              'Every call to save() or saveLayer() must be matched by a call to restore().'\n            ),\n            DiagnosticsProperty<Decoration>('The decoration was', decoration, style: DiagnosticsTreeStyle.errorProperty),\n            DiagnosticsProperty<BoxPainter>('The painter was', _painter, style: DiagnosticsTreeStyle.errorProperty),\n          ]);\n        }\n        return true;\n     ");
+        }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1979, 14, "() {\n        if (debugSaveCount != context.canvas.getSaveCount()) {\n          throw FlutterError.fromParts(<DiagnosticsNode>[\n            ErrorSummary('${_decoration.runtimeType} painter had mismatching save and restore calls.'),\n            ErrorDescription(\n              'Before painting the decoration, the canvas save count was $debugSaveCount. '\n              'After painting it, the canvas save count was ${context.canvas.getSaveCount()}. '\n              'Every call to save() or saveLayer() must be matched by a call to restore().'\n            ),\n            DiagnosticsProperty<Decoration>('The decoration was', decoration, style: DiagnosticsTreeStyle.errorProperty),\n            DiagnosticsProperty<BoxPainter>('The painter was', _painter, style: DiagnosticsTreeStyle.errorProperty),\n          ]);\n        }\n        return true;\n      }()");
         if (dart.test(this.decoration.isComplex)) context.setIsComplexHint();
       }
       super.paint(context, offset);
@@ -12445,9 +12445,9 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     let configuration = opts && 'configuration' in opts ? opts.configuration : C93 || CT.C93;
     let child = opts && 'child' in opts ? opts.child : null;
     this[_painter] = null;
-    if (!(decoration != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1896, 15, "ert(decoration != ");
-    if (!(position != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1897, 15, "ert(position != ");
-    if (!(configuration != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1898, 15, "ert(configuration != ");
+    if (!(decoration != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1896, 15, "decoration != null");
+    if (!(position != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1897, 15, "position != null");
+    if (!(configuration != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 1898, 15, "configuration != null");
     this[_decoration] = decoration;
     this[_position] = position;
     this[_configuration$] = configuration;
@@ -12516,7 +12516,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       this.markNeedsSemanticsUpdate();
     }
     set transform(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2096, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2096, 12, "value != null");
       if (dart.equals(this[_transform$0], value)) return;
       this[_transform$0] = vector_math_64.Matrix4.copy(value);
       this.markNeedsPaint();
@@ -12578,7 +12578,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     }
     hitTestChildren(result, opts) {
       let position = opts && 'position' in opts ? opts.position : null;
-      if (!(!dart.test(this.transformHitTests) || this[_effectiveTransform] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2177, 12, "ert(!transformHitTests || _effectiveTransform != ");
+      if (!(!dart.test(this.transformHitTests) || this[_effectiveTransform] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2177, 12, "!transformHitTests || _effectiveTransform != null");
       return result.addWithPaintTransform({transform: dart.test(this.transformHitTests) ? this[_effectiveTransform] : null, position: position, hitTest: dart.fn((result, position) => super.hitTestChildren(result, {position: position}), BoxHitTestResultAndOffsetTobool())});
     }
     paint(context, offset) {
@@ -12618,7 +12618,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     this[_textDirection$0] = null;
     this[_transform$0] = null;
     this[transformHitTests$] = transformHitTests;
-    if (!(transform != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2025, 15, "ert(transform != ");
+    if (!(transform != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2025, 15, "transform != null");
     proxy_box.RenderTransform.__proto__.new.call(this, child);
     this.transform = transform;
     this.alignment = alignment;
@@ -12681,7 +12681,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_fit$];
     }
     set fit(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2251, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2251, 12, "value != null");
       if (dart.equals(this[_fit$], value)) return;
       this[_fit$] = value;
       this[_clearPaintData]();
@@ -12691,7 +12691,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_alignment$0];
     }
     set alignment(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2270, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2270, 12, "value != null");
       if (dart.equals(this[_alignment$0], value)) return;
       this[_alignment$0] = value;
       this[_clearPaintData]();
@@ -12734,9 +12734,9 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
         let sourceRect = this[_resolvedAlignment$0].inscribe(sizes.source, ui.Offset.zero['&'](childSize));
         let destinationRect = this[_resolvedAlignment$0].inscribe(sizes.destination, ui.Offset.zero['&'](this.size));
         this[_hasVisualOverflow$] = dart.notNull(sourceRect.width) < dart.notNull(childSize.width) || dart.notNull(sourceRect.height) < dart.notNull(childSize.height);
-        if (!(scaleX[$isFinite] && scaleY[$isFinite])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2329, 14, "ert(scaleX.isFinite && scaleY.isFi");
+        if (!(scaleX[$isFinite] && scaleY[$isFinite])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2329, 14, "scaleX.isFinite && scaleY.isFinite");
         this[_transform$0] = (t14 = vector_math_64.Matrix4.translationValues(destinationRect.left, destinationRect.top, 0.0), t14.scale(scaleX, scaleY, 1.0), t14.translate(-dart.notNull(sourceRect.left), -dart.notNull(sourceRect.top)), t14);
-        if (!dart.test(this[_transform$0].storage[$every](dart.fn(value => value[$isFinite], doubleTobool())))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2333, 14, "ert(_transform.storage.every((double value) => value.isFin");
+        if (!dart.test(this[_transform$0].storage[$every](dart.fn(value => value[$isFinite], doubleTobool())))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2333, 14, "_transform.storage.every((double value) => value.isFinite)");
       }
     }
     [_paintChildWithTransform](context, offset) {
@@ -12788,8 +12788,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     this[_resolvedAlignment$0] = null;
     this[_hasVisualOverflow$] = null;
     this[_transform$0] = null;
-    if (!(fit != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2227, 15, "ert(fit != ");
-    if (!(alignment != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2228, 15, "ert(alignment != ");
+    if (!(fit != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2227, 15, "fit != null");
+    if (!(alignment != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2228, 15, "alignment != null");
     this[_fit$] = fit;
     this[_alignment$0] = alignment;
     this[_textDirection$0] = textDirection;
@@ -12840,7 +12840,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_translation];
     }
     set translation(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2422, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2422, 12, "value != null");
       if (dart.equals(this[_translation], value)) return;
       this[_translation] = value;
       this.markNeedsPaint();
@@ -12851,11 +12851,11 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     }
     hitTestChildren(result, opts) {
       let position = opts && 'position' in opts ? opts.position : null;
-      if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2448, 12, "ert(!debugNeedsLa");
+      if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2448, 12, "!debugNeedsLayout");
       return result.addWithPaintOffset({offset: dart.test(this.transformHitTests) ? new ui.Offset.new(dart.notNull(this.translation.dx) * dart.notNull(this.size.width), dart.notNull(this.translation.dy) * dart.notNull(this.size.height)) : null, position: position, hitTest: dart.fn((result, position) => super.hitTestChildren(result, {position: position}), BoxHitTestResultAndOffsetTobool())});
     }
     paint(context, offset) {
-      if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2462, 12, "ert(!debugNeedsLa");
+      if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2462, 12, "!debugNeedsLayout");
       if (this.child != null) {
         super.paint(context, new ui.Offset.new(dart.notNull(offset.dx) + dart.notNull(this.translation.dx) * dart.notNull(this.size.width), dart.notNull(offset.dy) + dart.notNull(this.translation.dy) * dart.notNull(this.size.height)));
       }
@@ -12875,7 +12875,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     let transformHitTests = opts && 'transformHitTests' in opts ? opts.transformHitTests : true;
     let child = opts && 'child' in opts ? opts.child : null;
     this[transformHitTests$0] = transformHitTests;
-    if (!(translation != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2411, 15, "ert(translation != ");
+    if (!(translation != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2411, 15, "translation != null");
     this[_translation] = translation;
     proxy_box.RenderFractionalTranslation.__proto__.new.call(this, child);
     ;
@@ -12936,7 +12936,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     }
     handleEvent(event, entry) {
       hit_test.HitTestEntry._check(entry);
-      if (!dart.test(this.debugHandleEvent(event, entry))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2564, 12, "ert(debugHandleEvent(event, en");
+      if (!dart.test(this.debugHandleEvent(event, entry))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2564, 12, "debugHandleEvent(event, entry)");
       if (this.onPointerDown != null && events.PointerDownEvent.is(event)) return this.onPointerDown(event);
       if (this.onPointerMove != null && events.PointerMoveEvent.is(event)) return this.onPointerMove(event);
       if (this.onPointerUp != null && events.PointerUpEvent.is(event)) return this.onPointerUp(event);
@@ -13090,7 +13090,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     let opaque = opts && 'opaque' in opts ? opts.opaque : true;
     let child = opts && 'child' in opts ? opts.child : null;
     this[_hoverAnnotation] = null;
-    if (!(opaque != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2620, 15, "ert(opaque != ");
+    if (!(opaque != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2620, 15, "opaque != null");
     this[_onEnter] = onEnter;
     this[_onHover] = onHover;
     this[_onExit] = onExit;
@@ -13142,7 +13142,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     }
     toImage(opts) {
       let pixelRatio = opts && 'pixelRatio' in opts ? opts.pixelRatio : 1;
-      if (!!dart.test(this.debugNeedsPaint)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2906, 12, "ert(!debugNeedsP");
+      if (!!dart.test(this.debugNeedsPaint)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2906, 12, "!debugNeedsPaint");
       let offsetLayer = layer$.OffsetLayer._check(this.layer);
       return offsetLayer.toImage(ui.Offset.zero['&'](this.size), {pixelRatio: pixelRatio});
     }
@@ -13157,7 +13157,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
         this[_debugSymmetricPaintCount] = 0;
         this[_debugAsymmetricPaintCount] = 0;
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2947, 12, "ert(() {\n      _debugSymmetricPaintCount = 0;\n      _debugAsymmetricPaintCount = 0;\n      return true;\n   ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2947, 12, "() {\n      _debugSymmetricPaintCount = 0;\n      _debugAsymmetricPaintCount = 0;\n      return true;\n    }()");
     }
     debugRegisterRepaintBoundaryPaint(opts) {
       let includedParent = opts && 'includedParent' in opts ? opts.includedParent : true;
@@ -13168,7 +13168,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
         else
           this[_debugAsymmetricPaintCount] = dart.notNull(this[_debugAsymmetricPaintCount]) + 1;
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2956, 12, "ert(() {\n      if (includedParent && includedChild)\n        _debugSymmetricPaintCount += 1;\n      else\n        _debugAsymmetricPaintCount += 1;\n      return true;\n   ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2956, 12, "() {\n      if (includedParent && includedChild)\n        _debugSymmetricPaintCount += 1;\n      else\n        _debugAsymmetricPaintCount += 1;\n      return true;\n    }()");
     }
     debugFillProperties(properties) {
       super.debugFillProperties(properties);
@@ -13199,7 +13199,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           properties.add(new diagnostics.MessageProperty.new("diagnosis", diagnosis));
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2969, 12, "ert(() {\n      inReleaseMode = false;\n      if (debugSymmetricPaintCount + debugAsymmetricPaintCount == 0) {\n        properties.add(MessageProperty('usefulness ratio', 'no metrics collected yet (never painted)'));\n      } else {\n        final double fraction = debugAsymmetricPaintCount / (debugSymmetricPaintCount + debugAsymmetricPaintCount);\n        String diagnosis;\n        if (debugSymmetricPaintCount + debugAsymmetricPaintCount < 5) {\n          diagnosis = 'insufficient data to draw conclusion (less than five repaints)';\n        } else if (fraction > 0.9) {\n          diagnosis = 'this is an outstandingly useful repaint boundary and should definitely be kept';\n        } else if (fraction > 0.5) {\n          diagnosis = 'this is a useful repaint boundary and should be kept';\n        } else if (fraction > 0.30) {\n          diagnosis = 'this repaint boundary is probably useful, but maybe it would be more useful in tandem with adding more repaint boundaries elsewhere';\n        } else if (fraction > 0.1) {\n          diagnosis = 'this repaint boundary does sometimes show value, though currently not that often';\n        } else if (debugAsymmetricPaintCount == 0) {\n          diagnosis = 'this repaint boundary is astoundingly ineffectual and should be removed';\n        } else {\n          diagnosis = 'this repaint boundary is not very effective and should probably be removed';\n        }\n        properties.add(PercentProperty('metrics', fraction, unit: 'useful', tooltip: '$debugSymmetricPaintCount bad vs $debugAsymmetricPaintCount good'));\n        properties.add(MessageProperty('diagnosis', diagnosis));\n      }\n      return true;\n   ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 2969, 12, "() {\n      inReleaseMode = false;\n      if (debugSymmetricPaintCount + debugAsymmetricPaintCount == 0) {\n        properties.add(MessageProperty('usefulness ratio', 'no metrics collected yet (never painted)'));\n      } else {\n        final double fraction = debugAsymmetricPaintCount / (debugSymmetricPaintCount + debugAsymmetricPaintCount);\n        String diagnosis;\n        if (debugSymmetricPaintCount + debugAsymmetricPaintCount < 5) {\n          diagnosis = 'insufficient data to draw conclusion (less than five repaints)';\n        } else if (fraction > 0.9) {\n          diagnosis = 'this is an outstandingly useful repaint boundary and should definitely be kept';\n        } else if (fraction > 0.5) {\n          diagnosis = 'this is a useful repaint boundary and should be kept';\n        } else if (fraction > 0.30) {\n          diagnosis = 'this repaint boundary is probably useful, but maybe it would be more useful in tandem with adding more repaint boundaries elsewhere';\n        } else if (fraction > 0.1) {\n          diagnosis = 'this repaint boundary does sometimes show value, though currently not that often';\n        } else if (debugAsymmetricPaintCount == 0) {\n          diagnosis = 'this repaint boundary is astoundingly ineffectual and should be removed';\n        } else {\n          diagnosis = 'this repaint boundary is not very effective and should probably be removed';\n        }\n        properties.add(PercentProperty('metrics', fraction, unit: 'useful', tooltip: '$debugSymmetricPaintCount bad vs $debugAsymmetricPaintCount good'));\n        properties.add(MessageProperty('diagnosis', diagnosis));\n      }\n      return true;\n    }()");
       if (inReleaseMode) properties.add(diagnostics.DiagnosticsNode.message("(run in checked mode to collect repaint boundary statistics)"));
     }
   };
@@ -13235,7 +13235,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_ignoring];
     }
     set ignoring(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 3038, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 3038, 12, "value != null");
       if (dart.equals(value, this[_ignoring])) return;
       this[_ignoring] = value;
       if (this.ignoringSemantics == null) this.markNeedsSemanticsUpdate();
@@ -13274,7 +13274,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     this[_ignoring] = ignoring;
     this[_ignoringSemantics] = ignoringSemantics;
     proxy_box.RenderIgnorePointer.__proto__.new.call(this, child);
-    if (!(this[_ignoring] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 3028, 12, "ert(_ignoring != ");
+    if (!(this[_ignoring] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 3028, 12, "_ignoring != null");
   }).prototype = proxy_box.RenderIgnorePointer.prototype;
   dart.addTypeTests(proxy_box.RenderIgnorePointer);
   dart.setGetterSignature(proxy_box.RenderIgnorePointer, () => ({
@@ -13300,7 +13300,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_offstage];
     }
     set offstage(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 3114, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 3114, 12, "value != null");
       if (dart.equals(value, this[_offstage])) return;
       this[_offstage] = value;
       this.markNeedsLayoutForSizedByParentChange();
@@ -13329,7 +13329,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this.offstage;
     }
     performResize() {
-      if (!dart.test(this.offstage)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 3161, 12, "ert(offs");
+      if (!dart.test(this.offstage)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 3161, 12, "offstage");
       this.size = this.constraints.smallest;
     }
     performLayout() {
@@ -13365,7 +13365,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
   (proxy_box.RenderOffstage.new = function(opts) {
     let offstage = opts && 'offstage' in opts ? opts.offstage : true;
     let child = opts && 'child' in opts ? opts.child : null;
-    if (!(offstage != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 3100, 15, "ert(offstage != ");
+    if (!(offstage != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 3100, 15, "offstage != null");
     this[_offstage] = offstage;
     proxy_box.RenderOffstage.__proto__.new.call(this, child);
     ;
@@ -13425,7 +13425,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     let child = opts && 'child' in opts ? opts.child : null;
     let absorbing = opts && 'absorbing' in opts ? opts.absorbing : true;
     let ignoringSemantics = opts && 'ignoringSemantics' in opts ? opts.ignoringSemantics : null;
-    if (!(absorbing != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 3232, 15, "ert(absorbing != ");
+    if (!(absorbing != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 3232, 15, "absorbing != null");
     this[_absorbing] = absorbing;
     this[_ignoringSemantics] = ignoringSemantics;
     proxy_box.RenderAbsorbPointer.__proto__.new.call(this, child);
@@ -13601,7 +13601,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     let scrollFactor = opts && 'scrollFactor' in opts ? opts.scrollFactor : 0.8;
     this[_validActions] = null;
     this[scrollFactor$] = scrollFactor;
-    if (!(scrollFactor != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 3336, 15, "ert(scrollFactor != ");
+    if (!(scrollFactor != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 3336, 15, "scrollFactor != null");
     this[_onTap] = onTap;
     this[_onLongPress] = onLongPress;
     this[_onHorizontalDragUpdate] = onHorizontalDragUpdate;
@@ -13717,7 +13717,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_container];
     }
     set container(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 3627, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 3627, 12, "value != null");
       if (dart.equals(this.container, value)) return;
       this[_container] = value;
       this.markNeedsSemanticsUpdate();
@@ -13726,7 +13726,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_explicitChildNodes];
     }
     set explicitChildNodes(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 3649, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 3649, 12, "value != null");
       if (dart.equals(this[_explicitChildNodes], value)) return;
       this[_explicitChildNodes] = value;
       this.markNeedsSemanticsUpdate();
@@ -13735,7 +13735,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_excludeSemantics];
     }
     set excludeSemantics(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 3665, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 3665, 12, "value != null");
       if (dart.equals(this[_excludeSemantics], value)) return;
       this[_excludeSemantics] = value;
       this.markNeedsSemanticsUpdate();
@@ -14158,8 +14158,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       super.describeSemanticsConfiguration(config);
       config.isSemanticBoundary = this.container;
       config.explicitChildNodes = this.explicitChildNodes;
-      if (!(dart.equals(this.scopesRoute, true) && dart.equals(this.explicitChildNodes, true) || !dart.equals(this.scopesRoute, true))) dart.assertFailed("explicitChildNodes must be set to true if scopes route is true", "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4402, 12, "ert((scopesRoute == true && explicitChildNodes == true) || scopesRoute != ");
-      if (!!(dart.equals(this.toggled, true) && dart.equals(this.checked, true))) dart.assertFailed("A semantics node cannot be toggled and checked at the same time", "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4404, 12, "ert(!(toggled == true && checked == t");
+      if (!(dart.equals(this.scopesRoute, true) && dart.equals(this.explicitChildNodes, true) || !dart.equals(this.scopesRoute, true))) dart.assertFailed("explicitChildNodes must be set to true if scopes route is true", "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4402, 12, "(scopesRoute == true && explicitChildNodes == true) || scopesRoute != true");
+      if (!!(dart.equals(this.toggled, true) && dart.equals(this.checked, true))) dart.assertFailed("A semantics node cannot be toggled and checked at the same time", "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4404, 12, "!(toggled == true && checked == true)");
       if (this.enabled != null) config.isEnabled = this.enabled;
       if (this.checked != null) config.isChecked = this.checked;
       if (this.toggled != null) config.isToggled = this.toggled;
@@ -14326,7 +14326,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     let onDidGainAccessibilityFocus = opts && 'onDidGainAccessibilityFocus' in opts ? opts.onDidGainAccessibilityFocus : null;
     let onDidLoseAccessibilityFocus = opts && 'onDidLoseAccessibilityFocus' in opts ? opts.onDidLoseAccessibilityFocus : null;
     let customSemanticsActions = opts && 'customSemanticsActions' in opts ? opts.customSemanticsActions : null;
-    if (!(container != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 3562, 15, "ert(container != ");
+    if (!(container != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 3562, 15, "container != null");
     this[_container] = container;
     this[_explicitChildNodes] = explicitChildNodes;
     this[_excludeSemantics] = excludeSemantics;
@@ -14577,7 +14577,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_blocking];
     }
     set blocking(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4627, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4627, 12, "value != null");
       if (dart.equals(value, this[_blocking])) return;
       this[_blocking] = value;
       this.markNeedsSemanticsUpdate();
@@ -14635,7 +14635,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_excluding];
     }
     set excluding(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4688, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4688, 12, "value != null");
       if (dart.equals(value, this[_excluding])) return;
       this[_excluding] = value;
       this.markNeedsSemanticsUpdate();
@@ -14654,7 +14654,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     let excluding = opts && 'excluding' in opts ? opts.excluding : true;
     this[_excluding] = excluding;
     proxy_box.RenderExcludeSemantics.__proto__.new.call(this, child);
-    if (!(this[_excluding] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4681, 12, "ert(_excluding != ");
+    if (!(this[_excluding] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4681, 12, "_excluding != null");
   }).prototype = proxy_box.RenderExcludeSemantics.prototype;
   dart.addTypeTests(proxy_box.RenderExcludeSemantics);
   dart.setGetterSignature(proxy_box.RenderExcludeSemantics, () => ({
@@ -14693,7 +14693,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
   (proxy_box.RenderIndexedSemantics.new = function(opts) {
     let child = opts && 'child' in opts ? opts.child : null;
     let index = opts && 'index' in opts ? opts.index : null;
-    if (!(index != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4724, 15, "ert(index != ");
+    if (!(index != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4724, 15, "index != null");
     this[_index$] = index;
     proxy_box.RenderIndexedSemantics.__proto__.new.call(this, child);
     ;
@@ -14717,7 +14717,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_link$];
     }
     set link(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4778, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4778, 12, "value != null");
       if (dart.equals(this[_link$], value)) return;
       this[_link$] = value;
       this.markNeedsPaint();
@@ -14737,7 +14737,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
         t15;
       }
       context.pushLayer(this.layer, dart.bind(this, 'paint', super.paint), ui.Offset.zero);
-      if (!(this.layer != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4799, 12, "ert(layer != ");
+      if (!(this.layer != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4799, 12, "layer != null");
     }
     debugFillProperties(properties) {
       super.debugFillProperties(properties);
@@ -14748,7 +14748,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     let link = opts && 'link' in opts ? opts.link : null;
     let child = opts && 'child' in opts ? opts.child : null;
     this[_link$] = null;
-    if (!(link != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4765, 15, "ert(link != ");
+    if (!(link != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4765, 15, "link != null");
     proxy_box.RenderLeaderLayer.__proto__.new.call(this, child);
     this.link = link;
   }).prototype = proxy_box.RenderLeaderLayer.prototype;
@@ -14778,7 +14778,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_link$];
     }
     set link(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4845, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4845, 12, "value != null");
       if (dart.equals(this[_link$], value)) return;
       this[_link$] = value;
       this.markNeedsPaint();
@@ -14787,7 +14787,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_showWhenUnlinked];
     }
     set showWhenUnlinked(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4864, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4864, 12, "value != null");
       if (dart.equals(this[_showWhenUnlinked], value)) return;
       this[_showWhenUnlinked] = value;
       this.markNeedsPaint();
@@ -14796,7 +14796,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_offset$];
     }
     set offset(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4876, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4876, 12, "value != null");
       if (dart.equals(this[_offset$], value)) return;
       this[_offset$] = value;
       this.markNeedsPaint();
@@ -14829,7 +14829,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     }
     paint(context, offset) {
       let t15;
-      if (!(this.showWhenUnlinked != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4928, 12, "ert(showWhenUnlinked != ");
+      if (!(this.showWhenUnlinked != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4928, 12, "showWhenUnlinked != null");
       if (this.layer == null) {
         this.layer = new layer$.FollowerLayer.new({link: this.link, showWhenUnlinked: this.showWhenUnlinked, linkedOffset: this.offset, unlinkedOffset: offset});
       } else {
@@ -14862,9 +14862,9 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     this[_link$] = null;
     this[_showWhenUnlinked] = null;
     this[_offset$] = null;
-    if (!(link != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4831, 15, "ert(link != ");
-    if (!(showWhenUnlinked != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4832, 15, "ert(showWhenUnlinked != ");
-    if (!(offset != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4833, 15, "ert(offset != ");
+    if (!(link != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4831, 15, "link != null");
+    if (!(showWhenUnlinked != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4832, 15, "showWhenUnlinked != null");
+    if (!(offset != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4833, 15, "offset != null");
     proxy_box.RenderFollowerLayer.__proto__.new.call(this, child);
     this.link = link;
     this.showWhenUnlinked = showWhenUnlinked;
@@ -14934,8 +14934,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       let sized = opts && 'sized' in opts ? opts.sized : null;
       let child = opts && 'child' in opts ? opts.child : null;
       this[alwaysNeedsCompositing] = true;
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4991, 15, "ert(value != ");
-      if (!(sized != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4992, 15, "ert(sized != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4991, 15, "value != null");
+      if (!(sized != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/proxy_box.dart", 4992, 15, "sized != null");
       this[_value] = value;
       this[_sized] = sized;
       RenderAnnotatedRegion.__proto__.new.call(this, child);
@@ -16514,16 +16514,16 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_geometry];
     }
     set geometry(value) {
-      if (!!(dart.test(this.debugDoingThisResize) && dart.test(this.debugDoingThisLayout))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1125, 12, "ert(!(debugDoingThisResize && debugDoingThisLay");
-      if (!(dart.test(this.sizedByParent) || !dart.test(this.debugDoingThisResize))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1126, 12, "ert(sizedByParent || !debugDoingThisRe");
+      if (!!(dart.test(this.debugDoingThisResize) && dart.test(this.debugDoingThisLayout))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1125, 12, "!(debugDoingThisResize && debugDoingThisLayout)");
+      if (!(dart.test(this.sizedByParent) || !dart.test(this.debugDoingThisResize))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1126, 12, "sizedByParent || !debugDoingThisResize");
       if (!dart.test(dart.fn(() => {
         if (dart.test(this.sizedByParent) && dart.test(this.debugDoingThisResize) || !dart.test(this.sizedByParent) && dart.test(this.debugDoingThisLayout)) return true;
-        if (!!dart.test(this.debugDoingThisResize)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1131, 14, "ert(!debugDoingThisRe");
+        if (!!dart.test(this.debugDoingThisResize)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1131, 14, "!debugDoingThisResize");
         let contract = null;
         let violation = null;
         let hint = null;
         if (dart.test(this.debugDoingThisLayout)) {
-          if (!dart.test(this.sizedByParent)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1134, 16, "ert(sizedByPa");
+          if (!dart.test(this.sizedByParent)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1134, 16, "sizedByParent");
           violation = new assertions.ErrorDescription.new("It appears that the geometry setter was called from performLayout().");
         } else {
           violation = new assertions.ErrorDescription.new("The geometry setter was called from outside layout (neither performResize() nor performLayout() were being run for this object).");
@@ -16543,14 +16543,14 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           return t15;
         })();
         dart.throw(new assertions.FlutterError.fromParts(information));
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1127, 12, "ert(() {\n      if ((sizedByParent && debugDoingThisResize) ||\n          (!sizedByParent && debugDoingThisLayout))\n        return true;\n      assert(!debugDoingThisResize);\n      DiagnosticsNode contract, violation, hint;\n      if (debugDoingThisLayout) {\n        assert(sizedByParent);\n        violation = ErrorDescription('It appears that the geometry setter was called from performLayout().');\n      } else {\n        violation = ErrorDescription('The geometry setter was called from outside layout (neither performResize() nor performLayout() were being run for this object).');\n        if (owner != null && owner.debugDoingLayout)\n          hint = ErrorDescription('Only the object itself can set its geometry. It is a contract violation for other objects to set it.');\n      }\n      if (sizedByParent)\n        contract = ErrorDescription('Because this RenderSliver has sizedByParent set to true, it must set its geometry in performResize().');\n      else\n        contract = ErrorDescription('Because this RenderSliver has sizedByParent set to false, it must set its geometry in performLayout().');\n\n      final List<DiagnosticsNode> information = <DiagnosticsNode>[\n        ErrorSummary('RenderSliver geometry setter called incorrectly.'),\n        violation,\n        if (hint != null) hint,\n        contract,\n        describeForError('The RenderSliver in question is'),\n      ];\n      throw FlutterError.fromParts(information);\n   ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1127, 12, "() {\n      if ((sizedByParent && debugDoingThisResize) ||\n          (!sizedByParent && debugDoingThisLayout))\n        return true;\n      assert(!debugDoingThisResize);\n      DiagnosticsNode contract, violation, hint;\n      if (debugDoingThisLayout) {\n        assert(sizedByParent);\n        violation = ErrorDescription('It appears that the geometry setter was called from performLayout().');\n      } else {\n        violation = ErrorDescription('The geometry setter was called from outside layout (neither performResize() nor performLayout() were being run for this object).');\n        if (owner != null && owner.debugDoingLayout)\n          hint = ErrorDescription('Only the object itself can set its geometry. It is a contract violation for other objects to set it.');\n      }\n      if (sizedByParent)\n        contract = ErrorDescription('Because this RenderSliver has sizedByParent set to true, it must set its geometry in performResize().');\n      else\n        contract = ErrorDescription('Because this RenderSliver has sizedByParent set to false, it must set its geometry in performLayout().');\n\n      final List<DiagnosticsNode> information = <DiagnosticsNode>[\n        ErrorSummary('RenderSliver geometry setter called incorrectly.'),\n        violation,\n        if (hint != null) hint,\n        contract,\n        describeForError('The RenderSliver in question is'),\n      ];\n      throw FlutterError.fromParts(information);\n    }()");
       this[_geometry] = value;
     }
     get semanticBounds() {
       return this.paintBounds;
     }
     get paintBounds() {
-      if (!(this.constraints.axis != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1163, 12, "ert(constraints.axis != ");
+      if (!(this.constraints.axis != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1163, 12, "constraints.axis != null");
       switch (this.constraints.axis) {
         case C29 || CT.C29:
         {
@@ -16568,7 +16568,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     debugAssertDoesMeetConstraints() {
       if (!dart.test(this.geometry.debugAssertIsValid({informationCollector: dart.fn(() => new (SyncIterableOfDiagnosticsNode()).new((function*() {
           yield this.describeForError("The RenderSliver that returned the offending geometry was");
-        }).bind(this)), VoidToIterableOfDiagnosticsNode())}))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1186, 12, "ert(geometry.debugAssertIsValid(\n      informationCollector: () sync* {\n        yield describeForError('The RenderSliver that returned the offending geometry was');\n      }\n ");
+        }).bind(this)), VoidToIterableOfDiagnosticsNode())}))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1186, 12, "geometry.debugAssertIsValid(\n      informationCollector: () sync* {\n        yield describeForError('The RenderSliver that returned the offending geometry was');\n      }\n    )");
       if (!dart.test(dart.fn(() => {
         if (dart.notNull(this.geometry.paintExtent) > dart.notNull(this.constraints.remainingPaintExtent)) {
           dart.throw(new assertions.FlutterError.fromParts((() => {
@@ -16582,10 +16582,10 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           })()));
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1191, 12, "ert(() {\n      if (geometry.paintExtent > constraints.remainingPaintExtent) {\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('SliverGeometry has a paintOffset that exceeds the remainingPaintExtent from the constraints.'),\n          describeForError('The render object whose geometry violates the constraints is the following'),\n          ..._debugCompareFloats(\n            'remainingPaintExtent', constraints.remainingPaintExtent,\n            'paintExtent', geometry.paintExtent,\n          ),\n          ErrorDescription(\n            'The paintExtent must cause the child sliver to paint within the viewport, and so '\n            'cannot exceed the remainingPaintExtent.',\n          ),\n        ]);\n      }\n      return true;\n   ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1191, 12, "() {\n      if (geometry.paintExtent > constraints.remainingPaintExtent) {\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('SliverGeometry has a paintOffset that exceeds the remainingPaintExtent from the constraints.'),\n          describeForError('The render object whose geometry violates the constraints is the following'),\n          ..._debugCompareFloats(\n            'remainingPaintExtent', constraints.remainingPaintExtent,\n            'paintExtent', geometry.paintExtent,\n          ),\n          ErrorDescription(\n            'The paintExtent must cause the child sliver to paint within the viewport, and so '\n            'cannot exceed the remainingPaintExtent.',\n          ),\n        ]);\n      }\n      return true;\n    }()");
     }
     performResize() {
-      if (!false) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1212, 12, "ert(f");
+      if (!false) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1212, 12, "false");
     }
     get centerOffsetAdjustment() {
       return 0.0;
@@ -16614,7 +16614,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     calculatePaintOffset(constraints, opts) {
       let from = opts && 'from' in opts ? opts.from : null;
       let to = opts && 'to' in opts ? opts.to : null;
-      if (!(dart.notNull(from) <= dart.notNull(to))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1323, 12, "ert(from <");
+      if (!(dart.notNull(from) <= dart.notNull(to))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1323, 12, "from <= to");
       let a = constraints.scrollOffset;
       let b = dart.notNull(constraints.scrollOffset) + dart.notNull(constraints.remainingPaintExtent);
       return (to[$clamp](a, b) - from[$clamp](a, b))[$clamp](0.0, constraints.remainingPaintExtent);
@@ -16622,7 +16622,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     calculateCacheOffset(constraints, opts) {
       let from = opts && 'from' in opts ? opts.from : null;
       let to = opts && 'to' in opts ? opts.to : null;
-      if (!(dart.notNull(from) <= dart.notNull(to))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1339, 12, "ert(from <");
+      if (!(dart.notNull(from) <= dart.notNull(to))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1339, 12, "from <= to");
       let a = dart.notNull(constraints.scrollOffset) + dart.notNull(constraints.cacheOrigin);
       let b = dart.notNull(constraints.scrollOffset) + dart.notNull(constraints.remainingCacheExtent);
       return (to[$clamp](a, b) - from[$clamp](a, b))[$clamp](0.0, constraints.remainingCacheExtent);
@@ -16631,7 +16631,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       object$.RenderObject._check(child);
       if (!dart.dassert(dart.fn(() => {
         dart.throw(assertions.FlutterError.new(dart.str(this[$runtimeType]) + " does not implement childPosition."));
-      }, VoidToNull())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1374, 12, "ert(() {\n      throw FlutterError('$runtimeType does not implement childPosition.');\n   ");
+      }, VoidToNull())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1374, 12, "() {\n      throw FlutterError('$runtimeType does not implement childPosition.');\n    }()");
       return 0.0;
     }
     childCrossAxisPosition(child) {
@@ -16640,18 +16640,18 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     }
     childScrollOffset(child) {
       object$.RenderObject._check(child);
-      if (!dart.equals(child.parent, this)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1405, 12, "ert(child.parent == ");
+      if (!dart.equals(child.parent, this)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1405, 12, "child.parent == this");
       return 0.0;
     }
     applyPaintTransform(child, transform) {
       object$.RenderObject._check(child);
       if (!dart.dassert(dart.fn(() => {
         dart.throw(assertions.FlutterError.new(dart.str(this[$runtimeType]) + " does not implement applyPaintTransform."));
-      }, VoidToNull())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1411, 12, "ert(() {\n      throw FlutterError('$runtimeType does not implement applyPaintTransform.');\n   ");
+      }, VoidToNull())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1411, 12, "() {\n      throw FlutterError('$runtimeType does not implement applyPaintTransform.');\n    }()");
     }
     getAbsoluteSizeRelativeToOrigin() {
-      if (!(this.geometry != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1427, 12, "ert(geometry != ");
-      if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1428, 12, "ert(!debugNeedsLa");
+      if (!(this.geometry != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1427, 12, "geometry != null");
+      if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1428, 12, "!debugNeedsLayout");
       switch (sliver$.applyGrowthDirectionToAxisDirection(this.constraints.axisDirection, this.constraints.growthDirection)) {
         case C115 || CT.C115:
         {
@@ -16673,8 +16673,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return null;
     }
     getAbsoluteSize() {
-      if (!(this.geometry != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1453, 12, "ert(geometry != ");
-      if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1454, 12, "ert(!debugNeedsLa");
+      if (!(this.geometry != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1453, 12, "geometry != null");
+      if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1454, 12, "!debugNeedsLayout");
       switch (this.constraints.axisDirection) {
         case C115 || CT.C115:
         case C117 || CT.C117:
@@ -16693,7 +16693,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       if (!dart.test(dart.fn(() => {
         let t18;
         if (dart.equals(p0, p1)) return true;
-        if (!(p0.dx == p1.dx || p0.dy == p1.dy)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1470, 14, "ert(p0.dx == p1.dx || p0.dy == p");
+        if (!(p0.dx == p1.dx || p0.dy == p1.dy)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1470, 14, "p0.dx == p1.dx || p0.dy == p1.dy");
         let d = dart.notNull(p1['-'](p0).distance) * 0.2;
         let temp = null;
         let dx1 = null;
@@ -16722,7 +16722,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
         }
         canvas.drawPath((t18 = ui.Path.new(), t18.moveTo(p0.dx, p0.dy), t18.lineTo(p1.dx, p1.dy), t18.moveTo(dart.notNull(p1.dx) - dart.notNull(dx1), dart.notNull(p1.dy) - dart.notNull(dy1)), t18.lineTo(p1.dx, p1.dy), t18.lineTo(dart.notNull(p1.dx) - dart.notNull(dx2), dart.notNull(p1.dy) - dart.notNull(dy2)), t18), paint);
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1467, 12, "ert(() {\n      if (p0 == p1)\n        return true;\n      assert(p0.dx == p1.dx || p0.dy == p1.dy); // must be axis-aligned\n      final double d = (p1 - p0).distance * 0.2;\n      Offset temp;\n      double dx1, dx2, dy1, dy2;\n      switch (direction) {\n        case GrowthDirection.forward:\n          dx1 = dx2 = dy1 = dy2 = d;\n          break;\n        case GrowthDirection.reverse:\n          temp = p0;\n          p0 = p1;\n          p1 = temp;\n          dx1 = dx2 = dy1 = dy2 = -d;\n          break;\n      }\n      if (p0.dx == p1.dx) {\n        dx2 = -dx2;\n      } else {\n        dy2 = -dy2;\n      }\n      canvas.drawPath(\n        Path()\n          ..moveTo(p0.dx, p0.dy)\n          ..lineTo(p1.dx, p1.dy)\n          ..moveTo(p1.dx - dx1, p1.dy - dy1)\n          ..lineTo(p1.dx, p1.dy)\n          ..lineTo(p1.dx - dx2, p1.dy - dy2),\n        paint,\n      );\n      return true;\n   ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1467, 12, "() {\n      if (p0 == p1)\n        return true;\n      assert(p0.dx == p1.dx || p0.dy == p1.dy); // must be axis-aligned\n      final double d = (p1 - p0).distance * 0.2;\n      Offset temp;\n      double dx1, dx2, dy1, dy2;\n      switch (direction) {\n        case GrowthDirection.forward:\n          dx1 = dx2 = dy1 = dy2 = d;\n          break;\n        case GrowthDirection.reverse:\n          temp = p0;\n          p0 = p1;\n          p1 = temp;\n          dx1 = dx2 = dy1 = dy2 = -d;\n          break;\n      }\n      if (p0.dx == p1.dx) {\n        dx2 = -dx2;\n      } else {\n        dy2 = -dy2;\n      }\n      canvas.drawPath(\n        Path()\n          ..moveTo(p0.dx, p0.dy)\n          ..lineTo(p1.dx, p1.dy)\n          ..moveTo(p1.dx - dx1, p1.dy - dy1)\n          ..lineTo(p1.dx, p1.dy)\n          ..lineTo(p1.dx - dx2, p1.dy - dy2),\n        paint,\n      );\n      return true;\n    }()");
     }
     debugPaint(context, offset) {
       if (!dart.test(dart.fn(() => {
@@ -16752,7 +16752,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           }
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1505, 12, "ert(() {\n      if (debugPaintSizeEnabled) {\n        final double strokeWidth = math.min(4.0, geometry.paintExtent / 30.0);\n        final Paint paint = Paint()\n          ..color = const Color(0xFF33CC33)\n          ..strokeWidth = strokeWidth\n          ..style = PaintingStyle.stroke\n          ..maskFilter = MaskFilter.blur(BlurStyle.solid, strokeWidth);\n        final double arrowExtent = geometry.paintExtent;\n        final double padding = math.max(2.0, strokeWidth);\n        final Canvas canvas = context.canvas;\n        canvas.drawCircle(\n          offset.translate(padding, padding),\n          padding * 0.5,\n          paint,\n        );\n        switch (constraints.axis) {\n          case Axis.vertical:\n            canvas.drawLine(\n              offset,\n              offset.translate(constraints.crossAxisExtent, 0.0),\n              paint,\n            );\n            _debugDrawArrow(\n              canvas,\n              paint,\n              offset.translate(constraints.crossAxisExtent * 1.0 / 4.0, padding),\n              offset.translate(constraints.crossAxisExtent * 1.0 / 4.0, arrowExtent - padding),\n              constraints.normalizedGrowthDirection,\n            );\n            _debugDrawArrow(\n              canvas,\n              paint,\n              offset.translate(constraints.crossAxisExtent * 3.0 / 4.0, padding),\n              offset.translate(constraints.crossAxisExtent * 3.0 / 4.0, arrowExtent - padding),\n              constraints.normalizedGrowthDirection,\n            );\n            break;\n          case Axis.horizontal:\n            canvas.drawLine(\n              offset,\n              offset.translate(0.0, constraints.crossAxisExtent),\n              paint,\n            );\n            _debugDrawArrow(\n              canvas,\n              paint,\n              offset.translate(padding, constraints.crossAxisExtent * 1.0 / 4.0),\n              offset.translate(arrowExtent - padding, constraints.crossAxisExtent * 1.0 / 4.0),\n              constraints.normalizedGrowthDirection,\n            );\n            _debugDrawArrow(\n              canvas,\n              paint,\n              offset.translate(padding, constraints.crossAxisExtent * 3.0 / 4.0),\n              offset.translate(arrowExtent - padding, constraints.crossAxisExtent * 3.0 / 4.0),\n              constraints.normalizedGrowthDirection,\n            );\n            break;\n        }\n      }\n      return true;\n   ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1505, 12, "() {\n      if (debugPaintSizeEnabled) {\n        final double strokeWidth = math.min(4.0, geometry.paintExtent / 30.0);\n        final Paint paint = Paint()\n          ..color = const Color(0xFF33CC33)\n          ..strokeWidth = strokeWidth\n          ..style = PaintingStyle.stroke\n          ..maskFilter = MaskFilter.blur(BlurStyle.solid, strokeWidth);\n        final double arrowExtent = geometry.paintExtent;\n        final double padding = math.max(2.0, strokeWidth);\n        final Canvas canvas = context.canvas;\n        canvas.drawCircle(\n          offset.translate(padding, padding),\n          padding * 0.5,\n          paint,\n        );\n        switch (constraints.axis) {\n          case Axis.vertical:\n            canvas.drawLine(\n              offset,\n              offset.translate(constraints.crossAxisExtent, 0.0),\n              paint,\n            );\n            _debugDrawArrow(\n              canvas,\n              paint,\n              offset.translate(constraints.crossAxisExtent * 1.0 / 4.0, padding),\n              offset.translate(constraints.crossAxisExtent * 1.0 / 4.0, arrowExtent - padding),\n              constraints.normalizedGrowthDirection,\n            );\n            _debugDrawArrow(\n              canvas,\n              paint,\n              offset.translate(constraints.crossAxisExtent * 3.0 / 4.0, padding),\n              offset.translate(constraints.crossAxisExtent * 3.0 / 4.0, arrowExtent - padding),\n              constraints.normalizedGrowthDirection,\n            );\n            break;\n          case Axis.horizontal:\n            canvas.drawLine(\n              offset,\n              offset.translate(0.0, constraints.crossAxisExtent),\n              paint,\n            );\n            _debugDrawArrow(\n              canvas,\n              paint,\n              offset.translate(padding, constraints.crossAxisExtent * 1.0 / 4.0),\n              offset.translate(arrowExtent - padding, constraints.crossAxisExtent * 1.0 / 4.0),\n              constraints.normalizedGrowthDirection,\n            );\n            _debugDrawArrow(\n              canvas,\n              paint,\n              offset.translate(padding, constraints.crossAxisExtent * 3.0 / 4.0),\n              offset.translate(arrowExtent - padding, constraints.crossAxisExtent * 3.0 / 4.0),\n              constraints.normalizedGrowthDirection,\n            );\n            break;\n        }\n      }\n      return true;\n    }()");
     }
     handleEvent(event, entry) {
       sliver$.SliverHitTestEntry._check(entry);
@@ -16804,8 +16804,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
   const _getRightWayUp = dart.privateName(sliver$, "_getRightWayUp");
   sliver$.RenderSliverHelpers = class RenderSliverHelpers extends core.Object {
     [_getRightWayUp](constraints) {
-      if (!(constraints != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1585, 12, "ert(constraints != ");
-      if (!(constraints.axisDirection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1586, 12, "ert(constraints.axisDirection != ");
+      if (!(constraints != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1585, 12, "constraints != null");
+      if (!(constraints.axisDirection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1586, 12, "constraints.axisDirection != null");
       let rightWayUp = null;
       switch (constraints.axisDirection) {
         case C115 || CT.C115:
@@ -16821,7 +16821,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           break;
         }
       }
-      if (!(constraints.growthDirection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1598, 12, "ert(constraints.growthDirection != ");
+      if (!(constraints.growthDirection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1598, 12, "constraints.growthDirection != null");
       switch (constraints.growthDirection) {
         case C120 || CT.C120:
         {
@@ -16833,7 +16833,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           break;
         }
       }
-      if (!(rightWayUp != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1606, 12, "ert(rightWayUp != ");
+      if (!(rightWayUp != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1606, 12, "rightWayUp != null");
       return rightWayUp;
     }
     hitTestBoxChild(result, child, opts) {
@@ -16846,7 +16846,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       let absoluteCrossAxisPosition = dart.notNull(crossAxisPosition) - dart.notNull(crossAxisDelta);
       let paintOffset = null;
       let transformedPosition = null;
-      if (!(this.constraints.axis != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1628, 12, "ert(constraints.axis != ");
+      if (!(this.constraints.axis != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1628, 12, "constraints.axis != null");
       switch (this.constraints.axis) {
         case C29 || CT.C29:
         {
@@ -16869,15 +16869,15 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           break;
         }
       }
-      if (!(paintOffset != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1647, 12, "ert(paintOffset != ");
-      if (!(transformedPosition != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1648, 12, "ert(transformedPosition != ");
+      if (!(paintOffset != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1647, 12, "paintOffset != null");
+      if (!(transformedPosition != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1648, 12, "transformedPosition != null");
       return result.addWithPaintOffset({offset: paintOffset, position: null, hitTest: dart.fn((result, _) => child.hitTest(result, {position: transformedPosition}), BoxHitTestResultAndOffsetTobool())});
     }
     applyPaintTransformForBoxChild(child, transform) {
       let rightWayUp = this[_getRightWayUp](this.constraints);
       let delta = this.childMainAxisPosition(child);
       let crossAxisDelta = this.childCrossAxisPosition(child);
-      if (!(this.constraints.axis != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1671, 12, "ert(constraints.axis != ");
+      if (!(this.constraints.axis != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1671, 12, "constraints.axis != null");
       switch (this.constraints.axis) {
         case C29 || CT.C29:
         {
@@ -18138,8 +18138,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     }
     setChildParentData(child, constraints, geometry) {
       let childParentData = sliver$.SliverPhysicalParentData._check(child.parentData);
-      if (!(constraints.axisDirection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1720, 12, "ert(constraints.axisDirection != ");
-      if (!(constraints.growthDirection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1721, 12, "ert(constraints.growthDirection != ");
+      if (!(constraints.axisDirection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1720, 12, "constraints.axisDirection != null");
+      if (!(constraints.growthDirection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1721, 12, "constraints.growthDirection != null");
       switch (sliver$.applyGrowthDirectionToAxisDirection(constraints.axisDirection, constraints.growthDirection)) {
         case C115 || CT.C115:
         {
@@ -18162,12 +18162,12 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           break;
         }
       }
-      if (!(childParentData.paintOffset != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1736, 12, "ert(childParentData.paintOffset != ");
+      if (!(childParentData.paintOffset != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1736, 12, "childParentData.paintOffset != null");
     }
     hitTestChildren(result, opts) {
       let mainAxisPosition = opts && 'mainAxisPosition' in opts ? opts.mainAxisPosition : null;
       let crossAxisPosition = opts && 'crossAxisPosition' in opts ? opts.crossAxisPosition : null;
-      if (!(dart.notNull(this.geometry.hitTestExtent) > 0.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1741, 12, "ert(geometry.hitTestExtent >");
+      if (!(dart.notNull(this.geometry.hitTestExtent) > 0.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1741, 12, "geometry.hitTestExtent > 0.0");
       if (this.child != null) return this.hitTestBoxChild(new box.BoxHitTestResult.wrap(result), this.child, {mainAxisPosition: mainAxisPosition, crossAxisPosition: crossAxisPosition});
       return false;
     }
@@ -18177,8 +18177,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     }
     applyPaintTransform(child, transform) {
       object$.RenderObject._check(child);
-      if (!(child != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1754, 12, "ert(child != ");
-      if (!dart.equals(child, this.child)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1755, 12, "ert(child == this.c");
+      if (!(child != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1754, 12, "child != null");
+      if (!dart.equals(child, this.child)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1755, 12, "child == this.child");
       let childParentData = sliver$.SliverPhysicalParentData._check(child.parentData);
       childParentData.applyPaintTransform(transform);
     }
@@ -18220,11 +18220,11 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           break;
         }
       }
-      if (!(childExtent != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1803, 12, "ert(childExtent != ");
+      if (!(childExtent != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1803, 12, "childExtent != null");
       let paintedChildSize = this.calculatePaintOffset(this.constraints, {from: 0.0, to: childExtent});
       let cacheExtent = this.calculateCacheOffset(this.constraints, {from: 0.0, to: childExtent});
-      if (!paintedChildSize[$isFinite]) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1807, 12, "ert(paintedChildSize.isFi");
-      if (!(dart.notNull(paintedChildSize) >= 0.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1808, 12, "ert(paintedChildSize >=");
+      if (!paintedChildSize[$isFinite]) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1807, 12, "paintedChildSize.isFinite");
+      if (!(dart.notNull(paintedChildSize) >= 0.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/sliver.dart", 1808, 12, "paintedChildSize >= 0.0");
       this.geometry = new sliver$.SliverGeometry.new({scrollExtent: childExtent, paintExtent: paintedChildSize, cacheExtent: cacheExtent, maxPaintExtent: childExtent, hitTestExtent: paintedChildSize, hasVisualOverflow: dart.notNull(childExtent) > dart.notNull(this.constraints.remainingPaintExtent) || dart.notNull(this.constraints.scrollOffset) > 0.0});
       this.setChildParentData(this.child, this.constraints, this.geometry);
     }
@@ -23628,7 +23628,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_textPainter$].textWidthBasis;
     }
     set textWidthBasis(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 258, 12, "t(value != nu");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 258, 12, "value != null");
       if (dart.equals(this[_textPainter$].textWidthBasis, value)) return;
       this[_textPainter$].textWidthBasis = value;
       this.markNeedsTextLayout();
@@ -23748,7 +23748,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     }
     [_handleShortcuts](key) {
       return async.async(dart.void, (function* _handleShortcuts() {
-        if (!dart.test(editable.RenderEditable._shortcutKeys.contains(key))) dart.assertFailed("shortcut key " + dart.str(key) + " not recognized.", "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 538, 12, "t(_shortcutKeys.contains(ke");
+        if (!dart.test(editable.RenderEditable._shortcutKeys.contains(key))) dart.assertFailed("shortcut key " + dart.str(key) + " not recognized.", "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 538, 12, "_shortcutKeys.contains(key)");
         if (dart.equals(key, keyboard_key.LogicalKeyboardKey.keyC)) {
           if (!dart.test(this.selection.isCollapsed)) {
             clipboard.Clipboard.setData(new clipboard.ClipboardData.new({text: this.selection.textInside(this.text.toPlainText())}));
@@ -23807,7 +23807,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_textPainter$].textAlign;
     }
     set textAlign(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 636, 12, "t(value != nu");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 636, 12, "value != null");
       if (dart.equals(this[_textPainter$].textAlign, value)) return;
       this[_textPainter$].textAlign = value;
       this.markNeedsTextLayout();
@@ -23816,7 +23816,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_textPainter$].textDirection;
     }
     set textDirection(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 658, 12, "t(value != nu");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 658, 12, "value != null");
       if (dart.equals(this[_textPainter$].textDirection, value)) return;
       this[_textPainter$].textDirection = value;
       this.markNeedsTextLayout();
@@ -23858,7 +23858,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_showCursor];
     }
     set showCursor(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 721, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 721, 12, "value != null");
       if (dart.equals(this[_showCursor], value)) return;
       if (dart.test(this.attached)) this[_showCursor].removeListener(dart.bind(this, 'markNeedsPaint'));
       this[_showCursor] = value;
@@ -23869,15 +23869,15 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_hasFocus];
     }
     set hasFocus(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 737, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 737, 12, "value != null");
       if (dart.equals(this[_hasFocus], value)) return;
       this[_hasFocus] = value;
       if (dart.test(this[_hasFocus])) {
-        if (!!dart.test(this[_listenerAttached])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 742, 14, "ert(!_listenerAtta");
+        if (!!dart.test(this[_listenerAttached])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 742, 14, "!_listenerAttached");
         raw_keyboard.RawKeyboard.instance.addListener(dart.bind(this, _handleKeyEvent));
         this[_listenerAttached] = true;
       } else {
-        if (!dart.test(this[_listenerAttached])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 746, 14, "ert(_listenerAtta");
+        if (!dart.test(this[_listenerAttached])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 746, 14, "_listenerAttached");
         raw_keyboard.RawKeyboard.instance.removeListener(dart.bind(this, _handleKeyEvent));
         this[_listenerAttached] = false;
       }
@@ -23887,7 +23887,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_forceLine];
     }
     set forceLine(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 757, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 757, 12, "value != null");
       if (dart.equals(this[_forceLine], value)) return;
       this[_forceLine] = value;
       this.markNeedsLayout();
@@ -23896,7 +23896,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_readOnly$];
     }
     set readOnly(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 768, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 768, 12, "value != null");
       if (dart.equals(this[_readOnly$], value)) return;
       this[_readOnly$] = value;
       this.markNeedsSemanticsUpdate();
@@ -23905,7 +23905,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_maxLines];
     }
     set maxLines(value) {
-      if (!(value == null || dart.notNull(value) > 0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 789, 12, "ert(value == null || value");
+      if (!(value == null || dart.notNull(value) > 0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 789, 12, "value == null || value > 0");
       if (this.maxLines == value) return;
       this[_maxLines] = value;
       this.markNeedsTextLayout();
@@ -23914,7 +23914,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_minLines];
     }
     set minLines(value) {
-      if (!(value == null || dart.notNull(value) > 0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 801, 12, "ert(value == null || value");
+      if (!(value == null || dart.notNull(value) > 0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 801, 12, "value == null || value > 0");
       if (this.minLines == value) return;
       this[_minLines] = value;
       this.markNeedsTextLayout();
@@ -23923,7 +23923,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_expands];
     }
     set expands(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 812, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 812, 12, "value != null");
       if (dart.equals(this.expands, value)) return;
       this[_expands] = value;
       this.markNeedsTextLayout();
@@ -23940,7 +23940,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_textPainter$].textScaleFactor;
     }
     set textScaleFactor(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 835, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 835, 12, "value != null");
       if (this[_textPainter$].textScaleFactor == value) return;
       this[_textPainter$].textScaleFactor = value;
       this.markNeedsTextLayout();
@@ -23959,7 +23959,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_offset$1];
     }
     set offset(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 864, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 864, 12, "value != null");
       if (dart.equals(this[_offset$1], value)) return;
       if (dart.test(this.attached)) this[_offset$1].removeListener(dart.bind(this, 'markNeedsPaint'));
       this[_offset$1] = value;
@@ -24197,7 +24197,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return null;
     }
     get [_viewportExtent]() {
-      if (!dart.test(this.hasSize)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1205, 12, "ert(has");
+      if (!dart.test(this.hasSize)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1205, 12, "hasSize");
       switch (this[_viewportAxis]) {
         case C29 || CT.C29:
         {
@@ -24211,7 +24211,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return null;
     }
     [_getMaxScrollExtent](contentSize) {
-      if (!dart.test(this.hasSize)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1216, 12, "ert(has");
+      if (!dart.test(this.hasSize)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1216, 12, "hasSize");
       switch (this[_viewportAxis]) {
         case C29 || CT.C29:
         {
@@ -24228,7 +24228,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return dart.notNull(this[_maxScrollExtent$]) > 0 || !dart.equals(this[_paintOffset], ui.Offset.zero);
     }
     getEndpointsForSelection(selection) {
-      if (!(this.constraints != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1243, 12, "ert(constraints != ");
+      if (!(this.constraints != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1243, 12, "constraints != null");
       this[_layoutText$]({minWidth: this.constraints.minWidth, maxWidth: this.constraints.maxWidth});
       let paintOffset = this[_paintOffset];
       if (dart.test(selection.isCollapsed)) {
@@ -24310,7 +24310,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     handleEvent(event, entry) {
       box.BoxHitTestEntry._check(entry);
       if (dart.test(this.ignorePointer)) return;
-      if (!dart.test(this.debugHandleEvent(event, entry))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1379, 12, "ert(debugHandleEvent(event, en");
+      if (!dart.test(this.debugHandleEvent(event, entry))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1379, 12, "debugHandleEvent(event, entry)");
       if (events.PointerDownEvent.is(event) && this.onSelectionChanged != null) {
         this[_tap].addPointer(event);
         this[_longPress].addPointer(event);
@@ -24320,14 +24320,14 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       this[_lastTapDownPosition] = details.globalPosition;
     }
     [_handleTapDown](details) {
-      if (!!dart.test(this.ignorePointer)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1398, 12, "ert(!ignorePoi");
+      if (!!dart.test(this.ignorePointer)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1398, 12, "!ignorePointer");
       this.handleTapDown(details);
     }
     handleTap() {
       this.selectPosition({cause: editable.SelectionChangedCause.tap});
     }
     [_handleTap]() {
-      if (!!dart.test(this.ignorePointer)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1412, 12, "ert(!ignorePoi");
+      if (!!dart.test(this.ignorePointer)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1412, 12, "!ignorePointer");
       this.handleTap();
     }
     handleDoubleTap() {
@@ -24337,7 +24337,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       this.selectWord({cause: editable.SelectionChangedCause.longPress});
     }
     [_handleLongPress]() {
-      if (!!dart.test(this.ignorePointer)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1436, 12, "ert(!ignorePoi");
+      if (!!dart.test(this.ignorePointer)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1436, 12, "!ignorePointer");
       this.handleLongPress();
     }
     selectPosition(opts) {
@@ -24348,8 +24348,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       let from = opts && 'from' in opts ? opts.from : null;
       let to = opts && 'to' in opts ? opts.to : null;
       let cause = opts && 'cause' in opts ? opts.cause : null;
-      if (!(cause != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1456, 12, "ert(cause != ");
-      if (!(from != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1457, 12, "ert(from != ");
+      if (!(cause != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1456, 12, "cause != null");
+      if (!(from != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1457, 12, "from != null");
       this[_layoutText$]({minWidth: this.constraints.minWidth, maxWidth: this.constraints.maxWidth});
       if (this.onSelectionChanged == null) {
         return;
@@ -24373,8 +24373,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       let from = opts && 'from' in opts ? opts.from : null;
       let to = opts && 'to' in opts ? opts.to : null;
       let cause = opts && 'cause' in opts ? opts.cause : null;
-      if (!(cause != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1497, 12, "ert(cause != ");
-      if (!(from != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1498, 12, "ert(from != ");
+      if (!(cause != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1497, 12, "cause != null");
+      if (!(from != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1498, 12, "from != null");
       this[_layoutText$]({minWidth: this.constraints.minWidth, maxWidth: this.constraints.maxWidth});
       if (this.onSelectionChanged == null) {
         return;
@@ -24386,9 +24386,9 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     }
     selectWordEdge(opts) {
       let cause = opts && 'cause' in opts ? opts.cause : null;
-      if (!(cause != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1522, 12, "ert(cause != ");
+      if (!(cause != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1522, 12, "cause != null");
       this[_layoutText$]({minWidth: this.constraints.minWidth, maxWidth: this.constraints.maxWidth});
-      if (!(this[_lastTapDownPosition] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1524, 12, "ert(_lastTapDownPosition != ");
+      if (!(this[_lastTapDownPosition] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1524, 12, "_lastTapDownPosition != null");
       if (this.onSelectionChanged == null) {
         return;
       }
@@ -24401,7 +24401,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       }
     }
     [_selectWordAtOffset](position) {
-      if (!(this[_textLayoutLastMaxWidth] == this.constraints.maxWidth && this[_textLayoutLastMinWidth] == this.constraints.minWidth)) dart.assertFailed("Last width (" + dart.str(this[_textLayoutLastMinWidth]) + ", " + dart.str(this[_textLayoutLastMaxWidth]) + ") not the same as max width constraint (" + dart.str(this.constraints.minWidth) + ", " + dart.str(this.constraints.maxWidth) + ").", "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1544, 12, "ert(_textLayoutLastMaxWidth == constraints.maxWidth &&\n           _textLayoutLastMinWidth == constraints.minW");
+      if (!(this[_textLayoutLastMaxWidth] == this.constraints.maxWidth && this[_textLayoutLastMinWidth] == this.constraints.minWidth)) dart.assertFailed("Last width (" + dart.str(this[_textLayoutLastMinWidth]) + ", " + dart.str(this[_textLayoutLastMaxWidth]) + ") not the same as max width constraint (" + dart.str(this.constraints.minWidth) + ", " + dart.str(this.constraints.maxWidth) + ").", "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1544, 12, "_textLayoutLastMaxWidth == constraints.maxWidth &&\n           _textLayoutLastMinWidth == constraints.minWidth");
       let word = this[_textPainter$].getWordBoundary(position);
       if (dart.notNull(position.offset) >= dart.notNull(word.end)) return new text_editing.TextSelection.fromPosition(position);
       if (dart.test(this.obscureText)) {
@@ -24412,7 +24412,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     [_layoutText$](opts) {
       let minWidth = opts && 'minWidth' in opts ? opts.minWidth : 0;
       let maxWidth = opts && 'maxWidth' in opts ? opts.maxWidth : 1 / 0;
-      if (!(maxWidth != null && minWidth != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1561, 12, "ert(maxWidth != null && minWidth != ");
+      if (!(maxWidth != null && minWidth != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1561, 12, "maxWidth != null && minWidth != null");
       if (this[_textLayoutLastMaxWidth] == maxWidth && this[_textLayoutLastMinWidth] == minWidth) return;
       let availableMaxWidth = math.max(core.double, 0.0, dart.notNull(maxWidth) - dart.notNull(this[_caretMargin]));
       let availableMinWidth = math.min(core.double, minWidth, availableMaxWidth);
@@ -24423,7 +24423,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       this[_textLayoutLastMaxWidth] = maxWidth;
     }
     get [_getCaretPrototype]() {
-      if (!(platform.defaultTargetPlatform != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1588, 12, "ert(defaultTargetPlatform != ");
+      if (!(platform.defaultTargetPlatform != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1588, 12, "defaultTargetPlatform != null");
       switch (platform.defaultTargetPlatform) {
         case C17 || CT.C17:
         {
@@ -24460,7 +24460,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     }
     [_paintCaret](canvas, effectiveOffset, textPosition) {
       let t30;
-      if (!(this[_textLayoutLastMaxWidth] == this.constraints.maxWidth && this[_textLayoutLastMinWidth] == this.constraints.minWidth)) dart.assertFailed("Last width (" + dart.str(this[_textLayoutLastMinWidth]) + ", " + dart.str(this[_textLayoutLastMaxWidth]) + ") not the same as max width constraint (" + dart.str(this.constraints.minWidth) + ", " + dart.str(this.constraints.maxWidth) + ").", "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1632, 12, "ert(_textLayoutLastMaxWidth == constraints.maxWidth &&\n           _textLayoutLastMinWidth == constraints.minW");
+      if (!(this[_textLayoutLastMaxWidth] == this.constraints.maxWidth && this[_textLayoutLastMinWidth] == this.constraints.minWidth)) dart.assertFailed("Last width (" + dart.str(this[_textLayoutLastMinWidth]) + ", " + dart.str(this[_textLayoutLastMaxWidth]) + ") not the same as max width constraint (" + dart.str(this.constraints.minWidth) + ", " + dart.str(this.constraints.maxWidth) + ").", "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1632, 12, "_textLayoutLastMaxWidth == constraints.maxWidth &&\n           _textLayoutLastMinWidth == constraints.minWidth");
       let paint = (t30 = new ui.Paint.new(), t30.color = dart.test(this[_floatingCursorOn]) ? this.backgroundCursorColor : this[_cursorColor], t30);
       let caretOffset = this[_textPainter$].getOffsetForCaret(textPosition, this[_caretPrototype])['+'](effectiveOffset);
       let caretRect = this[_caretPrototype].shift(caretOffset);
@@ -24496,9 +24496,9 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     }
     setFloatingCursor(state, boundedOffset, lastTextPosition, opts) {
       let resetLerpValue = opts && 'resetLerpValue' in opts ? opts.resetLerpValue : null;
-      if (!(state != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1692, 12, "ert(state != ");
-      if (!(boundedOffset != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1693, 12, "ert(boundedOffset != ");
-      if (!(lastTextPosition != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1694, 12, "ert(lastTextPosition != ");
+      if (!(state != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1692, 12, "state != null");
+      if (!(boundedOffset != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1693, 12, "boundedOffset != null");
+      if (!(lastTextPosition != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1694, 12, "lastTextPosition != null");
       if (dart.equals(state, text_input.FloatingCursorDragState.Start)) {
         this[_relativeOrigin] = C7 || CT.C7;
         this[_previousOffset] = null;
@@ -24517,8 +24517,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     }
     [_paintFloatingCaret](canvas, effectiveOffset) {
       let t30;
-      if (!(this[_textLayoutLastMaxWidth] == this.constraints.maxWidth && this[_textLayoutLastMinWidth] == this.constraints.minWidth)) dart.assertFailed("Last width (" + dart.str(this[_textLayoutLastMinWidth]) + ", " + dart.str(this[_textLayoutLastMaxWidth]) + ") not the same as max width constraint (" + dart.str(this.constraints.minWidth) + ", " + dart.str(this.constraints.maxWidth) + ").", "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1713, 12, "ert(_textLayoutLastMaxWidth == constraints.maxWidth &&\n           _textLayoutLastMinWidth == constraints.minW");
-      if (!dart.test(this[_floatingCursorOn])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1716, 12, "ert(_floatingCurs");
+      if (!(this[_textLayoutLastMaxWidth] == this.constraints.maxWidth && this[_textLayoutLastMinWidth] == this.constraints.minWidth)) dart.assertFailed("Last width (" + dart.str(this[_textLayoutLastMinWidth]) + ", " + dart.str(this[_textLayoutLastMaxWidth]) + ") not the same as max width constraint (" + dart.str(this.constraints.minWidth) + ", " + dart.str(this.constraints.maxWidth) + ").", "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1713, 12, "_textLayoutLastMaxWidth == constraints.maxWidth &&\n           _textLayoutLastMinWidth == constraints.minWidth");
+      if (!dart.test(this[_floatingCursorOn])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1716, 12, "_floatingCursorOn");
       let paint = (t30 = new ui.Paint.new(), t30.color = this[_cursorColor].withOpacity(0.75), t30);
       let sizeAdjustmentX = editable._kFloatingCaretSizeIncrease.dx;
       let sizeAdjustmentY = editable._kFloatingCaretSizeIncrease.dy;
@@ -24569,14 +24569,14 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     }
     [_paintSelection](canvas, effectiveOffset) {
       let t30;
-      if (!(this[_textLayoutLastMaxWidth] == this.constraints.maxWidth && this[_textLayoutLastMinWidth] == this.constraints.minWidth)) dart.assertFailed("Last width (" + dart.str(this[_textLayoutLastMinWidth]) + ", " + dart.str(this[_textLayoutLastMaxWidth]) + ") not the same as max width constraint (" + dart.str(this.constraints.minWidth) + ", " + dart.str(this.constraints.maxWidth) + ").", "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1802, 12, "ert(_textLayoutLastMaxWidth == constraints.maxWidth &&\n           _textLayoutLastMinWidth == constraints.minW");
-      if (!(this[_selectionRects] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1805, 12, "ert(_selectionRects != ");
+      if (!(this[_textLayoutLastMaxWidth] == this.constraints.maxWidth && this[_textLayoutLastMinWidth] == this.constraints.minWidth)) dart.assertFailed("Last width (" + dart.str(this[_textLayoutLastMinWidth]) + ", " + dart.str(this[_textLayoutLastMaxWidth]) + ") not the same as max width constraint (" + dart.str(this.constraints.minWidth) + ", " + dart.str(this.constraints.maxWidth) + ").", "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1802, 12, "_textLayoutLastMaxWidth == constraints.maxWidth &&\n           _textLayoutLastMinWidth == constraints.minWidth");
+      if (!(this[_selectionRects] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1805, 12, "_selectionRects != null");
       let paint = (t30 = new ui.Paint.new(), t30.color = this[_selectionColor], t30);
       for (let box of this[_selectionRects])
         canvas.drawRect(box.toRect().shift(effectiveOffset), paint);
     }
     [_paintContents$](context, offset) {
-      if (!(this[_textLayoutLastMaxWidth] == this.constraints.maxWidth && this[_textLayoutLastMinWidth] == this.constraints.minWidth)) dart.assertFailed("Last width (" + dart.str(this[_textLayoutLastMinWidth]) + ", " + dart.str(this[_textLayoutLastMaxWidth]) + ") not the same as max width constraint (" + dart.str(this.constraints.minWidth) + ", " + dart.str(this.constraints.maxWidth) + ").", "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1812, 12, "ert(_textLayoutLastMaxWidth == constraints.maxWidth &&\n           _textLayoutLastMinWidth == constraints.minW");
+      if (!(this[_textLayoutLastMaxWidth] == this.constraints.maxWidth && this[_textLayoutLastMinWidth] == this.constraints.minWidth)) dart.assertFailed("Last width (" + dart.str(this[_textLayoutLastMinWidth]) + ", " + dart.str(this[_textLayoutLastMaxWidth]) + ") not the same as max width constraint (" + dart.str(this.constraints.minWidth) + ", " + dart.str(this.constraints.maxWidth) + ").", "org-dartlang-app:///packages/flutter/src/rendering/editable.dart", 1812, 12, "_textLayoutLastMaxWidth == constraints.maxWidth &&\n           _textLayoutLastMinWidth == constraints.minWidth");
       let effectiveOffset = offset['+'](this[_paintOffset]);
       let showSelection = false;
       let showCaret = false;
@@ -25532,8 +25532,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_diameterRatio];
     }
     set diameterRatio(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 261, 12, "t(value != nu");
-      if (!(dart.notNull(value) > 0)) dart.assertFailed(list_wheel_viewport.RenderListWheelViewport.diameterRatioZeroMessage, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 263, 7, "  value >");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 261, 12, "value != null");
+      if (!(dart.notNull(value) > 0)) dart.assertFailed(list_wheel_viewport.RenderListWheelViewport.diameterRatioZeroMessage, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 263, 7, "value > 0");
       if (value == this[_diameterRatio]) return;
       this[_diameterRatio] = value;
       this.markNeedsPaint();
@@ -25543,9 +25543,9 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_perspective];
     }
     set perspective(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 290, 12, "t(value != nu");
-      if (!(dart.notNull(value) > 0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 291, 12, "t(value >");
-      if (!(dart.notNull(value) <= 0.01)) dart.assertFailed(list_wheel_viewport.RenderListWheelViewport.perspectiveTooHighMessage, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 293, 7, "  value <= 0.");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 290, 12, "value != null");
+      if (!(dart.notNull(value) > 0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 291, 12, "value > 0");
+      if (!(dart.notNull(value) <= 0.01)) dart.assertFailed(list_wheel_viewport.RenderListWheelViewport.perspectiveTooHighMessage, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 293, 7, "value <= 0.01");
       if (value == this[_perspective]) return;
       this[_perspective] = value;
       this.markNeedsPaint();
@@ -25555,7 +25555,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_offAxisFraction];
     }
     set offAxisFraction(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 331, 12, "t(value != nu");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 331, 12, "value != null");
       if (value == this[_offAxisFraction]) return;
       this[_offAxisFraction] = value;
       this.markNeedsPaint();
@@ -25564,7 +25564,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_useMagnifier];
     }
     set useMagnifier(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 344, 12, "t(value != nu");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 344, 12, "value != null");
       if (dart.equals(value, this[_useMagnifier])) return;
       this[_useMagnifier] = value;
       this.markNeedsPaint();
@@ -25573,8 +25573,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_magnification];
     }
     set magnification(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 363, 12, "t(value != nu");
-      if (!(dart.notNull(value) > 0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 364, 12, "t(value >");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 363, 12, "value != null");
+      if (!(dart.notNull(value) > 0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 364, 12, "value > 0");
       if (value == this[_magnification]) return;
       this[_magnification] = value;
       this.markNeedsPaint();
@@ -25583,8 +25583,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_itemExtent$];
     }
     set itemExtent(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 380, 12, "t(value != nu");
-      if (!(dart.notNull(value) > 0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 381, 12, "t(value >");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 380, 12, "value != null");
+      if (!(dart.notNull(value) > 0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 381, 12, "value > 0");
       if (value == this[_itemExtent$]) return;
       this[_itemExtent$] = value;
       this.markNeedsLayout();
@@ -25593,8 +25593,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_squeeze];
     }
     set squeeze(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 412, 12, "t(value != nu");
-      if (!(dart.notNull(value) > 0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 413, 12, "t(value >");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 412, 12, "value != null");
+      if (!(dart.notNull(value) > 0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 413, 12, "value > 0");
       if (value == this[_squeeze]) return;
       this[_squeeze] = value;
       this.markNeedsLayout();
@@ -25604,8 +25604,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_clipToSize];
     }
     set clipToSize(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 432, 12, "t(value != nu");
-      if (!(!dart.test(this.renderChildrenOutsideViewport) || !dart.test(this.clipToSize))) dart.assertFailed(list_wheel_viewport.RenderListWheelViewport.clipToSizeAndRenderChildrenOutsideViewportConflict, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 434, 7, "  !renderChildrenOutsideViewport || !clipToSi");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 432, 12, "value != null");
+      if (!(!dart.test(this.renderChildrenOutsideViewport) || !dart.test(this.clipToSize))) dart.assertFailed(list_wheel_viewport.RenderListWheelViewport.clipToSizeAndRenderChildrenOutsideViewportConflict, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 434, 7, "!renderChildrenOutsideViewport || !clipToSize");
       if (dart.equals(value, this[_clipToSize])) return;
       this[_clipToSize] = value;
       this.markNeedsPaint();
@@ -25615,8 +25615,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return this[_renderChildrenOutsideViewport];
     }
     set renderChildrenOutsideViewport(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 457, 12, "t(value != nu");
-      if (!(!dart.test(this.renderChildrenOutsideViewport) || !dart.test(this.clipToSize))) dart.assertFailed(list_wheel_viewport.RenderListWheelViewport.clipToSizeAndRenderChildrenOutsideViewportConflict, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 459, 7, "  !renderChildrenOutsideViewport || !clipToSi");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 457, 12, "value != null");
+      if (!(!dart.test(this.renderChildrenOutsideViewport) || !dart.test(this.clipToSize))) dart.assertFailed(list_wheel_viewport.RenderListWheelViewport.clipToSizeAndRenderChildrenOutsideViewportConflict, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 459, 7, "!renderChildrenOutsideViewport || !clipToSize");
       if (dart.equals(value, this[_renderChildrenOutsideViewport])) return;
       this[_renderChildrenOutsideViewport] = value;
       this.markNeedsLayout();
@@ -25643,21 +25643,21 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       return true;
     }
     get [_viewportExtent$]() {
-      if (!dart.test(this.hasSize)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 497, 12, "t(hasSi");
+      if (!dart.test(this.hasSize)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 497, 12, "hasSize");
       return this.size.height;
     }
     get [_minEstimatedScrollExtent]() {
-      if (!dart.test(this.hasSize)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 504, 12, "t(hasSi");
+      if (!dart.test(this.hasSize)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 504, 12, "hasSize");
       if (this.childManager.childCount == null) return -1 / 0;
       return 0.0;
     }
     get [_maxEstimatedScrollExtent]() {
-      if (!dart.test(this.hasSize)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 513, 12, "t(hasSi");
+      if (!dart.test(this.hasSize)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 513, 12, "hasSize");
       if (this.childManager.childCount == null) return 1 / 0;
       return math.max(core.double, 0.0, (dart.notNull(this.childManager.childCount) - 1) * dart.notNull(this[_itemExtent$]));
     }
     get [_topScrollMarginExtent]() {
-      if (!dart.test(this.hasSize)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 526, 12, "t(hasSi");
+      if (!dart.test(this.hasSize)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 526, 12, "hasSize");
       return -dart.notNull(this.size.height) / 2.0 + dart.notNull(this[_itemExtent$]) / 2.0;
     }
     [_getUntransformedPaintingCoordinateY](layoutCoordinateY) {
@@ -25697,9 +25697,9 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       this.size = this.constraints.biggest;
     }
     indexOf(child) {
-      if (!(child != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 600, 12, "t(child != nu");
+      if (!(child != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 600, 12, "child != null");
       let childParentData = list_wheel_viewport.ListWheelParentData._check(child.parentData);
-      if (!(childParentData.index != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 602, 12, "t(childParentData.index != nu");
+      if (!(childParentData.index != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 602, 12, "childParentData.index != null");
       return childParentData.index;
     }
     scrollOffsetToIndex(scrollOffset) {
@@ -25711,13 +25711,13 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     [_createChild](index, opts) {
       let after = opts && 'after' in opts ? opts.after : null;
       this.invokeLayoutCallback(box.BoxConstraints, dart.fn(constraints => {
-        if (!dart.equals(constraints, this.constraints)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 614, 14, "t(constraints == this.constrain");
+        if (!dart.equals(constraints, this.constraints)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 614, 14, "constraints == this.constraints");
         this.childManager.createChild(index, {after: after});
       }, BoxConstraintsToNull()));
     }
     [_destroyChild](child) {
       this.invokeLayoutCallback(box.BoxConstraints, dart.fn(constraints => {
-        if (!dart.equals(constraints, this.constraints)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 621, 14, "t(constraints == this.constrain");
+        if (!dart.equals(constraints, this.constraints)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/rendering/list_wheel_viewport.dart", 621, 14, "constraints == this.constraints");
         this.childManager.removeChild(child);
       }, BoxConstraintsToNull()));
     }

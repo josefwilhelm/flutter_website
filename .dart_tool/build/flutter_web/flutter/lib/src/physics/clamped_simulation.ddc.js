@@ -217,12 +217,12 @@ define(['dart_sdk'], function(dart_sdk) {
   dart.setLibraryUri(spring_simulation.ScrollSpringSimulation, "package:flutter/src/physics/spring_simulation.dart");
   spring_simulation._SpringSolution = class _SpringSolution extends core.Object {
     static new(spring, initialPosition, initialVelocity) {
-      if (!(spring != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/spring_simulation.dart", 154, 12, "rt(spring != n");
-      if (!(spring.mass != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/spring_simulation.dart", 155, 12, "rt(spring.mass != n");
-      if (!(spring.stiffness != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/spring_simulation.dart", 156, 12, "rt(spring.stiffness != n");
-      if (!(spring.damping != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/spring_simulation.dart", 157, 12, "rt(spring.damping != n");
-      if (!(initialPosition != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/spring_simulation.dart", 158, 12, "rt(initialPosition != n");
-      if (!(initialVelocity != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/spring_simulation.dart", 159, 12, "rt(initialVelocity != n");
+      if (!(spring != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/spring_simulation.dart", 154, 12, "spring != null");
+      if (!(spring.mass != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/spring_simulation.dart", 155, 12, "spring.mass != null");
+      if (!(spring.stiffness != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/spring_simulation.dart", 156, 12, "spring.stiffness != null");
+      if (!(spring.damping != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/spring_simulation.dart", 157, 12, "spring.damping != null");
+      if (!(initialPosition != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/spring_simulation.dart", 158, 12, "initialPosition != null");
+      if (!(initialVelocity != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/spring_simulation.dart", 159, 12, "initialVelocity != null");
       let cmk = dart.notNull(spring.damping) * dart.notNull(spring.damping) - 4 * dart.notNull(spring.mass) * dart.notNull(spring.stiffness);
       if (cmk === 0.0) return spring_simulation._CriticalSolution.new(spring, initialPosition, initialVelocity);
       if (cmk > 0.0) return spring_simulation._OverdampedSolution.new(spring, initialPosition, initialVelocity);
@@ -535,11 +535,11 @@ define(['dart_sdk'], function(dart_sdk) {
     }
   };
   (gravity_simulation.GravitySimulation.new = function(acceleration, distance, endDistance, velocity) {
-    if (!(acceleration != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/gravity_simulation.dart", 59, 14, "(acceleration != nul");
-    if (!(distance != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/gravity_simulation.dart", 60, 14, "(distance != nul");
-    if (!(velocity != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/gravity_simulation.dart", 61, 14, "(velocity != nul");
-    if (!(endDistance != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/gravity_simulation.dart", 62, 14, "(endDistance != nul");
-    if (!(dart.notNull(endDistance) >= 0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/gravity_simulation.dart", 63, 14, "(endDistance >= ");
+    if (!(acceleration != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/gravity_simulation.dart", 59, 14, "acceleration != null");
+    if (!(distance != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/gravity_simulation.dart", 60, 14, "distance != null");
+    if (!(velocity != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/gravity_simulation.dart", 61, 14, "velocity != null");
+    if (!(endDistance != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/gravity_simulation.dart", 62, 14, "endDistance != null");
+    if (!(dart.notNull(endDistance) >= 0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/gravity_simulation.dart", 63, 14, "endDistance >= 0");
     this[_a] = acceleration;
     this[_x$] = distance;
     this[_v$] = velocity;

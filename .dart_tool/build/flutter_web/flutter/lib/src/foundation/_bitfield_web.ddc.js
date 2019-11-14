@@ -1715,12 +1715,12 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
                   start = index;
                   mode = diagnostics$._WordWrapParseMode.inWord;
                 } else {
-                  if (!(dart.notNull(lastWordStart) > dart.notNull(lastWordEnd))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 934, 22, "yield line;\n            add");
+                  if (!(dart.notNull(lastWordStart) > dart.notNull(lastWordEnd))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 934, 22, "lastWordStart > lastWordEnd");
                   start = lastWordStart;
                   mode = diagnostics$._WordWrapParseMode.atBreak;
                 }
                 startForLengthCalculations = dart.notNull(start) - dart.notNull(otherLineOffset);
-                if (!addPrefix) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 939, 20, "current p");
+                if (!addPrefix) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 939, 20, "addPrefix");
                 lastWordEnd = null;
               } else {
                 lastWordEnd = index;
@@ -1782,7 +1782,7 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
       if (dart.test(this[_currentLine].isNotEmpty)) {
         this[_finalizeLine](true);
       }
-      if (!dart.test(this[_currentLine].isEmpty)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1015, 13, "ne(\n    String line,");
+      if (!dart.test(this[_currentLine].isEmpty)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1015, 13, "_currentLine.isEmpty");
       this[_buffer$].write(lines);
       if (!lines[$endsWith]("\n")) this[_buffer$].write("\n");
       this[_numLines] = dart.notNull(this[_numLines]) + 1;
@@ -1791,12 +1791,12 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
     writeStretched(text, targetLineLength) {
       this.write(text);
       let currentLineLength = dart.notNull(this[_currentLine].length) + this[_getCurrentPrefix](this[_buffer$].isEmpty).length;
-      if (!(dart.notNull(this[_currentLine].length) > 0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1028, 13, " }\n\n  /// Write lines a");
+      if (!(dart.notNull(this[_currentLine].length) > 0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1028, 13, "_currentLine.length > 0");
       let targetLength = dart.notNull(targetLineLength) - currentLineLength;
       if (targetLength > 0) {
-        if (!text[$isNotEmpty]) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1031, 14, "oid writeRawLin");
+        if (!text[$isNotEmpty]) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1031, 14, "text.isNotEmpty");
         let lastChar = text[$_get](text.length - 1);
-        if (!(lastChar !== "\n")) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1033, 14, "rentLine.isNotEm");
+        if (!(lastChar !== "\n")) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1033, 14, "lastChar != '\\n'");
         this[_currentLine].write(lastChar[$times](targetLength));
       }
       this[_wrappableRanges][$clear]();
@@ -2017,7 +2017,7 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
         builder.prefixOtherLines = prefixOtherLines;
         for (let i = 0; i < dart.notNull(children[$length]); i = i + 1) {
           let child = children[$_get](i);
-          if (!(child != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1331, 16, "Children';\n  ");
+          if (!(child != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1331, 16, "child != null");
           let childConfig = this[_childTextConfiguration](child, config);
           if (i === dart.notNull(children[$length]) - 1) {
             let lastChildPrefixLineOne = prefixChildrenRaw + dart.str(childConfig.prefixLastChildLineOne);
@@ -2059,7 +2059,7 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
     let wrapWidth = opts && 'wrapWidth' in opts ? opts.wrapWidth : 100;
     let wrapWidthProperties = opts && 'wrapWidthProperties' in opts ? opts.wrapWidthProperties : 65;
     let maxDescendentsTruncatableNode = opts && 'maxDescendentsTruncatableNode' in opts ? opts.maxDescendentsTruncatableNode : -1;
-    if (!(minLevel != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1082, 15, "dth] and the cur");
+    if (!(minLevel != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1082, 15, "minLevel != null");
     this[_minLevel] = minLevel;
     this[_wrapWidth] = wrapWidth;
     this[_wrapWidthProperties] = wrapWidthProperties;
@@ -2122,8 +2122,8 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
       let style = opts && 'style' in opts ? opts.style : C23 || CT.C23;
       let level = opts && 'level' in opts ? opts.level : C8 || CT.C8;
       let allowWrap = opts && 'allowWrap' in opts ? opts.allowWrap : true;
-      if (!(style != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1433, 12, "|| !name.ends");
-      if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1434, 12, "      'Names ");
+      if (!(style != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1433, 12, "style != null");
+      if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1434, 12, "level != null");
       return new (DiagnosticsPropertyOfvoid()).new("", null, {description: message, style: style, showName: false, allowWrap: allowWrap, level: level});
     }
     isFiltered(minLevel) {
@@ -2194,15 +2194,15 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
       if (false) {
         return super[$toString]();
       }
-      if (!(this.style != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1629, 12, "\n\n  /// Retur");
-      if (!(minLevel != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1630, 12, "presentation of ");
+      if (!(this.style != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1629, 12, "style != null");
+      if (!(minLevel != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1630, 12, "minLevel != null");
       if (dart.test(diagnostics$._isSingleLine(this.style))) return this.toStringDeep({parentConfiguration: parentConfiguration, minLevel: minLevel});
       let description = this.toDescription({parentConfiguration: parentConfiguration});
       if (this.name == null || this.name[$isEmpty] || !dart.test(this.showName)) return description;
       return description[$contains]("\n") ? dart.str(this.name) + dart.str(this[_separator]) + "\n" + dart.str(description) : dart.str(this.name) + dart.str(this[_separator]) + " " + dart.str(description);
     }
     get textTreeConfiguration() {
-      if (!(this.style != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1647, 12, "super.toStrin");
+      if (!(this.style != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1647, 12, "style != null");
       switch (this.style) {
         case C15 || CT.C15:
         {
@@ -2277,9 +2277,9 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
     this[showName$] = showName;
     this[showSeparator$] = showSeparator;
     this[linePrefix$] = linePrefix;
-    if (!(showName != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1406, 15, "quality\n/// mult");
-    if (!(showSeparator != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1407, 15, "p via [toStringDeep].");
-    if (!(name == null || !name[$endsWith](":"))) dart.assertFailed("Names of diagnostic nodes must not end with colons.\n" + "name:\n" + "  \"" + dart.str(name) + "\"", "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1412, 10, "d format output.\n///\n/// In release");
+    if (!(showName != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1406, 15, "showName != null");
+    if (!(showSeparator != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1407, 15, "showSeparator != null");
+    if (!(name == null || !name[$endsWith](":"))) dart.assertFailed("Names of diagnostic nodes must not end with colons.\n" + "name:\n" + "  \"" + dart.str(name) + "\"", "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1412, 10, "name == null || !name.endsWith(':')");
     ;
   }).prototype = diagnostics$.DiagnosticsNode.prototype;
   dart.addTypeTests(diagnostics$.DiagnosticsNode);
@@ -2421,7 +2421,7 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
         return this[_addTooltip](result);
       }
       [_addTooltip](text) {
-        if (!(text != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2724, 12, "tion parentC");
+        if (!(text != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2724, 12, "text != null");
         return this.tooltip == null ? text : dart.str(text) + " (" + dart.str(this.tooltip) + ")";
       }
       get propertyType() {
@@ -2438,7 +2438,7 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
       [_maybeCacheValue]() {
         if (dart.test(this[_valueComputed])) return;
         this[_valueComputed] = true;
-        if (!(this[_computeValue] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2794, 12, "llback],\n  /// [value");
+        if (!(this[_computeValue] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2794, 12, "_computeValue != null");
         try {
           this[_value] = this[_computeValue]();
         } catch (e) {
@@ -2503,10 +2503,10 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
       this[expandableValue$] = expandableValue;
       this[allowWrap$] = allowWrap;
       this[allowNameWrap$] = allowNameWrap;
-      if (!(showName != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2562, 15, "perty causes it ");
-      if (!(showSeparator != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2563, 15, "r higher\n  /// level.");
-      if (!(style != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2564, 15, "the property ");
-      if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2565, 15, " [missingIfNu");
+      if (!(showName != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2562, 15, "showName != null");
+      if (!(showSeparator != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2563, 15, "showSeparator != null");
+      if (!(style != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2564, 15, "style != null");
+      if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2565, 15, "level != null");
       this[_description] = description;
       this[_valueComputed] = true;
       this[_value] = value;
@@ -2539,12 +2539,12 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
       this[expandableValue$] = expandableValue;
       this[allowWrap$] = allowWrap;
       this[allowNameWrap$] = allowNameWrap;
-      if (!(showName != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2608, 15, "s it to have a l");
-      if (!(showSeparator != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2609, 15, "/// level. For exampl");
-      if (!(dart.equals(defaultValue, diagnostics$.kNoDefaultValue) || T.is(defaultValue))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2610, 15, "mputeValue` throws an exception, [level]\n  /// will ");
-      if (!(missingIfNull != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2611, 15, "agnosticLevel.error].");
-      if (!(style != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2612, 15, "perty.lazy(\n ");
-      if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2613, 15, "   ComputePro");
+      if (!(showName != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2608, 15, "showName != null");
+      if (!(showSeparator != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2609, 15, "showSeparator != null");
+      if (!(dart.equals(defaultValue, diagnostics$.kNoDefaultValue) || T.is(defaultValue))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2610, 15, "defaultValue == kNoDefaultValue || defaultValue is T");
+      if (!(missingIfNull != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2611, 15, "missingIfNull != null");
+      if (!(style != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2612, 15, "style != null");
+      if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2613, 15, "level != null");
       this[_description] = description;
       this[_valueComputed] = false;
       this[_value] = null;
@@ -2597,10 +2597,10 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
   (diagnostics$.MessageProperty.new = function(name, message, opts) {
     let style = opts && 'style' in opts ? opts.style : C23 || CT.C23;
     let level = opts && 'level' in opts ? opts.level : C8 || CT.C8;
-    if (!(name != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1759, 15, "gnosticsNode");
-    if (!(message != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1760, 15, "serves the same");
-    if (!(style != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1761, 15, "s\n///    with");
-    if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1762, 15, "rty name.\n///");
+    if (!(name != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1759, 15, "name != null");
+    if (!(message != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1760, 15, "message != null");
+    if (!(style != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1761, 15, "style != null");
+    if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1762, 15, "level != null");
     diagnostics$.MessageProperty.__proto__.new.call(this, name, null, {description: message, style: style, level: level});
     ;
   }).prototype = diagnostics$.MessageProperty.prototype;
@@ -2643,10 +2643,10 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
     let style = opts && 'style' in opts ? opts.style : C23 || CT.C23;
     let level = opts && 'level' in opts ? opts.level : C8 || CT.C8;
     this[quoted$] = quoted;
-    if (!(showName != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1787, 15, "///\n/// See also");
-    if (!(quoted != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1788, 15, "sageProperty],");
-    if (!(style != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1789, 15, "r fit for sho");
-    if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1790, 15, "/    instead ");
+    if (!(showName != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1787, 15, "showName != null");
+    if (!(quoted != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1788, 15, "quoted != null");
+    if (!(style != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1789, 15, "style != null");
+    if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1790, 15, "level != null");
     diagnostics$.StringProperty.__proto__.new.call(this, name, value, {description: description, defaultValue: defaultValue, tooltip: tooltip, showName: showName, ifEmpty: ifEmpty, style: style, level: level});
     ;
   }).prototype = diagnostics$.StringProperty.prototype;
@@ -2726,9 +2726,9 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
     let showName = opts && 'showName' in opts ? opts.showName : true;
     let style = opts && 'style' in opts ? opts.style : C23 || CT.C23;
     let level = opts && 'level' in opts ? opts.level : C8 || CT.C8;
-    if (!(showName != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1924, 15, "numberToString()");
-    if (!(style != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1925, 15, "rty describin");
-    if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1926, 15, "ue] with an o");
+    if (!(showName != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1924, 15, "showName != null");
+    if (!(style != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1925, 15, "style != null");
+    if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1926, 15, "level != null");
     diagnostics$.DoubleProperty.__proto__.new.call(this, name, value, {ifNull: ifNull, unit: unit, tooltip: tooltip, defaultValue: defaultValue, showName: showName, style: style, level: level});
     ;
   }).prototype = diagnostics$.DoubleProperty.prototype;
@@ -2739,8 +2739,8 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
     let tooltip = opts && 'tooltip' in opts ? opts.tooltip : null;
     let defaultValue = opts && 'defaultValue' in opts ? opts.defaultValue : C33 || CT.C33;
     let level = opts && 'level' in opts ? opts.level : C8 || CT.C8;
-    if (!(showName != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1954, 15, "   name,\n    val");
-    if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1955, 15, "fNull,\n    un");
+    if (!(showName != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1954, 15, "showName != null");
+    if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1955, 15, "level != null");
     diagnostics$.DoubleProperty.__proto__.lazy.call(this, name, computeValue, {showName: showName, ifNull: ifNull, unit: unit, tooltip: tooltip, defaultValue: defaultValue, level: level});
     ;
   }).prototype = diagnostics$.DoubleProperty.prototype;
@@ -2762,9 +2762,9 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
     let defaultValue = opts && 'defaultValue' in opts ? opts.defaultValue : C33 || CT.C33;
     let style = opts && 'style' in opts ? opts.style : C23 || CT.C23;
     let level = opts && 'level' in opts ? opts.level : C8 || CT.C8;
-    if (!(showName != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1987, 15, " defaultValue,\n ");
-    if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1988, 15, "  );\n\n  @over");
-    if (!(style != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1989, 15, "berToString()");
+    if (!(showName != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1987, 15, "showName != null");
+    if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1988, 15, "level != null");
+    if (!(style != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 1989, 15, "style != null");
     diagnostics$.IntProperty.__proto__.new.call(this, name, value, {ifNull: ifNull, showName: showName, unit: unit, defaultValue: defaultValue, level: level});
     ;
   }).prototype = diagnostics$.IntProperty.prototype;
@@ -2791,8 +2791,8 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
     let tooltip = opts && 'tooltip' in opts ? opts.tooltip : null;
     let unit = opts && 'unit' in opts ? opts.unit : null;
     let level = opts && 'level' in opts ? opts.level : C8 || CT.C8;
-    if (!(showName != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2023, 15, " [double] to bet");
-    if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2024, 15, "formats it as");
+    if (!(showName != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2023, 15, "showName != null");
+    if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2024, 15, "level != null");
     diagnostics$.PercentProperty.__proto__.new.call(this, name, fraction, {ifNull: ifNull, showName: showName, tooltip: tooltip, unit: unit, level: level});
     ;
   }).prototype = diagnostics$.PercentProperty.prototype;
@@ -2853,9 +2853,9 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
     let level = opts && 'level' in opts ? opts.level : C8 || CT.C8;
     this[ifTrue$] = ifTrue;
     this[ifFalse$] = ifFalse;
-    if (!(showName != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2104, 15, "e also:\n///\n/// ");
-    if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2105, 15, "perty], which");
-    if (!(ifTrue != null || ifFalse != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2106, 15, " behavior describing whether\n/// ");
+    if (!(showName != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2104, 15, "showName != null");
+    if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2105, 15, "level != null");
+    if (!(ifTrue != null || ifFalse != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2106, 15, "ifTrue != null || ifFalse != null");
     diagnostics$.FlagProperty.__proto__.new.call(this, name, value, {showName: showName, defaultValue: defaultValue, level: level});
     ;
   }).prototype = diagnostics$.FlagProperty.prototype;
@@ -2914,10 +2914,10 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
       let showName = opts && 'showName' in opts ? opts.showName : true;
       let showSeparator = opts && 'showSeparator' in opts ? opts.showSeparator : true;
       let level = opts && 'level' in opts ? opts.level : C8 || CT.C8;
-      if (!(style != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2202, 15, "/// elements ");
-      if (!(showName != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2203, 15, "[ifEmpty] equals");
-      if (!(showSeparator != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2204, 15, "tes that an\n  /// emp");
-      if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2205, 15, "e] is not int");
+      if (!(style != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2202, 15, "style != null");
+      if (!(showName != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2203, 15, "showName != null");
+      if (!(showSeparator != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2204, 15, "showSeparator != null");
+      if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2205, 15, "level != null");
       IterableProperty.__proto__.new.call(this, name, value, {defaultValue: defaultValue, ifNull: ifNull, ifEmpty: ifEmpty, style: style, showName: showName, showSeparator: showSeparator, level: level});
       ;
     }).prototype = IterableProperty.prototype;
@@ -2940,7 +2940,7 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
     (EnumProperty.new = function(name, value, opts) {
       let defaultValue = opts && 'defaultValue' in opts ? opts.defaultValue : C33 || CT.C33;
       let level = opts && 'level' in opts ? opts.level : C8 || CT.C8;
-      if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2285, 15, ")).toList();\n");
+      if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2285, 15, "level != null");
       EnumProperty.__proto__.new.call(this, name, value, {defaultValue: defaultValue, level: level});
       ;
     }).prototype = EnumProperty.prototype;
@@ -2996,16 +2996,16 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
       let showName = opts && 'showName' in opts ? opts.showName : false;
       let level = opts && 'level' in opts ? opts.level : C8 || CT.C8;
       this[ifPresent$] = ifPresent;
-      if (!(ifPresent != null || ifNull != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2337, 15, "vides similar functionality describ");
-      if (!(showName != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2338, 15, "  a [value] is t");
-      if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2339, 15, "ss ObjectFlag");
+      if (!(ifPresent != null || ifNull != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2337, 15, "ifPresent != null || ifNull != null");
+      if (!(showName != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2338, 15, "showName != null");
+      if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2339, 15, "level != null");
       ObjectFlagProperty.__proto__.new.call(this, name, value, {showName: showName, ifNull: ifNull, level: level});
       ;
     }).prototype = ObjectFlagProperty.prototype;
     (ObjectFlagProperty.has = function(name, value, opts) {
       let level = opts && 'level' in opts ? opts.level : C8 || CT.C8;
-      if (!(name != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2358, 15, " this.ifPres");
-      if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2359, 15, "fNull,\n    bo");
+      if (!(name != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2358, 15, "name != null");
+      if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2359, 15, "level != null");
       this[ifPresent$] = "has " + dart.str(name);
       ObjectFlagProperty.__proto__.new.call(this, name, value, {showName: false, level: level});
       ;
@@ -3032,7 +3032,7 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
     class FlagsSummary extends diagnostics$.DiagnosticsProperty$(core.Map$(core.String, T)) {
       valueToString(opts) {
         let parentConfiguration = opts && 'parentConfiguration' in opts ? opts.parentConfiguration : null;
-        if (!(this.value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2470, 12, "l).\n  ///\n  /");
+        if (!(this.value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2470, 12, "value != null");
         if (!dart.test(this[_hasNonNullEntry]()) && this.ifEmpty != null) return this.ifEmpty;
         let formattedValues = this[_formattedValues]();
         if (parentConfiguration != null && !dart.test(parentConfiguration.lineBreakProperties)) {
@@ -3067,10 +3067,10 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
       let showName = opts && 'showName' in opts ? opts.showName : true;
       let showSeparator = opts && 'showSeparator' in opts ? opts.showSeparator : true;
       let level = opts && 'level' in opts ? opts.level : C8 || CT.C8;
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2455, 15, " accepts\n/// ");
-      if (!(showName != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2456, 15, " and is preferre");
-      if (!(showSeparator != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2457, 15, "y one entry.\n///  * [");
-      if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2458, 15, ", which provi");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2455, 15, "value != null");
+      if (!(showName != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2456, 15, "showName != null");
+      if (!(showSeparator != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2457, 15, "showSeparator != null");
+      if (!(level != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2458, 15, "level != null");
       FlagsSummary.__proto__.new.call(this, name, value, {ifEmpty: ifEmpty, showName: showName, showSeparator: showSeparator, level: level});
       ;
     }).prototype = FlagsSummary.prototype;
@@ -3134,7 +3134,7 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
       let style = opts && 'style' in opts ? opts.style : null;
       this[_cachedBuilder] = null;
       this[value$] = value;
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2881, 15, "if (object is");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2881, 15, "value != null");
       DiagnosticableNode.__proto__.new.call(this, {name: name, style: style});
       ;
     }).prototype = DiagnosticableNode.prototype;
@@ -3174,7 +3174,7 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
         if (!dart.test(dart.fn(() => {
           fullString = this.toDiagnosticsNode({style: diagnostics$.DiagnosticsTreeStyle.singleLine}).toString({minLevel: minLevel});
           return true;
-        }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 3094, 12, "    class already describes the children of a node properly or a node has\n///    no children.\n///  * [DiagnosticsProperty], which should b");
+        }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 3094, 12, "() {\n      fullString = toDiagnosticsNode(style: DiagnosticsTreeStyle.singleLine).toString(minLevel: minLevel);\n      return true;\n    }()");
         t3 = fullString;
         return t3 == null ? this.toStringShort() : t3;
       }
@@ -3543,7 +3543,7 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
   diagnostics$.describeEnum = function describeEnum(enumEntry) {
     let description = dart.toString(enumEntry);
     let indexOfDot = description[$indexOf](".");
-    if (!(indexOfDot !== -1 && indexOfDot < description.length - 1)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2989, 10, "e}#${shortHash(object)}';\n\n// This method exists as a w");
+    if (!(indexOfDot !== -1 && indexOfDot < description.length - 1)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/diagnostics.dart", 2989, 10, "indexOfDot != -1 && indexOfDot < description.length - 1");
     return description[$substring](indexOfDot + 1);
   };
   dart.defineLazy(diagnostics$, {
@@ -5082,27 +5082,27 @@ define(['dart_sdk', 'packages/typed_data/typed_buffers'], function(dart_sdk, pac
           dart.throw(new assertions.FlutterError.fromParts(JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("A " + dart.str(this[$runtimeType]) + " was used after being disposed."), new assertions.ErrorDescription.new("Once you have called dispose() on a " + dart.str(this[$runtimeType]) + ", it can no longer be used.")])));
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/change_notifier.dart", 103, 12, "(() {\n      if (_listeners == null) {\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('A $runtimeType was used after being disposed.'),\n          ErrorDescription('Once you have called dispose() on a $runtimeType, it can no longer be used.')\n        ]);\n      }\n      return true;\n    }(");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/change_notifier.dart", 103, 12, "() {\n      if (_listeners == null) {\n        throw FlutterError.fromParts(<DiagnosticsNode>[\n          ErrorSummary('A $runtimeType was used after being disposed.'),\n          ErrorDescription('Once you have called dispose() on a $runtimeType, it can no longer be used.')\n        ]);\n      }\n      return true;\n    }()");
       return true;
     }
     get hasListeners() {
-      if (!dart.test(this[_debugAssertNotDisposed]())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/change_notifier.dart", 132, 12, "(_debugAssertNotDisposed(");
+      if (!dart.test(this[_debugAssertNotDisposed]())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/change_notifier.dart", 132, 12, "_debugAssertNotDisposed()");
       return this[_listeners].isNotEmpty;
     }
     addListener(listener) {
-      if (!dart.test(this[_debugAssertNotDisposed]())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/change_notifier.dart", 141, 12, "(_debugAssertNotDisposed(");
+      if (!dart.test(this[_debugAssertNotDisposed]())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/change_notifier.dart", 141, 12, "_debugAssertNotDisposed()");
       this[_listeners].add(listener);
     }
     removeListener(listener) {
-      if (!dart.test(this[_debugAssertNotDisposed]())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/change_notifier.dart", 166, 12, "(_debugAssertNotDisposed(");
+      if (!dart.test(this[_debugAssertNotDisposed]())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/change_notifier.dart", 166, 12, "_debugAssertNotDisposed()");
       this[_listeners].remove(listener);
     }
     dispose() {
-      if (!dart.test(this[_debugAssertNotDisposed]())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/change_notifier.dart", 178, 12, "(_debugAssertNotDisposed(");
+      if (!dart.test(this[_debugAssertNotDisposed]())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/change_notifier.dart", 178, 12, "_debugAssertNotDisposed()");
       this[_listeners] = null;
     }
     notifyListeners() {
-      if (!dart.test(this[_debugAssertNotDisposed]())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/change_notifier.dart", 200, 12, "(_debugAssertNotDisposed(");
+      if (!dart.test(this[_debugAssertNotDisposed]())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/foundation/change_notifier.dart", 200, 12, "_debugAssertNotDisposed()");
       if (this[_listeners] != null) {
         let localListeners = ListOfVoidTovoid().from(this[_listeners]);
         for (let listener of localListeners) {

@@ -7033,7 +7033,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
             print.debugPrint(prefix + dart.str(this) + " calling " + dart.str(name) + " callback." + (dart.equals((t9 = report, t9 == null ? null : t9[$isNotEmpty]), true) ? " " + dart.str(report) : ""));
           }
           return true;
-        }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/recognizer.dart", 172, 14, "() {\n        if (debugPrintRecognizerCallbacksTrace) {\n          final String report = debugReport != null ? debugReport() : null;\n          // The 19 in the line below is the width of the prefix used by\n          // _debugLogDiagnostic in arena.dart.\n          final String prefix = debugPrintGestureArenaDiagnostics ? ' ' * 19 + '❙ ' : '';\n          debugPrint('$prefix$this calling $name callback.${ report?.isNotEmpty == true ? \" $report\" : \"\" }');\n        }\n        return true;\n      }");
+        }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/recognizer.dart", 172, 14, "() {\n        if (debugPrintRecognizerCallbacksTrace) {\n          final String report = debugReport != null ? debugReport() : null;\n          // The 19 in the line below is the width of the prefix used by\n          // _debugLogDiagnostic in arena.dart.\n          final String prefix = debugPrintGestureArenaDiagnostics ? ' ' * 19 + '❙ ' : '';\n          debugPrint('$prefix$this calling $name callback.${ report?.isNotEmpty == true ? \" $report\" : \"\" }');\n        }\n        return true;\n      }()");
         result = callback();
       } catch (e) {
         let exception = dart.getThrown(e);
@@ -7102,17 +7102,17 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       for (let pointer of this[_trackedPointers])
         binding$0.GestureBinding.instance.pointerRouter.removeRoute(pointer, dart.bind(this, 'handleEvent'));
       this[_trackedPointers].clear();
-      if (!dart.test(this[_entries][$isEmpty])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/recognizer.dart", 276, 12, "t(_entries.isEmp");
+      if (!dart.test(this[_entries][$isEmpty])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/recognizer.dart", 276, 12, "_entries.isEmpty");
       super.dispose();
     }
     get team() {
       return this[_team];
     }
     set team(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/recognizer.dart", 294, 12, "t(value != nu");
-      if (!dart.test(this[_entries][$isEmpty])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/recognizer.dart", 295, 12, "t(_entries.isEmp");
-      if (!dart.test(this[_trackedPointers][$isEmpty])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/recognizer.dart", 296, 12, "t(_trackedPointers.isEmp");
-      if (!(this[_team] == null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/recognizer.dart", 297, 12, "t(_team == nu");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/recognizer.dart", 294, 12, "value != null");
+      if (!dart.test(this[_entries][$isEmpty])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/recognizer.dart", 295, 12, "_entries.isEmpty");
+      if (!dart.test(this[_trackedPointers][$isEmpty])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/recognizer.dart", 296, 12, "_trackedPointers.isEmpty");
+      if (!(this[_team] == null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/recognizer.dart", 297, 12, "_team == null");
       this[_team] = value;
     }
     [_addPointerToArena](pointer) {
@@ -7123,7 +7123,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       if (transform === void 0) transform = null;
       binding$0.GestureBinding.instance.pointerRouter.addRoute(pointer, dart.bind(this, 'handleEvent'), transform);
       this[_trackedPointers].add(pointer);
-      if (!!dart.test(this[_entries][$containsValue](pointer))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/recognizer.dart", 320, 12, "t(!_entries.containsValue(pointe");
+      if (!!dart.test(this[_entries][$containsValue](pointer))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/recognizer.dart", 320, 12, "!_entries.containsValue(pointer)");
       this[_entries][$_set](pointer, this[_addPointerToArena](pointer));
     }
     stopTrackingPointer(pointer) {
@@ -7954,7 +7954,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       }
     }
     handleEvent(event) {
-      if (!!dart.equals(this.state, recognizer.GestureRecognizerState.ready)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/recognizer.dart", 452, 12, "t(state != GestureRecognizerState.rea");
+      if (!!dart.equals(this.state, recognizer.GestureRecognizerState.ready)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/recognizer.dart", 452, 12, "state != GestureRecognizerState.ready");
       if (dart.equals(this.state, recognizer.GestureRecognizerState.possible) && event.pointer == this.primaryPointer) {
         let isPreAcceptSlopPastTolerance = !dart.test(this[_gestureAccepted]) && this.preAcceptSlopTolerance != null && dart.notNull(this[_getGlobalDistance](event)) > dart.notNull(this.preAcceptSlopTolerance);
         let isPostAcceptSlopPastTolerance = dart.test(this[_gestureAccepted]) && this.postAcceptSlopTolerance != null && dart.notNull(this[_getGlobalDistance](event)) > dart.notNull(this.postAcceptSlopTolerance);
@@ -7968,7 +7968,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       this.stopTrackingIfPointerNoLongerDown(event);
     }
     didExceedDeadline() {
-      if (!(this.deadline == null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/recognizer.dart", 483, 12, "t(deadline == nu");
+      if (!(this.deadline == null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/recognizer.dart", 483, 12, "deadline == null");
     }
     didExceedDeadlineWithEvent(event) {
       this.didExceedDeadline();
@@ -7983,7 +7983,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       }
     }
     didStopTrackingLastPointer(pointer) {
-      if (!!dart.equals(this.state, recognizer.GestureRecognizerState.ready)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/recognizer.dart", 511, 12, "t(state != GestureRecognizerState.rea");
+      if (!!dart.equals(this.state, recognizer.GestureRecognizerState.ready)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/recognizer.dart", 511, 12, "state != GestureRecognizerState.ready");
       this[_stopTimer]();
       this.state = recognizer.GestureRecognizerState.ready;
     }
@@ -8020,8 +8020,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     this[deadline$] = deadline;
     this[preAcceptSlopTolerance$] = preAcceptSlopTolerance;
     this[postAcceptSlopTolerance$] = postAcceptSlopTolerance;
-    if (!(preAcceptSlopTolerance == null || dart.notNull(preAcceptSlopTolerance) >= 0)) dart.assertFailed("The preAcceptSlopTolerance must be positive or null", "org-dartlang-app:///packages/flutter/src/gestures/recognizer.dart", 390, 10, "  preAcceptSlopTolerance == null || preAcceptSlopTolerance >=");
-    if (!(postAcceptSlopTolerance == null || dart.notNull(postAcceptSlopTolerance) >= 0)) dart.assertFailed("The postAcceptSlopTolerance must be positive or null", "org-dartlang-app:///packages/flutter/src/gestures/recognizer.dart", 394, 10, "  postAcceptSlopTolerance == null || postAcceptSlopTolerance >=");
+    if (!(preAcceptSlopTolerance == null || dart.notNull(preAcceptSlopTolerance) >= 0)) dart.assertFailed("The preAcceptSlopTolerance must be positive or null", "org-dartlang-app:///packages/flutter/src/gestures/recognizer.dart", 390, 10, "preAcceptSlopTolerance == null || preAcceptSlopTolerance >= 0");
+    if (!(postAcceptSlopTolerance == null || dart.notNull(postAcceptSlopTolerance) >= 0)) dart.assertFailed("The postAcceptSlopTolerance must be positive or null", "org-dartlang-app:///packages/flutter/src/gestures/recognizer.dart", 394, 10, "postAcceptSlopTolerance == null || postAcceptSlopTolerance >= 0");
     recognizer.PrimaryPointerGestureRecognizer.__proto__.new.call(this, {debugOwner: debugOwner, kind: kind});
     ;
   }).prototype = recognizer.PrimaryPointerGestureRecognizer.prototype;
@@ -9972,33 +9972,33 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
   arena.GestureArenaManager = class GestureArenaManager extends core.Object {
     add(pointer, member) {
       let state = this[_arenas][$putIfAbsent](pointer, dart.fn(() => {
-        if (!dart.test(this[_debugLogDiagnostic](pointer, "★ Opening new gesture arena."))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 108, 14, "_debugLogDiagnostic(pointer, '★ Opening new gesture arena.");
+        if (!dart.test(this[_debugLogDiagnostic](pointer, "★ Opening new gesture arena."))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 108, 14, "_debugLogDiagnostic(pointer, '★ Opening new gesture arena.')");
         return new arena._GestureArena.new();
       }, VoidTo_GestureArena()));
       state.add(member);
-      if (!dart.test(this[_debugLogDiagnostic](pointer, "Adding: " + dart.str(member)))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 112, 12, "t(_debugLogDiagnostic(pointer, 'Adding: $member");
+      if (!dart.test(this[_debugLogDiagnostic](pointer, "Adding: " + dart.str(member)))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 112, 12, "_debugLogDiagnostic(pointer, 'Adding: $member')");
       return new arena.GestureArenaEntry.__(this, pointer, member);
     }
     close(pointer) {
       let state = this[_arenas][$_get](pointer);
       if (state == null) return;
       state.isOpen = false;
-      if (!dart.test(this[_debugLogDiagnostic](pointer, "Closing", state))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 124, 12, "t(_debugLogDiagnostic(pointer, 'Closing', stat");
+      if (!dart.test(this[_debugLogDiagnostic](pointer, "Closing", state))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 124, 12, "_debugLogDiagnostic(pointer, 'Closing', state)");
       this[_tryToResolveArena](pointer, state);
     }
     sweep(pointer) {
       let state = this[_arenas][$_get](pointer);
       if (state == null) return;
-      if (!!dart.test(state.isOpen)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 145, 12, "t(!state.isOp");
+      if (!!dart.test(state.isOpen)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 145, 12, "!state.isOpen");
       if (dart.test(state.isHeld)) {
         state.hasPendingSweep = true;
-        if (!dart.test(this[_debugLogDiagnostic](pointer, "Delaying sweep", state))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 148, 14, "t(_debugLogDiagnostic(pointer, 'Delaying sweep', stat");
+        if (!dart.test(this[_debugLogDiagnostic](pointer, "Delaying sweep", state))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 148, 14, "_debugLogDiagnostic(pointer, 'Delaying sweep', state)");
         return;
       }
-      if (!dart.test(this[_debugLogDiagnostic](pointer, "Sweeping", state))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 151, 12, "t(_debugLogDiagnostic(pointer, 'Sweeping', stat");
+      if (!dart.test(this[_debugLogDiagnostic](pointer, "Sweeping", state))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 151, 12, "_debugLogDiagnostic(pointer, 'Sweeping', state)");
       this[_arenas][$remove](pointer);
       if (dart.test(state.members[$isNotEmpty])) {
-        if (!dart.test(this[_debugLogDiagnostic](pointer, "Winner: " + dart.str(state.members[$first])))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 155, 14, "t(_debugLogDiagnostic(pointer, 'Winner: ${state.members.first}");
+        if (!dart.test(this[_debugLogDiagnostic](pointer, "Winner: " + dart.str(state.members[$first])))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 155, 14, "_debugLogDiagnostic(pointer, 'Winner: ${state.members.first}')");
         state.members[$first].acceptGesture(pointer);
         for (let i = 1; i < dart.notNull(state.members[$length]); i = i + 1)
           state.members[$_get](i).rejectGesture(pointer);
@@ -10008,64 +10008,64 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       let state = this[_arenas][$_get](pointer);
       if (state == null) return;
       state.isHeld = true;
-      if (!dart.test(this[_debugLogDiagnostic](pointer, "Holding", state))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 180, 12, "t(_debugLogDiagnostic(pointer, 'Holding', stat");
+      if (!dart.test(this[_debugLogDiagnostic](pointer, "Holding", state))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 180, 12, "_debugLogDiagnostic(pointer, 'Holding', state)");
     }
     release(pointer) {
       let state = this[_arenas][$_get](pointer);
       if (state == null) return;
       state.isHeld = false;
-      if (!dart.test(this[_debugLogDiagnostic](pointer, "Releasing", state))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 197, 12, "t(_debugLogDiagnostic(pointer, 'Releasing', stat");
+      if (!dart.test(this[_debugLogDiagnostic](pointer, "Releasing", state))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 197, 12, "_debugLogDiagnostic(pointer, 'Releasing', state)");
       if (dart.test(state.hasPendingSweep)) this.sweep(pointer);
     }
     [_resolve$](pointer, member, disposition) {
       let t14;
       let state = this[_arenas][$_get](pointer);
       if (state == null) return;
-      if (!dart.test(this[_debugLogDiagnostic](pointer, (dart.equals(disposition, arena.GestureDisposition.accepted) ? "Accepting" : "Rejecting") + ": " + dart.str(member)))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 209, 12, "t(_debugLogDiagnostic(pointer, '${ disposition == GestureDisposition.accepted ? \"Accepting\" : \"Rejecting\" }: $member");
-      if (!dart.test(state.members[$contains](member))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 210, 12, "t(state.members.contains(membe");
+      if (!dart.test(this[_debugLogDiagnostic](pointer, (dart.equals(disposition, arena.GestureDisposition.accepted) ? "Accepting" : "Rejecting") + ": " + dart.str(member)))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 209, 12, "_debugLogDiagnostic(pointer, '${ disposition == GestureDisposition.accepted ? \"Accepting\" : \"Rejecting\" }: $member')");
+      if (!dart.test(state.members[$contains](member))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 210, 12, "state.members.contains(member)");
       if (dart.equals(disposition, arena.GestureDisposition.rejected)) {
         state.members[$remove](member);
         member.rejectGesture(pointer);
         if (!dart.test(state.isOpen)) this[_tryToResolveArena](pointer, state);
       } else {
-        if (!dart.equals(disposition, arena.GestureDisposition.accepted)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 217, 14, "t(disposition == GestureDisposition.accept");
+        if (!dart.equals(disposition, arena.GestureDisposition.accepted)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 217, 14, "disposition == GestureDisposition.accepted");
         if (dart.test(state.isOpen)) {
           t14 = state;
           t14.eagerWinner == null ? t14.eagerWinner = member : null;
         } else {
-          if (!dart.test(this[_debugLogDiagnostic](pointer, "Self-declared winner: " + dart.str(member)))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 221, 16, "t(_debugLogDiagnostic(pointer, 'Self-declared winner: $member");
+          if (!dart.test(this[_debugLogDiagnostic](pointer, "Self-declared winner: " + dart.str(member)))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 221, 16, "_debugLogDiagnostic(pointer, 'Self-declared winner: $member')");
           this[_resolveInFavorOf](pointer, state, member);
         }
       }
     }
     [_tryToResolveArena](pointer, state) {
-      if (!dart.equals(this[_arenas][$_get](pointer), state)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 228, 12, "t(_arenas[pointer] == sta");
-      if (!!dart.test(state.isOpen)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 229, 12, "t(!state.isOp");
+      if (!dart.equals(this[_arenas][$_get](pointer), state)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 228, 12, "_arenas[pointer] == state");
+      if (!!dart.test(state.isOpen)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 229, 12, "!state.isOpen");
       if (state.members[$length] === 1) {
         async.scheduleMicrotask(dart.fn(() => this[_resolveByDefault](pointer, state), VoidTovoid()));
       } else if (dart.test(state.members[$isEmpty])) {
         this[_arenas][$remove](pointer);
-        if (!dart.test(this[_debugLogDiagnostic](pointer, "Arena empty."))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 234, 14, "t(_debugLogDiagnostic(pointer, 'Arena empty.");
+        if (!dart.test(this[_debugLogDiagnostic](pointer, "Arena empty."))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 234, 14, "_debugLogDiagnostic(pointer, 'Arena empty.')");
       } else if (state.eagerWinner != null) {
-        if (!dart.test(this[_debugLogDiagnostic](pointer, "Eager winner: " + dart.str(state.eagerWinner)))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 236, 14, "t(_debugLogDiagnostic(pointer, 'Eager winner: ${state.eagerWinner}");
+        if (!dart.test(this[_debugLogDiagnostic](pointer, "Eager winner: " + dart.str(state.eagerWinner)))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 236, 14, "_debugLogDiagnostic(pointer, 'Eager winner: ${state.eagerWinner}')");
         this[_resolveInFavorOf](pointer, state, state.eagerWinner);
       }
     }
     [_resolveByDefault](pointer, state) {
       if (!dart.test(this[_arenas][$containsKey](pointer))) return;
-      if (!dart.equals(this[_arenas][$_get](pointer), state)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 244, 12, "t(_arenas[pointer] == sta");
-      if (!!dart.test(state.isOpen)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 245, 12, "t(!state.isOp");
+      if (!dart.equals(this[_arenas][$_get](pointer), state)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 244, 12, "_arenas[pointer] == state");
+      if (!!dart.test(state.isOpen)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 245, 12, "!state.isOpen");
       let members = state.members;
-      if (!(members[$length] === 1)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 247, 12, "t(members.length ==");
+      if (!(members[$length] === 1)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 247, 12, "members.length == 1");
       this[_arenas][$remove](pointer);
-      if (!dart.test(this[_debugLogDiagnostic](pointer, "Default winner: " + dart.str(state.members[$first])))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 249, 12, "t(_debugLogDiagnostic(pointer, 'Default winner: ${state.members.first}");
+      if (!dart.test(this[_debugLogDiagnostic](pointer, "Default winner: " + dart.str(state.members[$first])))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 249, 12, "_debugLogDiagnostic(pointer, 'Default winner: ${state.members.first}')");
       state.members[$first].acceptGesture(pointer);
     }
     [_resolveInFavorOf](pointer, state, member) {
-      if (!dart.equals(state, this[_arenas][$_get](pointer))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 254, 12, "t(state == _arenas[pointe");
-      if (!(state != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 255, 12, "t(state != nu");
-      if (!(state.eagerWinner == null || dart.equals(state.eagerWinner, member))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 256, 12, "t(state.eagerWinner == null || state.eagerWinner == memb");
-      if (!!dart.test(state.isOpen)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 257, 12, "t(!state.isOp");
+      if (!dart.equals(state, this[_arenas][$_get](pointer))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 254, 12, "state == _arenas[pointer]");
+      if (!(state != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 255, 12, "state != null");
+      if (!(state.eagerWinner == null || dart.equals(state.eagerWinner, member))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 256, 12, "state.eagerWinner == null || state.eagerWinner == member");
+      if (!!dart.test(state.isOpen)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 257, 12, "!state.isOpen");
       this[_arenas][$remove](pointer);
       for (let rejectedMember of state.members) {
         if (!dart.equals(rejectedMember, member)) rejectedMember.rejectGesture(pointer);
@@ -10081,7 +10081,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
           print.debugPrint("Gesture arena " + dart.toString(pointer)[$padRight](4) + " ❙ " + dart.str(message) + (count != null ? " with " + dart.str(count) + " member" + s + "." : ""));
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 267, 12, "t(() {\n      if (debugPrintGestureArenaDiagnostics) {\n        final int count = state != null ? state.members.length : null;\n        final String s = count != 1 ? 's' : '';\n        debugPrint('Gesture arena ${pointer.toString().padRight(4)} ❙ $message${ count != null ? \" with $count member$s.\" : \"\"}');\n      }\n      return true;\n   ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/arena.dart", 267, 12, "() {\n      if (debugPrintGestureArenaDiagnostics) {\n        final int count = state != null ? state.members.length : null;\n        final String s = count != 1 ? 's' : '';\n        debugPrint('Gesture arena ${pointer.toString().padRight(4)} ❙ $message${ count != null ? \" with $count member$s.\" : \"\"}');\n      }\n      return true;\n    }()");
       return true;
     }
   };
@@ -12755,7 +12755,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
     let debugName = opts && 'debugName' in opts ? opts.debugName : null;
     this[usbHidUsage$] = usbHidUsage;
     this[debugName$0] = debugName;
-    if (!(usbHidUsage != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/keyboard_key.dart", 2048, 16, "})\n      : assert(u");
+    if (!(usbHidUsage != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/keyboard_key.dart", 2048, 16, "usbHidUsage != null");
     keyboard_key.PhysicalKeyboardKey.__proto__.new.call(this);
     ;
   }).prototype = keyboard_key.PhysicalKeyboardKey.prototype;
@@ -16558,7 +16558,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
       let modifierKeys = LinkedHashSetOfLogicalKeyboardKey().new();
       for (let key of modifiersPressed[$keys]) {
         let mappedKeys = raw_keyboard.RawKeyboard._modifierKeyMap[$_get](new raw_keyboard._ModifierSidePair.new(key, modifiersPressed[$_get](key)));
-        if (!(mappedKeys != null)) dart.assertFailed("Platform key support for " + dart.str(io.Platform.operatingSystem) + " is " + "producing unsupported modifier combinations.", "org-dartlang-app:///packages/flutter/src/services/raw_keyboard.dart", 580, 14, "ssert(mappedKeys !");
+        if (!(mappedKeys != null)) dart.assertFailed("Platform key support for " + dart.str(io.Platform.operatingSystem) + " is " + "producing unsupported modifier combinations.", "org-dartlang-app:///packages/flutter/src/services/raw_keyboard.dart", 580, 14, "mappedKeys != null");
         modifierKeys.addAll(mappedKeys);
       }
       this[_keysPressed].removeAll(raw_keyboard.RawKeyboard._allModifiers);
@@ -18296,7 +18296,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/v
   };
   (text_formatter.WhitelistingTextInputFormatter.new = function(whitelistedPattern) {
     this[whitelistedPattern$] = whitelistedPattern;
-    if (!(whitelistedPattern != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/text_formatter.dart", 219, 14, "ssert(whitelistedPattern !");
+    if (!(whitelistedPattern != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/text_formatter.dart", 219, 14, "whitelistedPattern != null");
     ;
   }).prototype = text_formatter.WhitelistingTextInputFormatter.prototype;
   dart.addTypeTests(text_formatter.WhitelistingTextInputFormatter);

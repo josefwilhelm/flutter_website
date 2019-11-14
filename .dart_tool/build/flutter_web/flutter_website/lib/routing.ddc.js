@@ -1,4 +1,4 @@
-define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/service_locator', 'packages/flutter_website/services/navigation_service', 'packages/flutter/src/widgets/actions', 'packages/flutter/src/animation/animation', 'packages/flutter_website/screens/about', 'packages/flutter_website/styles', 'packages/flutter_website/util', 'packages/responsive_builder/responsive_builder', 'packages/flutter/src/gestures/arena', 'packages/flutter/src/painting/_network_image_web', 'packages/flutter_website/widgets/centered_view', 'packages/flutter_website/widgets/mobile/navbar_mobile', 'packages/flutter/src/rendering/animated_size', 'packages/flutter_website/widgets/navbar_item', 'packages/flutter_website/widgets/nav_drawer_item', 'packages/flutter_website/widgets/desktop/home_view_desktop', 'packages/flutter_website/widgets/mobile/home_view_mobile'], function(dart_sdk, packages__flutter__material, packages__flutter_website__service_locator, packages__flutter_website__services__navigation_service, packages__flutter__src__widgets__actions, packages__flutter__src__animation__animation, packages__flutter_website__screens__about, packages__flutter_website__styles, packages__flutter_website__util, packages__responsive_builder__responsive_builder, packages__flutter__src__gestures__arena, packages__flutter__src__painting___network_image_web, packages__flutter_website__widgets__centered_view, packages__flutter_website__widgets__mobile__navbar_mobile, packages__flutter__src__rendering__animated_size, packages__flutter_website__widgets__navbar_item, packages__flutter_website__widgets__nav_drawer_item, packages__flutter_website__widgets__desktop__home_view_desktop, packages__flutter_website__widgets__mobile__home_view_mobile) {
+define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/service_locator', 'packages/flutter_website/services/navigation_service', 'packages/flutter/src/widgets/actions', 'packages/flutter/src/animation/animation', 'packages/flutter_website/screens/about', 'packages/flutter_website/styles', 'packages/responsive_builder/responsive_builder', 'packages/flutter/src/gestures/arena', 'packages/flutter/src/painting/_network_image_web', 'packages/flutter_website/widgets/centered_view', 'packages/flutter/src/rendering/animated_size', 'packages/flutter_website/widgets/navbar_item', 'packages/flutter_website/widgets/nav_drawer_item', 'packages/flutter_website/widgets/desktop/home_view_desktop', 'packages/flutter_website/widgets/mobile/home_view_mobile'], function(dart_sdk, packages__flutter__material, packages__flutter_website__service_locator, packages__flutter_website__services__navigation_service, packages__flutter__src__widgets__actions, packages__flutter__src__animation__animation, packages__flutter_website__screens__about, packages__flutter_website__styles, packages__responsive_builder__responsive_builder, packages__flutter__src__gestures__arena, packages__flutter__src__painting___network_image_web, packages__flutter_website__widgets__centered_view, packages__flutter__src__rendering__animated_size, packages__flutter_website__widgets__navbar_item, packages__flutter_website__widgets__nav_drawer_item, packages__flutter_website__widgets__desktop__home_view_desktop, packages__flutter_website__widgets__mobile__home_view_mobile) {
   'use strict';
   const core = dart_sdk.core;
   const async = dart_sdk.async;
@@ -8,8 +8,9 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
   const dartx = dart_sdk.dartx;
   const ink_well = packages__flutter__material.src__material__ink_well;
   const scaffold = packages__flutter__material.src__material__scaffold;
-  const colors = packages__flutter__material.src__material__colors;
+  const icon_button = packages__flutter__material.src__material__icon_button;
   const icons = packages__flutter__material.src__material__icons;
+  const colors = packages__flutter__material.src__material__colors;
   const service_locator = packages__flutter_website__service_locator.service_locator;
   const navigation_service = packages__flutter_website__services__navigation_service.services__navigation_service;
   const basic = packages__flutter__src__widgets__actions.src__widgets__basic;
@@ -25,19 +26,19 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
   const navigator = packages__flutter__src__widgets__actions.src__widgets__navigator;
   const ticker_provider = packages__flutter__src__widgets__actions.src__widgets__ticker_provider;
   const container = packages__flutter__src__widgets__actions.src__widgets__container;
+  const icon = packages__flutter__src__widgets__actions.src__widgets__icon;
   const animation = packages__flutter__src__animation__animation.src__animation__animation;
   const animation_controller = packages__flutter__src__animation__animation.src__animation__animation_controller;
   const tween = packages__flutter__src__animation__animation.src__animation__tween;
   const about = packages__flutter_website__screens__about.screens__about;
   const styles = packages__flutter_website__styles.styles;
-  const util = packages__flutter_website__util.util;
+  const util = packages__flutter_website__styles.util;
   const responsive_builder = packages__responsive_builder__responsive_builder.responsive_builder;
   const drag_details = packages__flutter__src__gestures__arena.src__gestures__drag_details;
   const edge_insets = packages__flutter__src__painting___network_image_web.src__painting__edge_insets;
   const box_decoration = packages__flutter__src__painting___network_image_web.src__painting__box_decoration;
   const box_shadow = packages__flutter__src__painting___network_image_web.src__painting__box_shadow;
   const centered_view = packages__flutter_website__widgets__centered_view.widgets__centered_view;
-  const navbar_mobile = packages__flutter_website__widgets__mobile__navbar_mobile.widgets__mobile__navbar_mobile;
   const flex = packages__flutter__src__rendering__animated_size.src__rendering__flex;
   const navbar_item = packages__flutter_website__widgets__navbar_item.widgets__navbar_item;
   const nav_drawer_item = packages__flutter_website__widgets__nav_drawer_item.widgets__nav_drawer_item;
@@ -48,6 +49,8 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
   const portfolio = Object.create(dart.library);
   const base = Object.create(dart.library);
   const navbar = Object.create(dart.library);
+  const navbar_mobile = Object.create(dart.library);
+  const navbar_logo_mobile = Object.create(dart.library);
   const navbar_desktop = Object.create(dart.library);
   const nav_drawer = Object.create(dart.library);
   const home = Object.create(dart.library);
@@ -281,7 +284,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: C15 || CT.C15,
         [_Location_name]: null,
         [_Location_column]: 15,
-        [_Location_line]: 50,
+        [_Location_line]: 49,
         [_Location_file]: "org-dartlang-app:///packages/flutter_website/screens/base.dart"
       });
     },
@@ -291,7 +294,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: C15 || CT.C15,
         [_Location_name]: null,
         [_Location_column]: 19,
-        [_Location_line]: 65,
+        [_Location_line]: 64,
         [_Location_file]: "org-dartlang-app:///packages/flutter_website/screens/base.dart"
       });
     },
@@ -304,7 +307,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: null,
         [_Location_name]: "key",
         [_Location_column]: 21,
-        [_Location_line]: 68,
+        [_Location_line]: 67,
         [_Location_file]: null
       });
     },
@@ -314,7 +317,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: null,
         [_Location_name]: "onGenerateRoute",
         [_Location_column]: 21,
-        [_Location_line]: 69,
+        [_Location_line]: 68,
         [_Location_file]: null
       });
     },
@@ -324,7 +327,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: null,
         [_Location_name]: "initialRoute",
         [_Location_column]: 21,
-        [_Location_line]: 70,
+        [_Location_line]: 69,
         [_Location_file]: null
       });
     },
@@ -337,7 +340,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: C30 || CT.C30,
         [_Location_name]: null,
         [_Location_column]: 30,
-        [_Location_line]: 67,
+        [_Location_line]: 66,
         [_Location_file]: "org-dartlang-app:///packages/flutter_website/screens/base.dart"
       });
     },
@@ -347,7 +350,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: null,
         [_Location_name]: "child",
         [_Location_column]: 23,
-        [_Location_line]: 67,
+        [_Location_line]: 66,
         [_Location_file]: null
       });
     },
@@ -360,7 +363,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: C35 || CT.C35,
         [_Location_name]: null,
         [_Location_column]: 19,
-        [_Location_line]: 66,
+        [_Location_line]: 65,
         [_Location_file]: "org-dartlang-app:///packages/flutter_website/screens/base.dart"
       });
     },
@@ -370,7 +373,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: null,
         [_Location_name]: "children",
         [_Location_column]: 17,
-        [_Location_line]: 64,
+        [_Location_line]: 63,
         [_Location_file]: null
       });
     },
@@ -383,7 +386,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: C38 || CT.C38,
         [_Location_name]: null,
         [_Location_column]: 22,
-        [_Location_line]: 63,
+        [_Location_line]: 62,
         [_Location_file]: "org-dartlang-app:///packages/flutter_website/screens/base.dart"
       });
     },
@@ -393,7 +396,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: null,
         [_Location_name]: "child",
         [_Location_column]: 15,
-        [_Location_line]: 63,
+        [_Location_line]: 62,
         [_Location_file]: null
       });
     },
@@ -406,7 +409,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: C41 || CT.C41,
         [_Location_name]: null,
         [_Location_column]: 20,
-        [_Location_line]: 62,
+        [_Location_line]: 61,
         [_Location_file]: "org-dartlang-app:///packages/flutter_website/screens/base.dart"
       });
     },
@@ -416,7 +419,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: null,
         [_Location_name]: "padding",
         [_Location_column]: 13,
-        [_Location_line]: 59,
+        [_Location_line]: 58,
         [_Location_file]: null
       });
     },
@@ -426,7 +429,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: null,
         [_Location_name]: "duration",
         [_Location_column]: 13,
-        [_Location_line]: 60,
+        [_Location_line]: 59,
         [_Location_file]: null
       });
     },
@@ -436,7 +439,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: null,
         [_Location_name]: "color",
         [_Location_column]: 13,
-        [_Location_line]: 61,
+        [_Location_line]: 60,
         [_Location_file]: null
       });
     },
@@ -446,7 +449,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: null,
         [_Location_name]: "child",
         [_Location_column]: 13,
-        [_Location_line]: 62,
+        [_Location_line]: 61,
         [_Location_file]: null
       });
     },
@@ -459,7 +462,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: C44 || CT.C44,
         [_Location_name]: null,
         [_Location_column]: 18,
-        [_Location_line]: 58,
+        [_Location_line]: 57,
         [_Location_file]: "org-dartlang-app:///packages/flutter_website/screens/base.dart"
       });
     },
@@ -469,7 +472,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: null,
         [_Location_name]: "onPanStart",
         [_Location_column]: 11,
-        [_Location_line]: 54,
+        [_Location_line]: 53,
         [_Location_file]: null
       });
     },
@@ -479,7 +482,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: null,
         [_Location_name]: "onTap",
         [_Location_column]: 11,
-        [_Location_line]: 57,
+        [_Location_line]: 56,
         [_Location_file]: null
       });
     },
@@ -489,7 +492,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: null,
         [_Location_name]: "child",
         [_Location_column]: 11,
-        [_Location_line]: 58,
+        [_Location_line]: 57,
         [_Location_file]: null
       });
     },
@@ -502,7 +505,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: C50 || CT.C50,
         [_Location_name]: null,
         [_Location_column]: 15,
-        [_Location_line]: 53,
+        [_Location_line]: 52,
         [_Location_file]: "org-dartlang-app:///packages/flutter_website/screens/base.dart"
       });
     },
@@ -512,7 +515,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: null,
         [_Location_name]: "drawer",
         [_Location_column]: 9,
-        [_Location_line]: 49,
+        [_Location_line]: 48,
         [_Location_file]: null
       });
     },
@@ -522,7 +525,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: null,
         [_Location_name]: "backgroundColor",
         [_Location_column]: 9,
-        [_Location_line]: 52,
+        [_Location_line]: 51,
         [_Location_file]: null
       });
     },
@@ -532,7 +535,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: null,
         [_Location_name]: "body",
         [_Location_column]: 9,
-        [_Location_line]: 53,
+        [_Location_line]: 52,
         [_Location_file]: null
       });
     },
@@ -545,7 +548,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: C55 || CT.C55,
         [_Location_name]: null,
         [_Location_column]: 48,
-        [_Location_line]: 48,
+        [_Location_line]: 47,
         [_Location_file]: "org-dartlang-app:///packages/flutter_website/screens/base.dart"
       });
     },
@@ -555,7 +558,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: null,
         [_Location_name]: "builder",
         [_Location_column]: 7,
-        [_Location_line]: 48,
+        [_Location_line]: 47,
         [_Location_file]: null
       });
     },
@@ -568,7 +571,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_parameterLocations]: C60 || CT.C60,
         [_Location_name]: null,
         [_Location_column]: 12,
-        [_Location_line]: 47,
+        [_Location_line]: 46,
         [_Location_file]: "org-dartlang-app:///packages/flutter_website/screens/base.dart"
       });
     },
@@ -625,22 +628,22 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/navbar.dart"
       });
     },
-    get C68() {
-      return C68 = dart.const({
+    get C70() {
+      return C70 = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C15 || CT.C15,
-        [_Location_name]: null,
-        [_Location_column]: 11,
-        [_Location_line]: 15,
-        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/desktop/navbar_desktop.dart"
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 21,
+        [_Location_line]: 18,
+        [_Location_file]: null
       });
     },
     get C71() {
       return C71 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "title",
-        [_Location_column]: 26,
+        [_Location_name]: "color",
+        [_Location_column]: 15,
         [_Location_line]: 19,
         [_Location_file]: null
       });
@@ -649,116 +652,90 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
       return C72 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "route",
-        [_Location_column]: 39,
-        [_Location_line]: 19,
+        [_Location_name]: "size",
+        [_Location_column]: 15,
+        [_Location_line]: 20,
         [_Location_file]: null
       });
     },
-    get C70() {
-      return C70 = dart.constList([C71 || CT.C71, C72 || CT.C72], widget_inspector._Location);
-    },
     get C69() {
-      return C69 = dart.const({
+      return C69 = dart.constList([C70 || CT.C70, C71 || CT.C71, C72 || CT.C72], widget_inspector._Location);
+    },
+    get C68() {
+      return C68 = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C70 || CT.C70,
+        [_Location_parameterLocations]: C69 || CT.C69,
         [_Location_name]: null,
-        [_Location_column]: 15,
-        [_Location_line]: 19,
-        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/desktop/navbar_desktop.dart"
+        [_Location_column]: 19,
+        [_Location_line]: 17,
+        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/mobile/navbar_mobile.dart"
       });
     },
     get C75() {
       return C75 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "width",
-        [_Location_column]: 24,
-        [_Location_line]: 20,
+        [_Location_name]: "padding",
+        [_Location_column]: 13,
+        [_Location_line]: 16,
+        [_Location_file]: null
+      });
+    },
+    get C76() {
+      return C76 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 13,
+        [_Location_line]: 17,
+        [_Location_file]: null
+      });
+    },
+    get C77() {
+      return C77 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 13,
+        [_Location_line]: 22,
         [_Location_file]: null
       });
     },
     get C74() {
-      return C74 = dart.constList([C75 || CT.C75], widget_inspector._Location);
+      return C74 = dart.constList([C75 || CT.C75, C76 || CT.C76, C77 || CT.C77], widget_inspector._Location);
     },
     get C73() {
       return C73 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C74 || CT.C74,
         [_Location_name]: null,
-        [_Location_column]: 15,
-        [_Location_line]: 20,
-        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/desktop/navbar_desktop.dart"
+        [_Location_column]: 11,
+        [_Location_line]: 15,
+        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/mobile/navbar_mobile.dart"
       });
     },
     get C78() {
       return C78 = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "title",
-        [_Location_column]: 26,
-        [_Location_line]: 21,
-        [_Location_file]: null
-      });
-    },
-    get C79() {
-      return C79 = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "route",
-        [_Location_column]: 35,
-        [_Location_line]: 21,
-        [_Location_file]: null
-      });
-    },
-    get C77() {
-      return C77 = dart.constList([C78 || CT.C78, C79 || CT.C79], widget_inspector._Location);
-    },
-    get C76() {
-      return C76 = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C77 || CT.C77,
+        [_Location_parameterLocations]: C15 || CT.C15,
         [_Location_name]: null,
-        [_Location_column]: 15,
-        [_Location_line]: 21,
-        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/desktop/navbar_desktop.dart"
+        [_Location_column]: 11,
+        [_Location_line]: 26,
+        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/mobile/navbar_mobile.dart"
+      });
+    },
+    get C81() {
+      return C81 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisSize",
+        [_Location_column]: 9,
+        [_Location_line]: 12,
+        [_Location_file]: null
       });
     },
     get C82() {
       return C82 = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "mainAxisSize",
-        [_Location_column]: 13,
-        [_Location_line]: 17,
-        [_Location_file]: null
-      });
-    },
-    get C83() {
-      return C83 = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "children",
-        [_Location_column]: 13,
-        [_Location_line]: 18,
-        [_Location_file]: null
-      });
-    },
-    get C81() {
-      return C81 = dart.constList([C82 || CT.C82, C83 || CT.C83], widget_inspector._Location);
-    },
-    get C80() {
-      return C80 = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C81 || CT.C81,
-        [_Location_name]: null,
-        [_Location_column]: 11,
-        [_Location_line]: 16,
-        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/desktop/navbar_desktop.dart"
-      });
-    },
-    get C86() {
-      return C86 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "mainAxisAlignment",
@@ -767,13 +744,46 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         [_Location_file]: null
       });
     },
-    get C87() {
-      return C87 = dart.const({
+    get C83() {
+      return C83 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "children",
         [_Location_column]: 9,
         [_Location_line]: 14,
+        [_Location_file]: null
+      });
+    },
+    get C80() {
+      return C80 = dart.constList([C81 || CT.C81, C82 || CT.C82, C83 || CT.C83], widget_inspector._Location);
+    },
+    get C79() {
+      return C79 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C80 || CT.C80,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 11,
+        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/mobile/navbar_mobile.dart"
+      });
+    },
+    get C86() {
+      return C86 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 7,
+        [_Location_line]: 10,
+        [_Location_file]: null
+      });
+    },
+    get C87() {
+      return C87 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 11,
         [_Location_file]: null
       });
     },
@@ -785,51 +795,51 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C85 || CT.C85,
         [_Location_name]: null,
-        [_Location_column]: 14,
-        [_Location_line]: 12,
-        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/desktop/navbar_desktop.dart"
+        [_Location_column]: 12,
+        [_Location_line]: 9,
+        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/mobile/navbar_mobile.dart"
       });
     },
     get C90() {
       return C90 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "height",
-        [_Location_column]: 7,
-        [_Location_line]: 11,
-        [_Location_file]: null
-      });
-    },
-    get C91() {
-      return C91 = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 7,
-        [_Location_line]: 12,
+        [_Location_name]: "name",
+        [_Location_column]: 11,
+        [_Location_line]: 19,
         [_Location_file]: null
       });
     },
     get C89() {
-      return C89 = dart.constList([C90 || CT.C90, C91 || CT.C91], widget_inspector._Location);
+      return C89 = dart.constList([C90 || CT.C90], widget_inspector._Location);
     },
     get C88() {
       return C88 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C89 || CT.C89,
         [_Location_name]: null,
-        [_Location_column]: 12,
-        [_Location_line]: 10,
-        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/desktop/navbar_desktop.dart"
+        [_Location_column]: 22,
+        [_Location_line]: 18,
+        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/mobile/navbar_logo_mobile.dart"
+      });
+    },
+    get C93() {
+      return C93 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 9,
+        [_Location_line]: 16,
+        [_Location_file]: null
       });
     },
     get C94() {
       return C94 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "title",
-        [_Location_column]: 22,
-        [_Location_line]: 18,
+        [_Location_name]: "width",
+        [_Location_column]: 9,
+        [_Location_line]: 17,
         [_Location_file]: null
       });
     },
@@ -837,99 +847,99 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
       return C95 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "icon",
-        [_Location_column]: 41,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
         [_Location_line]: 18,
         [_Location_file]: null
       });
-    },
-    get C96() {
-      return C96 = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "route",
-        [_Location_column]: 49,
-        [_Location_line]: 18,
-        [_Location_file]: null
-      });
-    },
-    get C93() {
-      return C93 = dart.constList([C94 || CT.C94, C95 || CT.C95, C96 || CT.C96], widget_inspector._Location);
     },
     get C92() {
-      return C92 = dart.const({
+      return C92 = dart.constList([C93 || CT.C93, C94 || CT.C94, C95 || CT.C95], widget_inspector._Location);
+    },
+    get C91() {
+      return C91 = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C93 || CT.C93,
+        [_Location_parameterLocations]: C92 || CT.C92,
         [_Location_name]: null,
-        [_Location_column]: 11,
-        [_Location_line]: 18,
-        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/nav_drawer.dart"
+        [_Location_column]: 14,
+        [_Location_line]: 15,
+        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/mobile/navbar_logo_mobile.dart"
+      });
+    },
+    get C98() {
+      return C98 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 7,
+        [_Location_line]: 12,
+        [_Location_file]: null
       });
     },
     get C99() {
       return C99 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "title",
-        [_Location_column]: 22,
-        [_Location_line]: 19,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 15,
         [_Location_file]: null
+      });
+    },
+    get C97() {
+      return C97 = dart.constList([C98 || CT.C98, C99 || CT.C99], widget_inspector._Location);
+    },
+    get C96() {
+      return C96 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C97 || CT.C97,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 11,
+        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/mobile/navbar_logo_mobile.dart"
       });
     },
     get C100() {
       return C100 = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "icon",
-        [_Location_column]: 37,
-        [_Location_line]: 19,
-        [_Location_file]: null
-      });
-    },
-    get C101() {
-      return C101 = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "route",
-        [_Location_column]: 43,
-        [_Location_line]: 19,
-        [_Location_file]: null
-      });
-    },
-    get C98() {
-      return C98 = dart.constList([C99 || CT.C99, C100 || CT.C100, C101 || CT.C101], widget_inspector._Location);
-    },
-    get C97() {
-      return C97 = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C98 || CT.C98,
+        [_Location_parameterLocations]: C15 || CT.C15,
         [_Location_name]: null,
         [_Location_column]: 11,
+        [_Location_line]: 15,
+        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/desktop/navbar_desktop.dart"
+      });
+    },
+    get C103() {
+      return C103 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 26,
         [_Location_line]: 19,
-        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/nav_drawer.dart"
+        [_Location_file]: null
       });
     },
     get C104() {
       return C104 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "children",
-        [_Location_column]: 9,
-        [_Location_line]: 17,
+        [_Location_name]: "route",
+        [_Location_column]: 39,
+        [_Location_line]: 19,
         [_Location_file]: null
       });
     },
-    get C103() {
-      return C103 = dart.constList([C104 || CT.C104], widget_inspector._Location);
-    },
     get C102() {
-      return C102 = dart.const({
+      return C102 = dart.constList([C103 || CT.C103, C104 || CT.C104], widget_inspector._Location);
+    },
+    get C101() {
+      return C101 = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C103 || CT.C103,
+        [_Location_parameterLocations]: C102 || CT.C102,
         [_Location_name]: null,
-        [_Location_column]: 14,
-        [_Location_line]: 16,
-        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/nav_drawer.dart"
+        [_Location_column]: 15,
+        [_Location_line]: 19,
+        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/desktop/navbar_desktop.dart"
       });
     },
     get C107() {
@@ -937,71 +947,64 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "width",
-        [_Location_column]: 7,
-        [_Location_line]: 12,
-        [_Location_file]: null
-      });
-    },
-    get C108() {
-      return C108 = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "decoration",
-        [_Location_column]: 7,
-        [_Location_line]: 13,
-        [_Location_file]: null
-      });
-    },
-    get C109() {
-      return C109 = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 7,
-        [_Location_line]: 16,
+        [_Location_column]: 24,
+        [_Location_line]: 20,
         [_Location_file]: null
       });
     },
     get C106() {
-      return C106 = dart.constList([C107 || CT.C107, C108 || CT.C108, C109 || CT.C109], widget_inspector._Location);
+      return C106 = dart.constList([C107 || CT.C107], widget_inspector._Location);
     },
     get C105() {
       return C105 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C106 || CT.C106,
         [_Location_name]: null,
-        [_Location_column]: 12,
-        [_Location_line]: 11,
-        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/nav_drawer.dart"
+        [_Location_column]: 15,
+        [_Location_line]: 20,
+        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/desktop/navbar_desktop.dart"
       });
     },
     get C110() {
       return C110 = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C15 || CT.C15,
-        [_Location_name]: null,
-        [_Location_column]: 16,
-        [_Location_line]: 13,
-        [_Location_file]: "org-dartlang-app:///packages/flutter_website/screens/home.dart"
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 26,
+        [_Location_line]: 21,
+        [_Location_file]: null
       });
     },
     get C111() {
       return C111 = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C15 || CT.C15,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "route",
+        [_Location_column]: 35,
+        [_Location_line]: 21,
+        [_Location_file]: null
+      });
+    },
+    get C109() {
+      return C109 = dart.constList([C110 || CT.C110, C111 || CT.C111], widget_inspector._Location);
+    },
+    get C108() {
+      return C108 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C109 || CT.C109,
         [_Location_name]: null,
         [_Location_column]: 15,
-        [_Location_line]: 14,
-        [_Location_file]: "org-dartlang-app:///packages/flutter_website/screens/home.dart"
+        [_Location_line]: 21,
+        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/desktop/navbar_desktop.dart"
       });
     },
     get C114() {
       return C114 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "desktop",
-        [_Location_column]: 7,
-        [_Location_line]: 13,
+        [_Location_name]: "mainAxisSize",
+        [_Location_column]: 13,
+        [_Location_line]: 17,
         [_Location_file]: null
       });
     },
@@ -1009,9 +1012,9 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
       return C115 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "mobile",
-        [_Location_column]: 7,
-        [_Location_line]: 14,
+        [_Location_name]: "children",
+        [_Location_column]: 13,
+        [_Location_line]: 18,
         [_Location_file]: null
       });
     },
@@ -1022,6 +1025,257 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
       return C112 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C113 || CT.C113,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 16,
+        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/desktop/navbar_desktop.dart"
+      });
+    },
+    get C117() {
+      return C117 = dart.constList([C82 || CT.C82, C83 || CT.C83], widget_inspector._Location);
+    },
+    get C116() {
+      return C116 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C117 || CT.C117,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 12,
+        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/desktop/navbar_desktop.dart"
+      });
+    },
+    get C120() {
+      return C120 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 7,
+        [_Location_line]: 11,
+        [_Location_file]: null
+      });
+    },
+    get C121() {
+      return C121 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 12,
+        [_Location_file]: null
+      });
+    },
+    get C119() {
+      return C119 = dart.constList([C120 || CT.C120, C121 || CT.C121], widget_inspector._Location);
+    },
+    get C118() {
+      return C118 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C119 || CT.C119,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 10,
+        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/desktop/navbar_desktop.dart"
+      });
+    },
+    get C124() {
+      return C124 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 22,
+        [_Location_line]: 18,
+        [_Location_file]: null
+      });
+    },
+    get C125() {
+      return C125 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 41,
+        [_Location_line]: 18,
+        [_Location_file]: null
+      });
+    },
+    get C126() {
+      return C126 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "route",
+        [_Location_column]: 49,
+        [_Location_line]: 18,
+        [_Location_file]: null
+      });
+    },
+    get C123() {
+      return C123 = dart.constList([C124 || CT.C124, C125 || CT.C125, C126 || CT.C126], widget_inspector._Location);
+    },
+    get C122() {
+      return C122 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C123 || CT.C123,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 18,
+        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/nav_drawer.dart"
+      });
+    },
+    get C129() {
+      return C129 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 22,
+        [_Location_line]: 19,
+        [_Location_file]: null
+      });
+    },
+    get C130() {
+      return C130 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 37,
+        [_Location_line]: 19,
+        [_Location_file]: null
+      });
+    },
+    get C131() {
+      return C131 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "route",
+        [_Location_column]: 43,
+        [_Location_line]: 19,
+        [_Location_file]: null
+      });
+    },
+    get C128() {
+      return C128 = dart.constList([C129 || CT.C129, C130 || CT.C130, C131 || CT.C131], widget_inspector._Location);
+    },
+    get C127() {
+      return C127 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C128 || CT.C128,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 19,
+        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/nav_drawer.dart"
+      });
+    },
+    get C134() {
+      return C134 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 9,
+        [_Location_line]: 17,
+        [_Location_file]: null
+      });
+    },
+    get C133() {
+      return C133 = dart.constList([C134 || CT.C134], widget_inspector._Location);
+    },
+    get C132() {
+      return C132 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C133 || CT.C133,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 16,
+        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/nav_drawer.dart"
+      });
+    },
+    get C137() {
+      return C137 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 7,
+        [_Location_line]: 12,
+        [_Location_file]: null
+      });
+    },
+    get C138() {
+      return C138 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 7,
+        [_Location_line]: 13,
+        [_Location_file]: null
+      });
+    },
+    get C139() {
+      return C139 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 16,
+        [_Location_file]: null
+      });
+    },
+    get C136() {
+      return C136 = dart.constList([C137 || CT.C137, C138 || CT.C138, C139 || CT.C139], widget_inspector._Location);
+    },
+    get C135() {
+      return C135 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C136 || CT.C136,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 11,
+        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/nav_drawer.dart"
+      });
+    },
+    get C140() {
+      return C140 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C15 || CT.C15,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 13,
+        [_Location_file]: "org-dartlang-app:///packages/flutter_website/screens/home.dart"
+      });
+    },
+    get C141() {
+      return C141 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C15 || CT.C15,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 14,
+        [_Location_file]: "org-dartlang-app:///packages/flutter_website/screens/home.dart"
+      });
+    },
+    get C144() {
+      return C144 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "desktop",
+        [_Location_column]: 7,
+        [_Location_line]: 13,
+        [_Location_file]: null
+      });
+    },
+    get C145() {
+      return C145 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mobile",
+        [_Location_column]: 7,
+        [_Location_line]: 14,
+        [_Location_file]: null
+      });
+    },
+    get C143() {
+      return C143 = dart.constList([C144 || CT.C144, C145 || CT.C145], widget_inspector._Location);
+    },
+    get C142() {
+      return C142 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C143 || CT.C143,
         [_Location_name]: null,
         [_Location_column]: 12,
         [_Location_line]: 12,
@@ -1227,7 +1481,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
     initState() {
       super.initState();
       this[_animationController] = new animation_controller.AnimationController.new({duration: new core.Duration.new({seconds: 1}), vsync: this});
-      this[_animation] = new (TweenOfColor()).new({begin: styles.primaryColor, end: styles.accentColor}).animate(this[_animationController]);
+      this[_animation] = new (TweenOfColor()).new({begin: styles.currentColor1, end: styles.accentColor}).animate(this[_animationController]);
     }
     changeColor() {
       this.setState(dart.fn(() => {
@@ -1241,7 +1495,7 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
   (base._BaseViewState.new = function() {
     this[_animationController] = null;
     this[_animation] = null;
-    this[_color] = styles.primaryColor;
+    this[_color] = styles.currentColor1;
     base._BaseViewState.__proto__.new.call(this);
     ;
   }).prototype = base._BaseViewState.prototype;
@@ -1280,33 +1534,101 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
   dart.setLibraryUri(navbar.NavigationBar, "package:flutter_website/widgets/navbar.dart");
-  let C68;
+  let C70;
   let C71;
   let C72;
-  let C70;
   let C69;
+  let C68;
   let C75;
+  let C76;
+  let C77;
   let C74;
   let C73;
   let C78;
-  let C79;
-  let C77;
-  let C76;
+  let C81;
   let C82;
   let C83;
-  let C81;
   let C80;
+  let C79;
   let C86;
   let C87;
   let C85;
   let C84;
+  navbar_mobile.NavigationBarMobile = class NavigationBarMobile extends framework.StatelessWidget {
+    build(context) {
+      return new container.Container.new({height: 80.0, child: new basic.Row.new({mainAxisSize: flex.MainAxisSize.max, mainAxisAlignment: flex.MainAxisAlignment.spaceBetween, children: JSArrayOfWidget().of([new icon_button.IconButton.new({padding: new edge_insets.EdgeInsets.all(0.0), icon: new icon.Icon.new(icons.Icons.menu, {color: colors.Colors.white, size: 32.0, $creationLocationd_0dea112b090073317d4: C68 || CT.C68}), onPressed: dart.fn(() => {
+                scaffold.Scaffold.of(context).openDrawer();
+              }, VoidToNull()), $creationLocationd_0dea112b090073317d4: C73 || CT.C73}), new navbar_logo_mobile.NavBarLogoMobile.new({$creationLocationd_0dea112b090073317d4: C78 || CT.C78})]), $creationLocationd_0dea112b090073317d4: C79 || CT.C79}), $creationLocationd_0dea112b090073317d4: C84 || CT.C84});
+    }
+  };
+  (navbar_mobile.NavigationBarMobile.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    navbar_mobile.NavigationBarMobile.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = navbar_mobile.NavigationBarMobile.prototype;
+  dart.addTypeTests(navbar_mobile.NavigationBarMobile);
+  dart.setMethodSignature(navbar_mobile.NavigationBarMobile, () => ({
+    __proto__: dart.getMethods(navbar_mobile.NavigationBarMobile.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(navbar_mobile.NavigationBarMobile, "package:flutter_website/widgets/mobile/navbar_mobile.dart");
   let C90;
-  let C91;
   let C89;
   let C88;
+  let C93;
+  let C94;
+  let C95;
+  let C92;
+  let C91;
+  let C98;
+  let C99;
+  let C97;
+  let C96;
+  navbar_logo_mobile.NavBarLogoMobile = class NavBarLogoMobile extends framework.StatelessWidget {
+    build(context) {
+      return new ink_well.InkWell.new({onTap: dart.fn(() => {
+          service_locator.locator.call(navigation_service.NavigationService).navigateTo("home");
+        }, VoidToNull()), child: new basic.SizedBox.new({height: 124.0, width: 124.0, child: new image.Image.asset("assets/ic_logo_full.png", {$creationLocationd_0dea112b090073317d4: C88 || CT.C88}), $creationLocationd_0dea112b090073317d4: C91 || CT.C91}), $creationLocationd_0dea112b090073317d4: C96 || CT.C96});
+    }
+  };
+  (navbar_logo_mobile.NavBarLogoMobile.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    navbar_logo_mobile.NavBarLogoMobile.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = navbar_logo_mobile.NavBarLogoMobile.prototype;
+  dart.addTypeTests(navbar_logo_mobile.NavBarLogoMobile);
+  dart.setMethodSignature(navbar_logo_mobile.NavBarLogoMobile, () => ({
+    __proto__: dart.getMethods(navbar_logo_mobile.NavBarLogoMobile.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(navbar_logo_mobile.NavBarLogoMobile, "package:flutter_website/widgets/mobile/navbar_logo_mobile.dart");
+  let C100;
+  let C103;
+  let C104;
+  let C102;
+  let C101;
+  let C107;
+  let C106;
+  let C105;
+  let C110;
+  let C111;
+  let C109;
+  let C108;
+  let C114;
+  let C115;
+  let C113;
+  let C112;
+  let C117;
+  let C116;
+  let C120;
+  let C121;
+  let C119;
+  let C118;
   navbar_desktop.NavigationBarTabletDesktop = class NavigationBarTabletDesktop extends framework.StatelessWidget {
     build(context) {
-      return new container.Container.new({height: 100.0, child: new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.spaceBetween, children: JSArrayOfWidget().of([new navbar_logo_desktop.NavBarLogoDesktop.new({$creationLocationd_0dea112b090073317d4: C68 || CT.C68}), new basic.Row.new({mainAxisSize: flex.MainAxisSize.min, children: JSArrayOfWidget().of([new navbar_item.NavBarItem.new("Portfolio", "portfolio", {$creationLocationd_0dea112b090073317d4: C69 || CT.C69}), new basic.SizedBox.new({width: 60.0, $creationLocationd_0dea112b090073317d4: C73 || CT.C73}), new navbar_item.NavBarItem.new("About", "about", {$creationLocationd_0dea112b090073317d4: C76 || CT.C76}), util.bigSpace]), $creationLocationd_0dea112b090073317d4: C80 || CT.C80})]), $creationLocationd_0dea112b090073317d4: C84 || CT.C84}), $creationLocationd_0dea112b090073317d4: C88 || CT.C88});
+      return new container.Container.new({height: 100.0, child: new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.spaceBetween, children: JSArrayOfWidget().of([new navbar_logo_desktop.NavBarLogoDesktop.new({$creationLocationd_0dea112b090073317d4: C100 || CT.C100}), new basic.Row.new({mainAxisSize: flex.MainAxisSize.min, children: JSArrayOfWidget().of([new navbar_item.NavBarItem.new("Portfolio", "portfolio", {$creationLocationd_0dea112b090073317d4: C101 || CT.C101}), new basic.SizedBox.new({width: 60.0, $creationLocationd_0dea112b090073317d4: C105 || CT.C105}), new navbar_item.NavBarItem.new("About", "about", {$creationLocationd_0dea112b090073317d4: C108 || CT.C108}), util.bigSpace]), $creationLocationd_0dea112b090073317d4: C112 || CT.C112})]), $creationLocationd_0dea112b090073317d4: C116 || CT.C116}), $creationLocationd_0dea112b090073317d4: C118 || CT.C118});
     }
   };
   (navbar_desktop.NavigationBarTabletDesktop.new = function(opts) {
@@ -1320,27 +1642,27 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
   dart.setLibraryUri(navbar_desktop.NavigationBarTabletDesktop, "package:flutter_website/widgets/desktop/navbar_desktop.dart");
-  let C94;
-  let C95;
-  let C96;
-  let C93;
-  let C92;
-  let C99;
-  let C100;
-  let C101;
-  let C98;
-  let C97;
-  let C104;
-  let C103;
-  let C102;
-  let C107;
-  let C108;
-  let C109;
-  let C106;
-  let C105;
+  let C124;
+  let C125;
+  let C126;
+  let C123;
+  let C122;
+  let C129;
+  let C130;
+  let C131;
+  let C128;
+  let C127;
+  let C134;
+  let C133;
+  let C132;
+  let C137;
+  let C138;
+  let C139;
+  let C136;
+  let C135;
   nav_drawer.NavigationDrawer = class NavigationDrawer extends framework.StatelessWidget {
     build(context) {
-      return new container.Container.new({width: 300.0, decoration: new box_decoration.BoxDecoration.new({color: styles.primaryColor, boxShadow: JSArrayOfBoxShadow().of([new box_shadow.BoxShadow.new({color: colors.Colors.black12, blurRadius: 16.0})])}), child: new basic.Column.new({children: JSArrayOfWidget().of([new nav_drawer_item.DrawerItem.new("Portfolio", icons.Icons.camera, "portfolio", {$creationLocationd_0dea112b090073317d4: C92 || CT.C92}), new nav_drawer_item.DrawerItem.new("About", icons.Icons.help, "about", {$creationLocationd_0dea112b090073317d4: C97 || CT.C97})]), $creationLocationd_0dea112b090073317d4: C102 || CT.C102}), $creationLocationd_0dea112b090073317d4: C105 || CT.C105});
+      return new container.Container.new({width: 220.0, decoration: new box_decoration.BoxDecoration.new({color: styles.currentColor1, boxShadow: JSArrayOfBoxShadow().of([new box_shadow.BoxShadow.new({color: colors.Colors.black12, blurRadius: 16.0})])}), child: new basic.Column.new({children: JSArrayOfWidget().of([new nav_drawer_item.DrawerItem.new("Portfolio", icons.Icons.camera, "portfolio", {$creationLocationd_0dea112b090073317d4: C122 || CT.C122}), new nav_drawer_item.DrawerItem.new("About", icons.Icons.help, "about", {$creationLocationd_0dea112b090073317d4: C127 || CT.C127})]), $creationLocationd_0dea112b090073317d4: C132 || CT.C132}), $creationLocationd_0dea112b090073317d4: C135 || CT.C135});
     }
   };
   (nav_drawer.NavigationDrawer.new = function(opts) {
@@ -1355,15 +1677,15 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
   dart.setLibraryUri(nav_drawer.NavigationDrawer, "package:flutter_website/widgets/nav_drawer.dart");
-  let C110;
-  let C111;
-  let C114;
-  let C115;
-  let C113;
-  let C112;
+  let C140;
+  let C141;
+  let C144;
+  let C145;
+  let C143;
+  let C142;
   home.HomeView = class HomeView extends framework.StatelessWidget {
     build(context) {
-      return new responsive_builder.ScreenTypeLayout.new({desktop: new home_view_desktop.HomeContentViewDesktop.new({$creationLocationd_0dea112b090073317d4: C110 || CT.C110}), mobile: new home_view_mobile.HomeContentViewMobile.new({$creationLocationd_0dea112b090073317d4: C111 || CT.C111}), $creationLocationd_0dea112b090073317d4: C112 || CT.C112});
+      return new responsive_builder.ScreenTypeLayout.new({desktop: new home_view_desktop.HomeContentViewDesktop.new({$creationLocationd_0dea112b090073317d4: C140 || CT.C140}), mobile: new home_view_mobile.HomeContentViewMobile.new({$creationLocationd_0dea112b090073317d4: C141 || CT.C141}), $creationLocationd_0dea112b090073317d4: C142 || CT.C142});
     }
   };
   (home.HomeView.new = function(opts) {
@@ -1384,11 +1706,13 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
     "package:flutter_website/screens/portfolio.dart": portfolio,
     "package:flutter_website/screens/base.dart": base,
     "package:flutter_website/widgets/navbar.dart": navbar,
+    "package:flutter_website/widgets/mobile/navbar_mobile.dart": navbar_mobile,
+    "package:flutter_website/widgets/mobile/navbar_logo_mobile.dart": navbar_logo_mobile,
     "package:flutter_website/widgets/desktop/navbar_desktop.dart": navbar_desktop,
     "package:flutter_website/widgets/nav_drawer.dart": nav_drawer,
     "package:flutter_website/screens/home.dart": home
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["widgets/desktop/navbar_logo_desktop.dart","routing.dart","screens/portfolio.dart","screens/base.dart","widgets/navbar.dart","widgets/desktop/navbar_desktop.dart","widgets/nav_drawer.dart","screens/home.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UAU4B;AACxB,YAAO,kCACE,cAAM,AAAO,AAAsB,+GACnC,+BACQ,sBACX;IAIR;;;QAZ6B;;AAAQ,yEAAW,GAAG;;EAAC;;;;;;;;;;;;;QCwBnC;;AACX,8DACe,SACE,SACK,WACA,uBAEhB,KAAK,uFACW,SACL,SACK,WACA,oBACX,UAEL,6CACO,SAAS,SACX,KAAK;;EAEf;;;;;;;;;;;;iDAxCkC;AACD,IAAxC,WAAM,AAAiC,6BAAf,AAAS,QAAD;AAChC,YAAQ,AAAS,QAAD;;;AAEZ,cAAO,uBAAc;;;;AAErB,cAAO,uBAAc;;;;AAErB,cAAO,uBAAc;;;;AAErB,cAAO,uBAAc;;;EAE3B;iDAE+B;AAC7B,UAAO,oCACE,KAAK;EAEhB;;MAtBa,iBAAS;;;MACT,kBAAU;;;MACV,sBAAc;;;;;;ACAQ;IAAiB;;;;;;EACpD;;;;;;;;;;;;;;;;UAc4B;AACxB,YAAO,8BACE,kBACL,0BACO;IAuCb;;;IAtDM,oBAAkB;;;EAuD1B;;;;;;;;;;;;;ACpDkC;IAAgB;;;;;;EAClD;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAWqB,MAAX;AAG8D,MADpE,6BACI,4DAA8B,gCAAkB,YAAW;AAG7B,MADlC,mBAAa,AACR,iCAD4B,0BAAmB,6BACvC;IAGf;;AAMI,MAHF,cAAS;AAC2B,QAAlC,eAAc,uBAAa;;IAG/B;UAG0B;AACxB,YAAO,wDACI,SAAC,SAAS,sBAAsB,mCACI,YAAnC,AAAkB,iBAAD,mBAAsC,8CACzD,+FACA,uBACW,AAAW,8BACtB,sDACQ,QAAC,QAAS,mEAGf,6BACA,wDACe,+BAAI,gBACd,AAAqB,4CACxB,qBACA,2CACE,gCACa,sBAChB,uFACA,+BACW,kCACJ,AAAO,AAAsB;IAWpD;;;IA3DoB;IACH;IAEX,eAAS;;;EAyDjB;;;;;;;;;;;;;;;;;;;;;UCxE4B;AACxB,YAAO,uDACI,oHACD;IAEZ;;;;;;EACF;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UCL4B;AACxB,YAAO,sCACG,cACD,sCACgC,+CACnB,sBAChB,wGACA,iCAC6B,iCACT,sBAChB,+BAAW,oFACX,+BAAgB,+DAChB,+BAAW,4EACX;IAMZ;;;;;;EACF;;;;;;;;;;;;;;;;;;;;;;;;;;UCnB4B;AACxB,YAAO,qCACE,mBACK,6CACD,gCACI,yBAAC,qCAAwB,mCAAqB,mBACtD,gCACa,sBAChB,mCAAW,aAAmB,2FAC9B,mCAAW,SAAe;IAIlC;;;QAhB4B;;AAAQ,+DAAW,GAAG;;EAAC;;;;;;;;;;;;;;UCIzB;AACxB,YAAO,uDACI,qHACD;IAEZ;;;QARoB;;AAAQ,iDAAW,GAAG;;EAAC","file":"routing.ddc.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["widgets/desktop/navbar_logo_desktop.dart","routing.dart","screens/portfolio.dart","screens/base.dart","widgets/navbar.dart","widgets/mobile/navbar_mobile.dart","widgets/mobile/navbar_logo_mobile.dart","widgets/desktop/navbar_desktop.dart","widgets/nav_drawer.dart","screens/home.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UAU4B;AACxB,YAAO,kCACE,cAAM,AAAO,AAAsB,+GACnC,+BACQ,sBACX;IAIR;;;QAZ6B;;AAAQ,yEAAW,GAAG;;EAAC;;;;;;;;;;;;;QCwBnC;;AACX,8DACe,SACE,SACK,WACA,uBAEhB,KAAK,uFACW,SACL,SACK,WACA,oBACX,UAEL,6CACO,SAAS,SACX,KAAK;;EAEf;;;;;;;;;;;;iDAxCkC;AACD,IAAxC,WAAM,AAAiC,6BAAf,AAAS,QAAD;AAChC,YAAQ,AAAS,QAAD;;;AAEZ,cAAO,uBAAc;;;;AAErB,cAAO,uBAAc;;;;AAErB,cAAO,uBAAc;;;;AAErB,cAAO,uBAAc;;;EAE3B;iDAE+B;AAC7B,UAAO,oCACE,KAAK;EAEhB;;MAtBa,iBAAS;;;MACT,kBAAU;;;MACV,sBAAc;;;;;;ACAQ;IAAiB;;;;;;EACpD;;;;;;;;;;;;;;;;UAc4B;AACxB,YAAO,8BACE,kBACL,0BACO;IAuCb;;;IAtDM,oBAAkB;;;EAuD1B;;;;;;;;;;;;;ACpDkC;IAAgB;;;;;;EAClD;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAUqB,MAAX;AAG8D,MADpE,6BACI,4DAA8B,gCAAkB,YAAW;AAG7B,MADlC,mBAAa,AACR,iCAD4B,2BAAoB,6BACxC;IAGf;;AAMI,MAHF,cAAS;AAC2B,QAAlC,eAAc,uBAAa;;IAG/B;UAG0B;AACxB,YAAO,wDACI,SAAC,SAAS,sBAAsB,mCACI,YAAnC,AAAkB,iBAAD,mBAAsC,8CACzD,+FACA,uBACW,AAAW,8BACtB,sDACQ,QAAC,QAAS,mEAGf,6BACA,wDACe,+BAAI,gBACd,AAAqB,4CACxB,qBACA,2CACE,gCACa,sBAChB,uFACA,+BACW,kCACJ,AAAO,AAAsB;IAWpD;;;IA1DoB;IACH;IAEX,eAAS;;;EAwDjB;;;;;;;;;;;;;;;;;;;;;UCvE4B;AACxB,YAAO,uDACI,oHACD;IAEZ;;;;;;EACF;;;;;;;;;;;;;;;;;;;;;;;;;;;;UCN4B;AACxB,YAAO,sCACG,aACD,iCACsB,0CACU,+CACnB,sBAChB,yCACsB,+BAAI,YAClB,kBACE,0BACQ,2BACR,0EAEG;AACwB,gBAAxB,AAAY,qBAAT,OAAO;yFAGvB;IAIR;;;QAzB+B;;AAAQ,qEAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;UCK5B;AACxB,YAAO,kCACE;AAC6C,UAAlD,AAAO,AAAsB;iCAExB,gCACG,cACD,cACM,sBACX;IAIR;;;QAhB4B;;AAAQ,uEAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UCEzB;AACxB,YAAO,sCACG,cACD,sCACgC,+CACnB,sBAChB,0GACA,iCAC6B,iCACT,sBAChB,+BAAW,sFACX,+BAAgB,iEAChB,+BAAW,8EACX;IAMZ;;;;;;EACF;;;;;;;;;;;;;;;;;;;;;;;;;;UCnB4B;AACxB,YAAO,qCACE,mBACK,6CACD,iCACI,yBAAC,qCAAwB,mCAAqB,mBACtD,gCACa,sBAChB,mCAAW,aAAmB,6FAC9B,mCAAW,SAAe;IAIlC;;;QAhB4B;;AAAQ,+DAAW,GAAG;;EAAC;;;;;;;;;;;;;;UCIzB;AACxB,YAAO,uDACI,qHACD;IAEZ;;;QARoB;;AAAQ,iDAAW,GAAG;;EAAC","file":"routing.ddc.js"}');
   // Exports:
   return {
     widgets__desktop__navbar_logo_desktop: navbar_logo_desktop,
@@ -1396,6 +1720,8 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter_website/servi
     screens__portfolio: portfolio,
     screens__base: base,
     widgets__navbar: navbar,
+    widgets__mobile__navbar_mobile: navbar_mobile,
+    widgets__mobile__navbar_logo_mobile: navbar_logo_mobile,
     widgets__desktop__navbar_desktop: navbar_desktop,
     widgets__nav_drawer: nav_drawer,
     screens__home: home

@@ -746,7 +746,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       return this[_isMergedIntoParent];
     }
     set isMergedIntoParent(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1329, 12, "ert(value != ");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1329, 12, "value != null");
       if (dart.equals(this[_isMergedIntoParent], value)) return;
       this[_isMergedIntoParent] = value;
       this[_markDirty]();
@@ -759,7 +759,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
     }
     [_replaceChildren](newChildren) {
       let t4;
-      if (!!dart.test(newChildren[$any](dart.fn(child => dart.equals(child, this), SemanticsNodeTobool())))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1363, 12, "ert(!newChildren.any((SemanticsNode child) => child == t");
+      if (!!dart.test(newChildren[$any](dart.fn(child => dart.equals(child, this), SemanticsNodeTobool())))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1363, 12, "!newChildren.any((SemanticsNode child) => child == this)");
       if (!dart.test(dart.fn(() => {
         if (newChildren == this[_children]) {
           let mutationErrors = JSArrayOfDiagnosticsNode().of([]);
@@ -789,27 +789,27 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
             })()));
           }
         }
-        if (!(!dart.test(newChildren[$any](dart.fn(node => node.isMergedIntoParent, SemanticsNodeTobool()))) || dart.test(this.isPartOfNodeMerging))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1393, 14, "ert(!newChildren.any((SemanticsNode node) => node.isMergedIntoParent) || isPartOfNodeMer");
+        if (!(!dart.test(newChildren[$any](dart.fn(node => node.isMergedIntoParent, SemanticsNodeTobool()))) || dart.test(this.isPartOfNodeMerging))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1393, 14, "!newChildren.any((SemanticsNode node) => node.isMergedIntoParent) || isPartOfNodeMerging");
         this[_debugPreviousSnapshot] = ListOfSemanticsNode().from(newChildren);
         let ancestor = this;
         while (semantics.SemanticsNode.is(ancestor.parent))
           ancestor = ancestor.parent;
-        if (!!dart.test(newChildren[$any](dart.fn(child => dart.equals(child, ancestor), SemanticsNodeTobool())))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1400, 14, "ert(!newChildren.any((SemanticsNode child) => child == ances");
+        if (!!dart.test(newChildren[$any](dart.fn(child => dart.equals(child, ancestor), SemanticsNodeTobool())))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1400, 14, "!newChildren.any((SemanticsNode child) => child == ancestor)");
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1364, 12, "ert(() {\n      if (identical(newChildren, _children)) {\n        final List<DiagnosticsNode> mutationErrors = <DiagnosticsNode>[];\n        if (newChildren.length != _debugPreviousSnapshot.length) {\n          mutationErrors.add(ErrorDescription(\n            'The list\\'s length has changed from ${_debugPreviousSnapshot.length} '\n            'to ${newChildren.length}.'\n          ));\n        } else {\n          for (int i = 0; i < newChildren.length; i++) {\n            if (!identical(newChildren[i], _debugPreviousSnapshot[i])) {\n              if (mutationErrors.isNotEmpty) {\n                mutationErrors.add(ErrorSpacer());\n              }\n              mutationErrors.add(ErrorDescription('Child node at position $i was replaced:'));\n              mutationErrors.add(newChildren[i].toDiagnosticsNode(name: 'Previous child', style: DiagnosticsTreeStyle.singleLine));\n              mutationErrors.add(_debugPreviousSnapshot[i].toDiagnosticsNode(name: 'New child', style: DiagnosticsTreeStyle.singleLine));\n            }\n          }\n        }\n        if (mutationErrors.isNotEmpty) {\n          throw FlutterError.fromParts(<DiagnosticsNode>[\n            ErrorSummary('Failed to replace child semantics nodes because the list of `SemanticsNode`s was mutated.'),\n            ErrorHint('Instead of mutating the existing list, create a new list containing the desired `SemanticsNode`s.'),\n            ErrorDescription('Error details:'),\n            ...mutationErrors,\n          ]);\n        }\n      }\n      assert(!newChildren.any((SemanticsNode node) => node.isMergedIntoParent) || isPartOfNodeMerging);\n\n      _debugPreviousSnapshot = List<SemanticsNode>.from(newChildren);\n\n      SemanticsNode ancestor = this;\n      while (ancestor.parent is SemanticsNode)\n        ancestor = ancestor.parent;\n      assert(!newChildren.any((SemanticsNode child) => child == ancestor));\n      return true;\n   ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1364, 12, "() {\n      if (identical(newChildren, _children)) {\n        final List<DiagnosticsNode> mutationErrors = <DiagnosticsNode>[];\n        if (newChildren.length != _debugPreviousSnapshot.length) {\n          mutationErrors.add(ErrorDescription(\n            'The list\\'s length has changed from ${_debugPreviousSnapshot.length} '\n            'to ${newChildren.length}.'\n          ));\n        } else {\n          for (int i = 0; i < newChildren.length; i++) {\n            if (!identical(newChildren[i], _debugPreviousSnapshot[i])) {\n              if (mutationErrors.isNotEmpty) {\n                mutationErrors.add(ErrorSpacer());\n              }\n              mutationErrors.add(ErrorDescription('Child node at position $i was replaced:'));\n              mutationErrors.add(newChildren[i].toDiagnosticsNode(name: 'Previous child', style: DiagnosticsTreeStyle.singleLine));\n              mutationErrors.add(_debugPreviousSnapshot[i].toDiagnosticsNode(name: 'New child', style: DiagnosticsTreeStyle.singleLine));\n            }\n          }\n        }\n        if (mutationErrors.isNotEmpty) {\n          throw FlutterError.fromParts(<DiagnosticsNode>[\n            ErrorSummary('Failed to replace child semantics nodes because the list of `SemanticsNode`s was mutated.'),\n            ErrorHint('Instead of mutating the existing list, create a new list containing the desired `SemanticsNode`s.'),\n            ErrorDescription('Error details:'),\n            ...mutationErrors,\n          ]);\n        }\n      }\n      assert(!newChildren.any((SemanticsNode node) => node.isMergedIntoParent) || isPartOfNodeMerging);\n\n      _debugPreviousSnapshot = List<SemanticsNode>.from(newChildren);\n\n      SemanticsNode ancestor = this;\n      while (ancestor.parent is SemanticsNode)\n        ancestor = ancestor.parent;\n      assert(!newChildren.any((SemanticsNode child) => child == ancestor));\n      return true;\n    }()");
       if (!dart.test(dart.fn(() => {
         let seenChildren = LinkedHashSetOfSemanticsNode().new();
         for (let child of newChildren)
-          if (!dart.test(seenChildren.add(child))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1406, 16, "ert(seenChildren.add(ch");
+          if (!dart.test(seenChildren.add(child))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1406, 16, "seenChildren.add(child)");
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1403, 12, "ert(() {\n      final Set<SemanticsNode> seenChildren = <SemanticsNode>{};\n      for (SemanticsNode child in newChildren)\n        assert(seenChildren.add(child)); // check for duplicate adds\n      return true;\n   ");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1403, 12, "() {\n      final Set<SemanticsNode> seenChildren = <SemanticsNode>{};\n      for (SemanticsNode child in newChildren)\n        assert(seenChildren.add(child)); // check for duplicate adds\n      return true;\n    }()");
       if (this[_children] != null) {
         for (let child of this[_children])
           child[_dead] = true;
       }
       if (newChildren != null) {
         for (let child of newChildren) {
-          if (!!dart.test(child.isInvisible)) dart.assertFailed("Child " + dart.str(child) + " is invisible and should not be added as a child of " + dart.str(this) + ".", "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1417, 16, "ert(!child.isInvis");
+          if (!!dart.test(child.isInvisible)) dart.assertFailed("Child " + dart.str(child) + " is invisible and should not be added as a child of " + dart.str(this) + ".", "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1417, 16, "!child.isInvisible");
           child[_dead] = false;
         }
       }
@@ -831,15 +831,15 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
               t4 = child.parent;
               t4 == null ? null : t4.dropChild(child);
             }
-            if (!!dart.test(child.attached)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1445, 18, "ert(!child.atta");
+            if (!!dart.test(child.attached)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1445, 18, "!child.attached");
             this.adoptChild(child);
             sawChange = true;
           }
         }
       }
       if (!sawChange && this[_children] != null) {
-        if (!(newChildren != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1452, 14, "ert(newChildren != ");
-        if (!(newChildren[$length] == this[_children][$length])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1453, 14, "ert(newChildren.length == _children.le");
+        if (!(newChildren != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1452, 14, "newChildren != null");
+        if (!(newChildren[$length] == this[_children][$length])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1453, 14, "newChildren.length == _children.length");
         for (let i = 0; i < dart.notNull(this[_children][$length]); i = i + 1) {
           if (this[_children][$_get](i).id != newChildren[$_get](i).id) {
             sawChange = true;
@@ -887,7 +887,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
     attach(owner) {
       semantics.SemanticsOwner._check(owner);
       super.attach(owner);
-      if (!!dart.test(owner[_nodes][$containsKey](this.id))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1519, 12, "ert(!owner._nodes.containsKey");
+      if (!!dart.test(owner[_nodes][$containsKey](this.id))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1519, 12, "!owner._nodes.containsKey(id)");
       owner[_nodes][$_set](this.id, this);
       owner[_detachedNodes].remove(this);
       if (dart.test(this[_dirty])) {
@@ -900,12 +900,12 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       }
     }
     detach() {
-      if (!dart.test(this.owner[_nodes][$containsKey](this.id))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1534, 12, "ert(owner._nodes.containsKey");
-      if (!!dart.test(this.owner[_detachedNodes].contains(this))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1535, 12, "ert(!owner._detachedNodes.contains(t");
+      if (!dart.test(this.owner[_nodes][$containsKey](this.id))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1534, 12, "owner._nodes.containsKey(id)");
+      if (!!dart.test(this.owner[_detachedNodes].contains(this))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1535, 12, "!owner._detachedNodes.contains(this)");
       this.owner[_nodes][$remove](this.id);
       this.owner[_detachedNodes].add(this);
       super.detach();
-      if (!(this.owner == null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1539, 12, "ert(owner == ");
+      if (!(this.owner == null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1539, 12, "owner == null");
       if (this[_children] != null) {
         for (let child of this[_children]) {
           if (dart.equals(child.parent, this)) child.detach();
@@ -917,7 +917,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       if (dart.test(this[_dirty])) return;
       this[_dirty] = true;
       if (dart.test(this.attached)) {
-        if (!!dart.test(this.owner[_detachedNodes].contains(this))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1562, 14, "ert(!owner._detachedNodes.contains(t");
+        if (!!dart.test(this.owner[_detachedNodes].contains(this))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1562, 14, "!owner._detachedNodes.contains(this)");
         this.owner[_dirtyNodes].add(this);
       }
     }
@@ -999,7 +999,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       let childrenInInversePaintOrder = opts && 'childrenInInversePaintOrder' in opts ? opts.childrenInInversePaintOrder : null;
       config == null ? config = semantics.SemanticsNode._kEmptyConfig : null;
       if (dart.test(this[_isDifferentFromCurrentSemanticAnnotation](config))) this[_markDirty]();
-      if (!(config.platformViewId == null || dart.test(childrenInInversePaintOrder[$isEmpty]))) dart.assertFailed("SemanticsNodes with children must not specify a platformViewId.", "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1848, 7, "    config.platformViewId == null || childrenInInversePaintOrder.isE");
+      if (!(config.platformViewId == null || dart.test(childrenInInversePaintOrder[$isEmpty]))) dart.assertFailed("SemanticsNodes with children must not specify a platformViewId.", "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1848, 7, "config.platformViewId == null || childrenInInversePaintOrder.isEmpty");
       this[_label] = config.label;
       this[_decreasedValue] = config.decreasedValue;
       this[_value] = config.value;
@@ -1027,8 +1027,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       this[_maxValueLength] = config[_maxValueLength];
       this[_currentValueLength] = config[_currentValueLength];
       this[_replaceChildren]((t4 = childrenInInversePaintOrder, t4 == null ? C1 || CT.C1 : t4));
-      if (!(!dart.test(this[_canPerformAction](ui.SemanticsAction.increase)) || (this[_value] === "")[$_equals](this[_increasedValue] === ""))) dart.assertFailed("A SemanticsNode with action \"increase\" needs to be annotated with either both \"value\" and \"increasedValue\" or neither", "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1881, 7, "    !_canPerformAction(SemanticsAction.increase) || (_value == '') == (_increasedValue ==");
-      if (!(!dart.test(this[_canPerformAction](ui.SemanticsAction.decrease)) || (this[_value] === "")[$_equals](this[_decreasedValue] === ""))) dart.assertFailed("A SemanticsNode with action \"increase\" needs to be annotated with either both \"value\" and \"decreasedValue\" or neither", "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1885, 7, "    !_canPerformAction(SemanticsAction.decrease) || (_value == '') == (_decreasedValue ==");
+      if (!(!dart.test(this[_canPerformAction](ui.SemanticsAction.increase)) || (this[_value] === "")[$_equals](this[_increasedValue] === ""))) dart.assertFailed("A SemanticsNode with action \"increase\" needs to be annotated with either both \"value\" and \"increasedValue\" or neither", "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1881, 7, "!_canPerformAction(SemanticsAction.increase) || (_value == '') == (_increasedValue == '')");
+      if (!(!dart.test(this[_canPerformAction](ui.SemanticsAction.decrease)) || (this[_value] === "")[$_equals](this[_decreasedValue] === ""))) dart.assertFailed("A SemanticsNode with action \"increase\" needs to be annotated with either both \"value\" and \"decreasedValue\" or neither", "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1885, 7, "!_canPerformAction(SemanticsAction.decrease) || (_value == '') == (_decreasedValue == '')");
     }
     getSemanticsData() {
       let t4;
@@ -1067,7 +1067,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       }
       if (dart.test(this.mergeAllDescendantsIntoThisNode)) {
         this[_visitDescendants](dart.fn(node => {
-          if (!dart.test(node.isMergedIntoParent)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1939, 16, "ert(node.isMergedIntoPa");
+          if (!dart.test(node.isMergedIntoParent)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 1939, 16, "node.isMergedIntoParent");
           flags = (dart.notNull(flags) | dart.notNull(node[_flags])) >>> 0;
           actions = (dart.notNull(actions) | dart.notNull(node[_actionsAsBits])) >>> 0;
           textDirection == null ? textDirection = node[_textDirection] : null;
@@ -1114,7 +1114,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
     }
     [_addToUpdate](builder, customSemanticsActionIdsUpdate) {
       let t4, t4$, t4$0, t4$1, t4$2, t4$3, t4$4, t4$5, t4$6, t4$7, t4$8, t4$9;
-      if (!dart.test(this[_dirty])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2037, 12, "ert(_d");
+      if (!dart.test(this[_dirty])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2037, 12, "_dirty");
       let data = this.getSemanticsData();
       let childrenInTraversalOrder = null;
       let childrenInHitTestOrder = null;
@@ -1246,7 +1246,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       let prefixOtherLines = opts && 'prefixOtherLines' in opts ? opts.prefixOtherLines : null;
       let minLevel = opts && 'minLevel' in opts ? opts.minLevel : C2 || CT.C2;
       let childOrder = opts && 'childOrder' in opts ? opts.childOrder : C3 || CT.C3;
-      if (!(childOrder != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2247, 12, "\n    assert(childO");
+      if (!(childOrder != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2247, 12, "childOrder != null");
       return this.toDiagnosticsNode({childOrder: childOrder}).toStringDeep({prefixLineOne: prefixLineOne, prefixOtherLines: prefixOtherLines, minLevel: minLevel});
     }
     toDiagnosticsNode(opts) {
@@ -1260,7 +1260,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       return this.debugListChildrenInOrder(childOrder)[$map](diagnostics.DiagnosticsNode, dart.fn(node => node.toDiagnosticsNode({childOrder: childOrder}), SemanticsNodeToDiagnosticsNode()))[$toList]();
     }
     debugListChildrenInOrder(childOrder) {
-      if (!(childOrder != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2274, 12, "\n    assert(childO");
+      if (!(childOrder != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2274, 12, "childOrder != null");
       if (this[_children] == null) return C1 || CT.C1;
       switch (childOrder) {
         case C5 || CT.C5:
@@ -1272,7 +1272,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
           return this[_childrenInTraversalOrder]();
         }
       }
-      if (!false) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2284, 12, "\n    ");
+      if (!false) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2284, 12, "false");
       return null;
     }
   };
@@ -2099,10 +2099,10 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
     this.isLeadingEdge = isLeadingEdge;
     this.offset = offset;
     this.node = node;
-    if (!(isLeadingEdge != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2302, 15, "}) : assert(isLeading");
-    if (!(offset != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2303, 15, "     assert(of");
-    if (!offset[$isFinite]) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2304, 15, "     assert(off");
-    if (!(node != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2305, 15, "     assert(");
+    if (!(isLeadingEdge != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2302, 15, "isLeadingEdge != null");
+    if (!(offset != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2303, 15, "offset != null");
+    if (!offset[$isFinite]) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2304, 15, "offset.isFinite");
+    if (!(node != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2305, 15, "node != null");
     ;
   }).prototype = semantics._BoxEdge.prototype;
   dart.addTypeTests(semantics._BoxEdge);
@@ -2211,7 +2211,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
     this.nodes = JSArrayOfSemanticsNode().of([]);
     this.startOffset = startOffset;
     this.textDirection = textDirection;
-    if (!(startOffset != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2339, 15, "}) : assert(startOf");
+    if (!(startOffset != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2339, 15, "startOffset != null");
     ;
   }).prototype = semantics._SemanticsSortGroup.prototype;
   dart.addTypeTests(semantics._SemanticsSortGroup);
@@ -2247,8 +2247,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
     this.node = node;
     this.sortKey = sortKey;
     this.position = position;
-    if (!(node != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2563, 14, "   : assert(");
-    if (!(position != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2564, 14, "     assert(posi");
+    if (!(node != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2563, 14, "node != null");
+    if (!(position != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2564, 14, "position != null");
     ;
   }).prototype = semantics._TraversalSortNode.prototype;
   dart.addTypeTests(semantics._TraversalSortNode);
@@ -2290,10 +2290,10 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
         localDirtyNodes[$sort](dart.fn((a, b) => dart.notNull(a.depth) - dart.notNull(b.depth), SemanticsNodeAndSemanticsNodeToint()));
         visitedNodes[$addAll](localDirtyNodes);
         for (let node of localDirtyNodes) {
-          if (!dart.test(node[_dirty])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2625, 16, "     assert");
-          if (!(node.parent == null || !dart.test(node.parent.isPartOfNodeMerging) || dart.test(node.isMergedIntoParent))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2626, 16, "     assert(node.parent == null || !node.parent.isPartOfNodeMerging || node.isMerg");
+          if (!dart.test(node[_dirty])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2625, 16, "node._dirty");
+          if (!(node.parent == null || !dart.test(node.parent.isPartOfNodeMerging) || dart.test(node.isMergedIntoParent))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2626, 16, "node.parent == null || !node.parent.isPartOfNodeMerging || node.isMergedIntoParent");
           if (dart.test(node.isPartOfNodeMerging)) {
-            if (!(dart.test(node.mergeAllDescendantsIntoThisNode) || node.parent != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2628, 18, "     assert(node.mergeAllDescendantsIntoThisNode || node.pa");
+            if (!(dart.test(node.mergeAllDescendantsIntoThisNode) || node.parent != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2628, 18, "node.mergeAllDescendantsIntoThisNode || node.parent != null");
             if (node.parent != null && dart.test(node.parent.isPartOfNodeMerging)) node.parent[_markDirty]();
           }
         }
@@ -2301,7 +2301,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       visitedNodes[$sort](dart.fn((a, b) => dart.notNull(a.depth) - dart.notNull(b.depth), SemanticsNodeAndSemanticsNodeToint()));
       let builder = new ui.SemanticsUpdateBuilder.new();
       for (let node of visitedNodes) {
-        if (!!dart.equals((t4 = node.parent, t4 == null ? null : t4[_dirty]), true)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2638, 14, "     assert(node.parent?._d");
+        if (!!dart.equals((t4 = node.parent, t4 == null ? null : t4[_dirty]), true)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2638, 14, "node.parent?._dirty != true");
         if (dart.test(node[_dirty]) && dart.test(node.attached)) node[_addToUpdate](builder, customSemanticsActionIds);
       }
       this[_dirtyNodes].clear();
@@ -2328,7 +2328,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
     }
     performAction(id, action, args) {
       if (args === void 0) args = null;
-      if (!(action != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2685, 12, "\n    assert(ac");
+      if (!(action != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2685, 12, "action != null");
       let handler = this[_getSemanticsActionHandlerForId](id, action);
       if (handler != null) {
         handler(args);
@@ -2365,7 +2365,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
     }
     performActionAt(position, action, args) {
       if (args === void 0) args = null;
-      if (!(action != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2735, 12, "\n    assert(ac");
+      if (!(action != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2735, 12, "action != null");
       let node = this.rootSemanticsNode;
       if (node == null) return;
       let handler = this[_getSemanticsActionHandlerForPosition](node, position, action);
@@ -2452,22 +2452,22 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       return this[_isSemanticBoundary];
     }
     set isSemanticBoundary(value) {
-      if (!(!dart.test(this.isMergingSemanticsOfDescendants) || dart.test(value))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2773, 12, "\n    assert(!isMergingSemanticsOfDescenda");
+      if (!(!dart.test(this.isMergingSemanticsOfDescendants) || dart.test(value))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2773, 12, "!isMergingSemanticsOfDescendants || value");
       this[_isSemanticBoundary] = value;
     }
     get hasBeenAnnotated() {
       return this[_hasBeenAnnotated];
     }
     [_addAction](action, handler) {
-      if (!(handler != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2835, 12, "\n    assert(han");
+      if (!(handler != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2835, 12, "handler != null");
       this[_actions][$_set](action, handler);
       this[_actionsAsBits] = (dart.notNull(this[_actionsAsBits]) | dart.notNull(action.index)) >>> 0;
       this[_hasBeenAnnotated] = true;
     }
     [_addArgumentlessAction](action, handler) {
-      if (!(handler != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2847, 12, "\n    assert(han");
+      if (!(handler != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2847, 12, "handler != null");
       this[_addAction](action, dart.fn(args => {
-        if (!(args == null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2849, 14, "     assert(");
+        if (!(args == null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2849, 14, "args == null");
         handler();
       }, dynamicToNull()));
     }
@@ -2566,10 +2566,10 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       return this[_onMoveCursorForwardByCharacter];
     }
     set onMoveCursorForwardByCharacter(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3084, 12, "\n    assert(v");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3084, 12, "value != null");
       this[_addAction](ui.SemanticsAction.moveCursorForwardByCharacter, dart.fn(args => {
         let extentSelection = core.bool._check(args);
-        if (!(extentSelection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3087, 14, "     assert(extentSelec");
+        if (!(extentSelection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3087, 14, "extentSelection != null");
         value(extentSelection);
       }, dynamicToNull()));
       this[_onMoveCursorForwardByCharacter] = value;
@@ -2578,10 +2578,10 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       return this[_onMoveCursorBackwardByCharacter];
     }
     set onMoveCursorBackwardByCharacter(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3103, 12, "\n    assert(v");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3103, 12, "value != null");
       this[_addAction](ui.SemanticsAction.moveCursorBackwardByCharacter, dart.fn(args => {
         let extentSelection = core.bool._check(args);
-        if (!(extentSelection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3106, 14, "     assert(extentSelec");
+        if (!(extentSelection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3106, 14, "extentSelection != null");
         value(extentSelection);
       }, dynamicToNull()));
       this[_onMoveCursorBackwardByCharacter] = value;
@@ -2590,10 +2590,10 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       return this[_onMoveCursorForwardByWord];
     }
     set onMoveCursorForwardByWord(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3122, 12, "\n    assert(v");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3122, 12, "value != null");
       this[_addAction](ui.SemanticsAction.moveCursorForwardByWord, dart.fn(args => {
         let extentSelection = core.bool._check(args);
-        if (!(extentSelection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3125, 14, "     assert(extentSelec");
+        if (!(extentSelection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3125, 14, "extentSelection != null");
         value(extentSelection);
       }, dynamicToNull()));
       this[_onMoveCursorForwardByCharacter] = value;
@@ -2602,10 +2602,10 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       return this[_onMoveCursorBackwardByWord];
     }
     set onMoveCursorBackwardByWord(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3141, 12, "\n    assert(v");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3141, 12, "value != null");
       this[_addAction](ui.SemanticsAction.moveCursorBackwardByWord, dart.fn(args => {
         let extentSelection = core.bool._check(args);
-        if (!(extentSelection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3144, 14, "     assert(extentSelec");
+        if (!(extentSelection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3144, 14, "extentSelection != null");
         value(extentSelection);
       }, dynamicToNull()));
       this[_onMoveCursorBackwardByCharacter] = value;
@@ -2614,11 +2614,11 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       return this[_onSetSelection];
     }
     set onSetSelection(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3160, 12, "\n    assert(v");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3160, 12, "value != null");
       this[_addAction](ui.SemanticsAction.setSelection, dart.fn(args => {
-        if (!(args != null && core.Map.is(args))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3162, 14, "     assert(args != null &&");
+        if (!(args != null && core.Map.is(args))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3162, 14, "args != null && args is Map");
         let selection = MapOfString$int()._check(dart.dgsend(args, [core.String, core.int], 'cast', []));
-        if (!(selection != null && selection[$_get]("base") != null && selection[$_get]("extent") != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3164, 14, "     assert(selection != null && selection['base'] != null && selection['exte");
+        if (!(selection != null && selection[$_get]("base") != null && selection[$_get]("extent") != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3164, 14, "selection != null && selection['base'] != null && selection['extent'] != null");
         value(new text_editing.TextSelection.new({baseOffset: selection[$_get]("base"), extentOffset: selection[$_get]("extent")}));
       }, dynamicToNull()));
       this[_onSetSelection] = value;
@@ -2644,7 +2644,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       return this[_sortKey];
     }
     set sortKey(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3243, 12, "\n    assert(v");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3243, 12, "value != null");
       this[_sortKey] = value;
       this[_hasBeenAnnotated] = true;
     }
@@ -2699,7 +2699,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       return this[_isMergingSemanticsOfDescendants];
     }
     set isMergingSemanticsOfDescendants(value) {
-      if (!dart.test(this.isSemanticBoundary)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3341, 12, "\n    assert(isSema");
+      if (!dart.test(this.isSemanticBoundary)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3341, 12, "isSemanticBoundary");
       this[_isMergingSemanticsOfDescendants] = value;
       this[_hasBeenAnnotated] = true;
     }
@@ -2722,7 +2722,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       return this[_label];
     }
     set label(label) {
-      if (!(label != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3381, 12, "\n    assert(l");
+      if (!(label != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3381, 12, "label != null");
       this[_label] = label;
       this[_hasBeenAnnotated] = true;
     }
@@ -2730,7 +2730,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       return this[_value];
     }
     set value(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3404, 12, "\n    assert(v");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3404, 12, "value != null");
       this[_value] = value;
       this[_hasBeenAnnotated] = true;
     }
@@ -2738,7 +2738,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       return this[_decreasedValue];
     }
     set decreasedValue(decreasedValue) {
-      if (!(decreasedValue != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3419, 12, "\n    assert(decreasedV");
+      if (!(decreasedValue != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3419, 12, "decreasedValue != null");
       this[_decreasedValue] = decreasedValue;
       this[_hasBeenAnnotated] = true;
     }
@@ -2746,7 +2746,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       return this[_increasedValue];
     }
     set increasedValue(increasedValue) {
-      if (!(increasedValue != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3434, 12, "\n    assert(increasedV");
+      if (!(increasedValue != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3434, 12, "increasedValue != null");
       this[_increasedValue] = increasedValue;
       this[_hasBeenAnnotated] = true;
     }
@@ -2754,7 +2754,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       return this[_hint];
     }
     set hint(hint) {
-      if (!(hint != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3450, 12, "\n    assert(");
+      if (!(hint != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3450, 12, "hint != null");
       this[_hint] = hint;
       this[_hasBeenAnnotated] = true;
     }
@@ -2770,7 +2770,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       return this[_elevation];
     }
     set elevation(value) {
-      if (!(value != null && dart.notNull(value) >= 0.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3471, 12, "\n    assert(value != null && ");
+      if (!(value != null && dart.notNull(value) >= 0.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3471, 12, "value != null && value >= 0.0");
       if (value == this[_elevation]) {
         return;
       }
@@ -2781,7 +2781,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       return this[_thickness];
     }
     set thickness(value) {
-      if (!(value != null && dart.notNull(value) >= 0.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3488, 12, "\n    assert(value != null && ");
+      if (!(value != null && dart.notNull(value) >= 0.0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3488, 12, "value != null && value >= 0.0");
       if (value == this[_thickness]) {
         return;
       }
@@ -2922,7 +2922,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       return this[_textSelection];
     }
     set textSelection(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3726, 12, "\n    assert(v");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3726, 12, "value != null");
       this[_textSelection] = value;
       this[_hasBeenAnnotated] = true;
     }
@@ -2930,7 +2930,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       return this[_scrollPosition];
     }
     set scrollPosition(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3744, 12, "\n    assert(v");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3744, 12, "value != null");
       this[_scrollPosition] = value;
       this[_hasBeenAnnotated] = true;
     }
@@ -2938,7 +2938,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       return this[_scrollExtentMax];
     }
     set scrollExtentMax(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3760, 12, "\n    assert(v");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3760, 12, "value != null");
       this[_scrollExtentMax] = value;
       this[_hasBeenAnnotated] = true;
     }
@@ -2946,7 +2946,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       return this[_scrollExtentMin];
     }
     set scrollExtentMin(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3776, 12, "\n    assert(v");
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3776, 12, "value != null");
       this[_scrollExtentMin] = value;
       this[_hasBeenAnnotated] = true;
     }
@@ -2985,7 +2985,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
       return true;
     }
     absorb(child) {
-      if (!!dart.test(this.explicitChildNodes)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3867, 12, "\n    assert(!explic");
+      if (!!dart.test(this.explicitChildNodes)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 3867, 12, "!explicitChildNodes");
       if (!dart.test(child.hasBeenAnnotated)) return;
       this[_actions][$addAll](child[_actions]);
       this[_customSemanticsActions][$addAll](child[_customSemanticsActions]);
@@ -3335,8 +3335,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
     }
     compareTo(other) {
       semantics.SemanticsSortKey._check(other);
-      if (!dart.equals(this[$runtimeType], dart.runtimeType(other))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 4032, 12, "\n    assert(runtimeType == other");
-      if (!(this.name == other.name)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 4033, 12, "\n    assert(name =");
+      if (!dart.equals(this[$runtimeType], dart.runtimeType(other))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 4032, 12, "runtimeType == other.runtimeType");
+      if (!(this.name == other.name)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 4033, 12, "name == other.name");
       return this.doCompare(other);
     }
     debugFillProperties(properties) {
@@ -3384,10 +3384,10 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
   (semantics.OrdinalSortKey.new = function(order, opts) {
     let name = opts && 'name' in opts ? opts.name : null;
     this[order$] = order;
-    if (!(order != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 4073, 15, "}) : assert(o");
-    if (!(order !== 0 / 0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 4074, 15, "     assert(order !");
-    if (!(dart.notNull(order) > -1 / 0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 4075, 15, "     assert(order > double.nega");
-    if (!(dart.notNull(order) < 1 / 0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 4076, 15, "     assert(order < dou");
+    if (!(order != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 4073, 15, "order != null");
+    if (!(order !== 0 / 0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 4074, 15, "order != double.nan");
+    if (!(dart.notNull(order) > -1 / 0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 4075, 15, "order > double.negativeInfinity");
+    if (!(dart.notNull(order) < 1 / 0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 4076, 15, "order < double.infinity");
     semantics.OrdinalSortKey.__proto__.new.call(this, {name: name});
     ;
   }).prototype = semantics.OrdinalSortKey.prototype;
@@ -3418,7 +3418,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/f
   semantics._childrenInDefaultOrder = function _childrenInDefaultOrder(children, textDirection) {
     let edges = JSArrayOf_BoxEdge().of([]);
     for (let child of children) {
-      if (!dart.test(child.rect.isFinite)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2508, 12, "\n    assert(child.r");
+      if (!dart.test(child.rect.isFinite)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/semantics/semantics.dart", 2508, 12, "child.rect.isFinite");
       let childRect = child.rect.deflate(0.1);
       edges[$add](new semantics._BoxEdge.new({isLeadingEdge: true, offset: semantics._pointInParentCoordinates(child, childRect.topLeft).dy, node: child}));
       edges[$add](new semantics._BoxEdge.new({isLeadingEdge: false, offset: semantics._pointInParentCoordinates(child, childRect.bottomRight).dy, node: child}));

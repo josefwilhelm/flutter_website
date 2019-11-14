@@ -762,7 +762,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
           print.debugPrint("No transient callback is currently executing.");
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 606, 12, " assert(() {\n      if (_FrameCallbackEntry.debugCurrentCallbackStack != null) {\n        debugPrint('When the current transient callback was registered, this was the stack:');\n        debugPrint(\n          FlutterError.defaultStackFilter(\n            _FrameCallbackEntry.debugCurrentCallbackStack.toString().trimRight().split('\\n')\n          ).join('\\n')\n        );\n      } else {\n        debugPrint('No transient callback is currently executing.');\n      }\n      return true;");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 606, 12, "() {\n      if (_FrameCallbackEntry.debugCurrentCallbackStack != null) {\n        debugPrint('When the current transient callback was registered, this was the stack:');\n        debugPrint(\n          FlutterError.defaultStackFilter(\n            _FrameCallbackEntry.debugCurrentCallbackStack.toString().trimRight().split('\\n')\n          ).join('\\n')\n        );\n      } else {\n        debugPrint('No transient callback is currently executing.');\n      }\n      return true;\n    }()");
     }
     static _debugDescribeTimeStamp(timeStamp, buffer) {
       if (dart.notNull(timeStamp.inDays) > 0) buffer.write(dart.str(timeStamp.inDays) + "d ");
@@ -953,7 +953,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
             }), VoidToIterableOfDiagnosticsNode())}));
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 551, 12, "() {\n      if (transientCallbackCount > 0) {\n        // We cache the values so that we can produce them later\n        // even if the information collector is called after\n        // the problem has been resolved.\n        final int count = transientCallbackCount;\n        final Map<int, _FrameCallbackEntry> callbacks = Map<int, _FrameCallbackEntry>.from(_transientCallbacks);\n        FlutterError.reportError(FlutterErrorDetails(\n          exception: reason,\n          library: 'scheduler library',\n          informationCollector: () sync* {\n            if (count == 1) {\n              // TODO(jacobr): I have added an extra line break in this case.\n              yield ErrorDescription(\n                'There was one transient callback left. '\n                'The stack trace for when it was registered is as follows:'\n              );\n            } else {\n              yield ErrorDescription(\n                'There were $count transient callbacks left. '\n                'The stack traces for when they were registered are as follows:'\n              );\n            }\n            for (int id in callbacks.keys) {\n              final _FrameCallbackEntry entry = callbacks[id];\n              yield DiagnosticsStackTrace('── callback $id ──', entry.debugStack, showSeparator: false);\n            }\n          },\n        ));\n      }\n      return true;");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 551, 12, "() {\n      if (transientCallbackCount > 0) {\n        // We cache the values so that we can produce them later\n        // even if the information collector is called after\n        // the problem has been resolved.\n        final int count = transientCallbackCount;\n        final Map<int, _FrameCallbackEntry> callbacks = Map<int, _FrameCallbackEntry>.from(_transientCallbacks);\n        FlutterError.reportError(FlutterErrorDetails(\n          exception: reason,\n          library: 'scheduler library',\n          informationCollector: () sync* {\n            if (count == 1) {\n              // TODO(jacobr): I have added an extra line break in this case.\n              yield ErrorDescription(\n                'There was one transient callback left. '\n                'The stack trace for when it was registered is as follows:'\n              );\n            } else {\n              yield ErrorDescription(\n                'There were $count transient callbacks left. '\n                'The stack traces for when they were registered are as follows:'\n              );\n            }\n            for (int id in callbacks.keys) {\n              final _FrameCallbackEntry entry = callbacks[id];\n              yield DiagnosticsStackTrace('── callback $id ──', entry.debugStack, showSeparator: false);\n            }\n          },\n        ));\n      }\n      return true;\n    }()");
       return true;
     }
     addPersistentFrameCallback(callback) {
@@ -1015,7 +1015,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       if (!dart.test(dart.fn(() => {
         if (dart.test(debug$.debugPrintScheduleFrameStacks)) assertions.debugPrintStack({label: "scheduleFrame() called. Current phase is " + dart.str(this.schedulerPhase) + "."});
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 773, 12, " assert(() {\n      if (debugPrintScheduleFrameStacks)\n        debugPrintStack(label: 'scheduleFrame() called. Current phase is $schedulerPhase.');\n      return true;");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 773, 12, "() {\n      if (debugPrintScheduleFrameStacks)\n        debugPrintStack(label: 'scheduleFrame() called. Current phase is $schedulerPhase.');\n      return true;\n    }()");
       this.ensureFrameCallbacksRegistered();
       this.window.scheduleFrame();
       this[_hasScheduledFrame] = true;
@@ -1025,7 +1025,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       if (!dart.test(dart.fn(() => {
         if (dart.test(debug$.debugPrintScheduleFrameStacks)) assertions.debugPrintStack({label: "scheduleForcedFrame() called. Current phase is " + dart.str(this.schedulerPhase) + "."});
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 805, 12, " assert(() {\n      if (debugPrintScheduleFrameStacks)\n        debugPrintStack(label: 'scheduleForcedFrame() called. Current phase is $schedulerPhase.');\n      return true;");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 805, 12, "() {\n      if (debugPrintScheduleFrameStacks)\n        debugPrintStack(label: 'scheduleForcedFrame() called. Current phase is $schedulerPhase.');\n      return true;\n    }()");
       this.window.scheduleFrame();
       this[_hasScheduledFrame] = true;
     }
@@ -1035,11 +1035,11 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       developer.Timeline.startSync("Warm-up frame");
       let hadScheduledFrame = this[_hasScheduledFrame];
       async.Timer.run(dart.fn(() => {
-        if (!dart.test(this[_warmUpFrame])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 840, 14, " assert(_war");
+        if (!dart.test(this[_warmUpFrame])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 840, 14, "_warmUpFrame");
         this.handleBeginFrame(null);
       }, VoidToNull()));
       async.Timer.run(dart.fn(() => {
-        if (!dart.test(this[_warmUpFrame])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 844, 14, " assert(_war");
+        if (!dart.test(this[_warmUpFrame])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 844, 14, "_warmUpFrame");
         this.handleDrawFrame();
         this.resetEpoch();
         this[_warmUpFrame] = false;
@@ -1059,16 +1059,16 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       return new core.Duration.new({microseconds: (dart.notNull(rawDurationSinceEpoch.inMicroseconds) / dart.notNull(binding$0.timeDilation))[$round]() + dart.notNull(this[_epochStart].inMicroseconds)});
     }
     get currentFrameTimeStamp() {
-      if (!(this[_currentFrameTimeStamp] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 913, 12, " assert(_currentFrameTimeStamp");
+      if (!(this[_currentFrameTimeStamp] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 913, 12, "_currentFrameTimeStamp != null");
       return this[_currentFrameTimeStamp];
     }
     get currentSystemFrameTimeStamp() {
-      if (!(this[_lastRawTimeStamp] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 930, 12, " assert(_lastRawTimeStamp");
+      if (!(this[_lastRawTimeStamp] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 930, 12, "_lastRawTimeStamp != null");
       return this[_lastRawTimeStamp];
     }
     [_handleBeginFrame](rawTimeStamp) {
       if (dart.test(this[_warmUpFrame])) {
-        if (!!dart.test(this[_ignoreNextEngineDrawFrame])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 940, 14, " assert(!_ignoreNextEngineD");
+        if (!!dart.test(this[_ignoreNextEngineDrawFrame])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 940, 14, "!_ignoreNextEngineDrawFrame");
         this[_ignoreNextEngineDrawFrame] = true;
         return;
       }
@@ -1100,8 +1100,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
           if (dart.test(debug$.debugPrintBeginFrameBanner)) print.debugPrint(this[_debugBanner]);
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 985, 12, " assert(() {\n      _debugFrameNumber += 1;\n\n      if (debugPrintBeginFrameBanner || debugPrintEndFrameBanner) {\n        final StringBuffer frameTimeStampDescription = StringBuffer();\n        if (rawTimeStamp != null) {\n          _debugDescribeTimeStamp(_currentFrameTimeStamp, frameTimeStampDescription);\n        } else {\n          frameTimeStampDescription.write('(warm-up frame)');\n        }\n        _debugBanner = '▄▄▄▄▄▄▄▄ Frame ${_debugFrameNumber.toString().padRight(7)}   ${frameTimeStampDescription.toString().padLeft(18)} ▄▄▄▄▄▄▄▄';\n        if (debugPrintBeginFrameBanner)\n          debugPrint(_debugBan");
-      if (!dart.equals(this.schedulerPhase, binding$0.SchedulerPhase.idle)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1002, 12, "     return true;\n    }());\n\n    asse");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 985, 12, "() {\n      _debugFrameNumber += 1;\n\n      if (debugPrintBeginFrameBanner || debugPrintEndFrameBanner) {\n        final StringBuffer frameTimeStampDescription = StringBuffer();\n        if (rawTimeStamp != null) {\n          _debugDescribeTimeStamp(_currentFrameTimeStamp, frameTimeStampDescription);\n        } else {\n          frameTimeStampDescription.write('(warm-up frame)');\n        }\n        _debugBanner = '▄▄▄▄▄▄▄▄ Frame ${_debugFrameNumber.toString().padRight(7)}   ${frameTimeStampDescription.toString().padLeft(18)} ▄▄▄▄▄▄▄▄';\n        if (debugPrintBeginFrameBanner)\n          debugPrint(_debugBanner);\n      }\n      return true;\n    }()");
+      if (!dart.equals(this.schedulerPhase, binding$0.SchedulerPhase.idle)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1002, 12, "schedulerPhase == SchedulerPhase.idle");
       this[_hasScheduledFrame] = false;
       try {
         developer.Timeline.startSync("Animate", {arguments: debug.timelineWhitelistArguments});
@@ -1117,7 +1117,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       }
     }
     handleDrawFrame() {
-      if (!dart.equals(this[_schedulerPhase], binding$0.SchedulerPhase.midFrameMicrotasks)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1030, 12, ".\n  void handleDrawFrame() {\n    assert(_schedulerPh");
+      if (!dart.equals(this[_schedulerPhase], binding$0.SchedulerPhase.midFrameMicrotasks)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1030, 12, "_schedulerPhase == SchedulerPhase.midFrameMicrotasks");
       developer.Timeline.finishSync();
       try {
         this[_schedulerPhase] = binding$0.SchedulerPhase.persistentCallbacks;
@@ -1135,7 +1135,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
           if (dart.test(debug$.debugPrintEndFrameBanner)) print.debugPrint("▀"[$times](this[_debugBanner].length));
           this[_debugBanner] = null;
           return true;
-        }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1048, 14, "shSync(); // end the Frame\n      assert(() {\n        if (debugPrintEndFrameBanner)\n          debugPrint('▀' * _debugBanner.length);\n        _debugBan");
+        }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1048, 14, "() {\n        if (debugPrintEndFrameBanner)\n          debugPrint('▀' * _debugBanner.length);\n        _debugBanner = null;\n        return true;\n      }()");
         this[_currentFrameTimeStamp] = null;
       }
     }
@@ -1144,12 +1144,12 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
     }
     [_invokeFrameCallback](callback, timeStamp, callbackStack) {
       if (callbackStack === void 0) callbackStack = null;
-      if (!(callback != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1090, 12, " StackTrace call");
-      if (!(binding$0._FrameCallbackEntry.debugCurrentCallbackStack == null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1091, 12, "\n    assert(callback != null);\n    assert(_FrameCallb");
+      if (!(callback != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1090, 12, "callback != null");
+      if (!(binding$0._FrameCallbackEntry.debugCurrentCallbackStack == null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1091, 12, "_FrameCallbackEntry.debugCurrentCallbackStack == null");
       if (!dart.test(dart.fn(() => {
         binding$0._FrameCallbackEntry.debugCurrentCallbackStack = callbackStack;
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1092, 12, "CurrentCallbackStack == null);\n    assert(() {\n      _FrameCallbackEntry.debugCurrentCallbackStack =");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1092, 12, "() {\n      _FrameCallbackEntry.debugCurrentCallbackStack = callbackStack;\n      return true;\n    }()");
       try {
         callback(timeStamp);
       } catch (e) {
@@ -1162,7 +1162,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       if (!dart.test(dart.fn(() => {
         binding$0._FrameCallbackEntry.debugCurrentCallbackStack = null;
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1114, 12, " );\n        },\n      ));\n    }\n    assert(() {\n      _FrameCallbackEntry.debugCurrentCallba");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1114, 12, "() {\n      _FrameCallbackEntry.debugCurrentCallbackStack = null;\n      return true;\n    }()");
     }
   };
   (binding$0.SchedulerBinding[dart.mixinNew] = function() {

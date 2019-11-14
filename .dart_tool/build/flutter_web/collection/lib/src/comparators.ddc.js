@@ -161,7 +161,7 @@ define(['dart_sdk'], function(dart_sdk) {
     return defaultResult[$sign];
   };
   comparators._compareNaturally = function _compareNaturally(a, b, index, aChar, bChar) {
-    if (!(aChar != bChar)) dart.assertFailed(null, "org-dartlang-app:///packages/collection/src/comparators.dart", 259, 10, "t(aChar != bCh");
+    if (!(aChar != bChar)) dart.assertFailed(null, "org-dartlang-app:///packages/collection/src/comparators.dart", 259, 10, "aChar != bChar");
     let aIsDigit = comparators._isDigit(aChar);
     let bIsDigit = comparators._isDigit(bChar);
     if (dart.test(aIsDigit)) {

@@ -5,7 +5,6 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/sr
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
   const basic = packages__flutter__src__widgets__actions.src__widgets__basic;
-  const icon = packages__flutter__src__widgets__actions.src__widgets__icon;
   const widget_inspector = packages__flutter__src__widgets__actions.src__widgets__widget_inspector;
   const framework = packages__flutter__src__widgets__actions.src__widgets__framework;
   const icon_data = packages__flutter__src__widgets__actions.src__widgets__icon_data;
@@ -28,83 +27,37 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/sr
       return C3 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "icon",
-        [_Location_column]: 16,
-        [_Location_line]: 16,
+        [_Location_name]: "title",
+        [_Location_column]: 39,
+        [_Location_line]: 15,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C4 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "route",
+        [_Location_column]: 46,
+        [_Location_line]: 15,
         [_Location_file]: null
       });
     },
     get C2() {
-      return C2 = dart.constList([C3 || CT.C3], widget_inspector._Location);
+      return C2 = dart.constList([C3 || CT.C3, C4 || CT.C4], widget_inspector._Location);
     },
     get C1() {
       return C1 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C2 || CT.C2,
         [_Location_name]: null,
-        [_Location_column]: 11,
-        [_Location_line]: 16,
+        [_Location_column]: 28,
+        [_Location_line]: 15,
         [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/nav_drawer_item.dart"
       });
-    },
-    get C6() {
-      return C6 = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "width",
-        [_Location_column]: 20,
-        [_Location_line]: 17,
-        [_Location_file]: null
-      });
-    },
-    get C5() {
-      return C5 = dart.constList([C6 || CT.C6], widget_inspector._Location);
-    },
-    get C4() {
-      return C4 = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C5 || CT.C5,
-        [_Location_name]: null,
-        [_Location_column]: 11,
-        [_Location_line]: 17,
-        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/nav_drawer_item.dart"
-      });
-    },
-    get C9() {
-      return C9 = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "title",
-        [_Location_column]: 22,
-        [_Location_line]: 18,
-        [_Location_file]: null
-      });
-    },
-    get C10() {
-      return C10 = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "route",
-        [_Location_column]: 29,
-        [_Location_line]: 18,
-        [_Location_file]: null
-      });
-    },
-    get C8() {
-      return C8 = dart.constList([C9 || CT.C9, C10 || CT.C10], widget_inspector._Location);
     },
     get C7() {
       return C7 = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C8 || CT.C8,
-        [_Location_name]: null,
-        [_Location_column]: 11,
-        [_Location_line]: 18,
-        [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/nav_drawer_item.dart"
-      });
-    },
-    get C13() {
-      return C13 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "children",
@@ -113,21 +66,21 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/sr
         [_Location_file]: null
       });
     },
-    get C12() {
-      return C12 = dart.constList([C13 || CT.C13], widget_inspector._Location);
+    get C6() {
+      return C6 = dart.constList([C7 || CT.C7], widget_inspector._Location);
     },
-    get C11() {
-      return C11 = dart.const({
+    get C5() {
+      return C5 = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C12 || CT.C12,
+        [_Location_parameterLocations]: C6 || CT.C6,
         [_Location_name]: null,
         [_Location_column]: 14,
         [_Location_line]: 14,
         [_Location_file]: "org-dartlang-app:///packages/flutter_website/widgets/nav_drawer_item.dart"
       });
     },
-    get C16() {
-      return C16 = dart.const({
+    get C10() {
+      return C10 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "padding",
@@ -136,8 +89,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/sr
         [_Location_file]: null
       });
     },
-    get C17() {
-      return C17 = dart.const({
+    get C11() {
+      return C11 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "child",
@@ -146,13 +99,13 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/sr
         [_Location_file]: null
       });
     },
-    get C15() {
-      return C15 = dart.constList([C16 || CT.C16, C17 || CT.C17], widget_inspector._Location);
+    get C9() {
+      return C9 = dart.constList([C10 || CT.C10, C11 || CT.C11], widget_inspector._Location);
     },
-    get C14() {
-      return C14 = dart.const({
+    get C8() {
+      return C8 = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C15 || CT.C15,
+        [_Location_parameterLocations]: C9 || CT.C9,
         [_Location_name]: null,
         [_Location_column]: 12,
         [_Location_line]: 12,
@@ -171,22 +124,16 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/sr
   const _Location_line = dart.privateName(widget_inspector, "_Location.line");
   const _Location_file = dart.privateName(widget_inspector, "_Location.file");
   let C3;
+  let C4;
   let C2;
   let C1;
+  let C7;
   let C6;
   let C5;
-  let C4;
-  let C9;
   let C10;
-  let C8;
-  let C7;
-  let C13;
-  let C12;
   let C11;
-  let C16;
-  let C17;
-  let C15;
-  let C14;
+  let C9;
+  let C8;
   const title$ = dart.privateName(nav_drawer_item, "DrawerItem.title");
   const icon$ = dart.privateName(nav_drawer_item, "DrawerItem.icon");
   const route$ = dart.privateName(nav_drawer_item, "DrawerItem.route");
@@ -210,7 +157,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/sr
       super.route = value;
     }
     build(context) {
-      return new basic.Padding.new({padding: C0 || CT.C0, child: new basic.Row.new({children: JSArrayOfWidget().of([new icon.Icon.new(this.icon, {$creationLocationd_0dea112b090073317d4: C1 || CT.C1}), new basic.SizedBox.new({width: 30.0, $creationLocationd_0dea112b090073317d4: C4 || CT.C4}), new navbar_item.NavBarItem.new(this.title, this.route, {$creationLocationd_0dea112b090073317d4: C7 || CT.C7})]), $creationLocationd_0dea112b090073317d4: C11 || CT.C11}), $creationLocationd_0dea112b090073317d4: C14 || CT.C14});
+      return new basic.Padding.new({padding: C0 || CT.C0, child: new basic.Row.new({children: JSArrayOfWidget().of([new navbar_item.NavBarItem.new(this.title, this.route, {$creationLocationd_0dea112b090073317d4: C1 || CT.C1})]), $creationLocationd_0dea112b090073317d4: C5 || CT.C5}), $creationLocationd_0dea112b090073317d4: C8 || CT.C8});
     }
   };
   (nav_drawer_item.DrawerItem.new = function(title, icon, route, opts) {
@@ -236,7 +183,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/sr
   dart.trackLibraries("packages/flutter_website/widgets/nav_drawer_item", {
     "package:flutter_website/widgets/nav_drawer_item.dart": nav_drawer_item
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["nav_drawer_item.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAIe;;;;;;IACE;;;;;;IACF;;;;;;UAIa;AACxB,YAAO,qDAEE,6BACa,sBAChB,kBAAK,mEACL,+BAAgB,6DAChB,+BAAW,YAAO;IAI1B;;6CAdsB,OAAY,MAAW;;IAAvB;IAAY;IAAW;AAAvC;;EAA6C","file":"nav_drawer_item.ddc.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["nav_drawer_item.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAIe;;;;;;IACE;;;;;;IACF;;;;;;UAIa;AACxB,YAAO,qDAEE,6BACa,sBAAC,+BAAW,YAAO;IAG3C;;6CAVsB,OAAY,MAAW;;IAAvB;IAAY;IAAW;AAAvC;;EAA6C","file":"nav_drawer_item.ddc.js"}');
   // Exports:
   return {
     widgets__nav_drawer_item: nav_drawer_item

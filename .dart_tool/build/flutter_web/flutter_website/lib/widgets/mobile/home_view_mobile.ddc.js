@@ -1,4 +1,4 @@
-define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/src/rendering/animated_size', 'packages/flutter/src/painting/_network_image_web', 'packages/auto_size_text/auto_size_text', 'packages/flutter_website/styles', 'packages/flutter_website/util', 'packages/flutter_website/widgets/contact'], function(dart_sdk, packages__flutter__src__widgets__actions, packages__flutter__src__rendering__animated_size, packages__flutter__src__painting___network_image_web, packages__auto_size_text__auto_size_text, packages__flutter_website__styles, packages__flutter_website__util, packages__flutter_website__widgets__contact) {
+define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/src/rendering/animated_size', 'packages/flutter/src/painting/_network_image_web', 'packages/auto_size_text/auto_size_text', 'packages/flutter_website/styles', 'packages/flutter_website/widgets/contact'], function(dart_sdk, packages__flutter__src__widgets__actions, packages__flutter__src__rendering__animated_size, packages__flutter__src__painting___network_image_web, packages__auto_size_text__auto_size_text, packages__flutter_website__styles, packages__flutter_website__widgets__contact) {
   'use strict';
   const core = dart_sdk.core;
   const ui = dart_sdk.ui;
@@ -12,7 +12,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/sr
   const edge_insets = packages__flutter__src__painting___network_image_web.src__painting__edge_insets;
   const auto_size_text = packages__auto_size_text__auto_size_text.auto_size_text;
   const styles = packages__flutter_website__styles.styles;
-  const util = packages__flutter_website__util.util;
+  const util = packages__flutter_website__styles.util;
   const contact = packages__flutter_website__widgets__contact.widgets__contact;
   const home_view_mobile = Object.create(dart.library);
   let JSArrayOfWidget = () => (JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))();

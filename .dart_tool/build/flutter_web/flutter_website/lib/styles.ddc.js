@@ -1,13 +1,20 @@
-define(['dart_sdk', 'packages/flutter/material', 'packages/flutter/src/painting/_network_image_web'], function(dart_sdk, packages__flutter__material, packages__flutter__src__painting___network_image_web) {
+define(['dart_sdk', 'packages/flutter/material', 'packages/flutter/src/painting/_network_image_web', 'packages/flutter/src/widgets/actions'], function(dart_sdk, packages__flutter__material, packages__flutter__src__painting___network_image_web, packages__flutter__src__widgets__actions) {
   'use strict';
   const core = dart_sdk.core;
   const ui = dart_sdk.ui;
+  const math = dart_sdk.math;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
+  const colors = packages__flutter__material.src__material__colors;
   const text_theme = packages__flutter__material.src__material__text_theme;
   const theme_data = packages__flutter__material.src__material__theme_data;
   const text_style = packages__flutter__src__painting___network_image_web.src__painting__text_style;
+  const basic = packages__flutter__src__widgets__actions.src__widgets__basic;
+  const framework = packages__flutter__src__widgets__actions.src__widgets__framework;
   const styles = Object.create(dart.library);
+  const util = Object.create(dart.library);
+  const $length = dartx.length;
+  const $_get = dartx._get;
   const CT = Object.create(null);
   dart.defineLazy(CT, {
     get C0() {
@@ -264,6 +271,24 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter/src/painting/
         [TextStyle_color]: C2 || CT.C2,
         [TextStyle_inherit]: true
       });
+    },
+    get C19() {
+      return C19 = dart.const({
+        __proto__: basic.SizedBox.prototype,
+        [Widget_key]: null,
+        [SingleChildRenderObjectWidget_child]: null,
+        [SizedBox_height]: 24,
+        [SizedBox_width]: null
+      });
+    },
+    get C20() {
+      return C20 = dart.const({
+        __proto__: basic.SizedBox.prototype,
+        [Widget_key]: null,
+        [SingleChildRenderObjectWidget_child]: null,
+        [SizedBox_height]: 60,
+        [SizedBox_width]: 80
+      });
     }
   });
   const Color_value = dart.privateName(ui, "Color.value");
@@ -336,6 +361,10 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter/src/painting/
     /*styles.textColor*/get textColor() {
       return C2 || CT.C2;
     },
+    /*styles.currentColor1*/get currentColor1() {
+      return util.Util.getNextColor(colors.Colors.yellow);
+    },
+    set currentColor1(_) {},
     /*styles.colorArray*/get colorArray() {
       return C3 || CT.C3;
     },
@@ -361,13 +390,48 @@ define(['dart_sdk', 'packages/flutter/material', 'packages/flutter/src/painting/
       return theme_data.ThemeData.new({brightness: ui.Brightness.light, accentColor: styles.accentColor, primaryColor: styles.primaryColor, cardColor: styles.textColor, canvasColor: styles.primaryColor, scaffoldBackgroundColor: styles.primaryColor, fontFamily: "Karla", textTheme: styles.textThemeBright});
     }
   });
+  util.Util = class Util extends core.Object {
+    static getNextColor(currentColor) {
+      let index = math.Random.new().nextInt(styles.colorArray[$length]);
+      let newColor = styles.colorArray[$_get](index);
+      while (true)
+        if (!dart.equals(newColor, currentColor)) {
+          styles.currentColor1 = styles.colorArray[$_get](index);
+          return styles.currentColor1;
+        } else {
+          index = math.Random.new().nextInt(styles.colorArray[$length]);
+          newColor = styles.colorArray[$_get](index);
+        }
+    }
+  };
+  (util.Util.new = function() {
+    ;
+  }).prototype = util.Util.prototype;
+  dart.addTypeTests(util.Util);
+  dart.setLibraryUri(util.Util, "package:flutter_website/util.dart");
+  const Widget_key = dart.privateName(framework, "Widget.key");
+  const SingleChildRenderObjectWidget_child = dart.privateName(framework, "SingleChildRenderObjectWidget.child");
+  const SizedBox_height = dart.privateName(basic, "SizedBox.height");
+  const SizedBox_width = dart.privateName(basic, "SizedBox.width");
+  let C19;
+  let C20;
+  dart.defineLazy(util, {
+    /*util.smallSpace*/get smallSpace() {
+      return C19 || CT.C19;
+    },
+    /*util.bigSpace*/get bigSpace() {
+      return C20 || CT.C20;
+    }
+  });
   dart.trackLibraries("packages/flutter_website/styles", {
-    "package:flutter_website/styles.dart": styles
+    "package:flutter_website/styles.dart": styles,
+    "package:flutter_website/util.dart": util
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["styles.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MAEY,mBAAY;;;MACZ,kBAAW;;;MACjB,sBAAe;;;MACf,gBAAS;;;MAET,iBAAU;;;MAUV,sBAAe;;;MAEL,sBAAe;;;MAOf,kBAAW;;;MAOX,mBAAY;;;MAOZ,wBAAiB;;;MAOjB,uBAAgB;;;MAO1B,sBAAe;YAAG,uCACC,kCACV,kCACC,gCACH,+BACE,8CACY,qDAEd","file":"styles.ddc.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["styles.dart","util.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MAGY,mBAAY;;;MACZ,kBAAW;;;MACjB,sBAAe;;;MACf,gBAAS;;;MAET,oBAAa;YAAQ,wBAAoB;;;MAEzC,iBAAU;;;MAUV,sBAAe;;;MAEL,sBAAe;;;MAOf,kBAAW;;;MAOX,mBAAY;;;MAOZ,wBAAiB;;;MAOjB,uBAAgB;;;MAO1B,sBAAe;YAAG,uCACC,kCACV,kCACC,gCACH,+BACE,8CACY,qDAEd;;;;wBCzDqB;AAC1B,kBAAQ,AAAS,0BAAQ,AAAW;AACpC,qBAAW,AAAU,yBAAC,KAAK;AAC/B,aAAO;AACL,yBAAI,QAAQ,EAAI,YAAY;AAEO,UAAjC,uBAAgB,AAAU,yBAAC,KAAK;AAChC,gBAAO;;AAEoC,UAA3C,QAAQ,AAAS,0BAAQ,AAAW;AACR,UAA5B,WAAW,AAAU,yBAAC,KAAK;;IAEjC;;;;EACF;;;;;;;;;;MAEM,eAAU;;;MACV,aAAQ","file":"styles.ddc.js"}');
   // Exports:
   return {
-    styles: styles
+    styles: styles,
+    util: util
   };
 });
 
