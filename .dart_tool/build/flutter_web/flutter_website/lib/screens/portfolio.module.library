@@ -1,1 +1,0 @@
-{"isEntrypoint":true,"deps":["flutter|lib/material.dart","flutter_website|lib/screens/base.dart","flutter_website|lib/styles.dart","parallax_image|lib/parallax_image.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":[],"hasMain":false}

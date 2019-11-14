@@ -1,1 +1,0 @@
-{"isEntrypoint":true,"deps":["flutter_website|lib/services/navigation_service.dart","get_it|lib/get_it.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":[],"hasMain":false}
