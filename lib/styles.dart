@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_website/util.dart';
 
 const Color primaryColor = Color(0xFFD55672);
 const Color accentColor = Color(0XFFFF6140);
 const fontFamilyKarla = 'Karla';
 const textColor = Color(0XFFFAFAFA);
+
+Color activeColor = Util.getNextColor(Colors.yellow);
 
 const colorArray = [
   primaryColor,

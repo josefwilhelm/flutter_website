@@ -19,7 +19,9 @@ class NavigationBarMobile extends StatelessWidget {
               color: Colors.white,
               size: 32,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
           ),
           NavBarLogoMobile()
         ],

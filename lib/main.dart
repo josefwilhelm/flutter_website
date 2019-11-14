@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_website/screens/base.dart';
-import 'package:flutter_website/screens/home.dart';
-import 'package:flutter_website/screens/portfolio.dart';
 import 'package:flutter_website/service_locator.dart';
-import 'package:flutter_website/util.dart';
+import 'package:flutter_website/services/color_service.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   setupLocator();
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Josef Wilhelm',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

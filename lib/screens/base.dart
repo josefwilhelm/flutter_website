@@ -20,8 +20,7 @@ class _BaseViewState extends State<BaseView>
   AnimationController _animationController;
   Animation<Color> _animation;
 
-  Color _color = primaryColor;
-
+  Color _color = activeColor;
   @override
   void initState() {
     super.initState();
@@ -29,7 +28,7 @@ class _BaseViewState extends State<BaseView>
     _animationController =
         AnimationController(duration: Duration(seconds: 1), vsync: this);
 
-    _animation = Tween<Color>(begin: primaryColor, end: accentColor)
+    _animation = Tween<Color>(begin: activeColor, end: accentColor)
         .animate(_animationController);
 
     // _animationController.forward();
@@ -52,8 +51,6 @@ class _BaseViewState extends State<BaseView>
         backgroundColor: _animation.value,
         body: GestureDetector(
           onPanStart: (asdf) => changeColor(),
-          // onVerticalDragStart: (asf) => changeColor(),
-          // onHorizontalDragStart: (asf) => changeColor(),
           onTap: changeColor,
           child: AnimatedContainer(
             padding: EdgeInsets.all(0),

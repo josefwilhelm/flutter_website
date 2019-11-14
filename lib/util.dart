@@ -8,9 +8,10 @@ class Util {
     var index = Random().nextInt(colorArray.length);
     var newColor = colorArray[index];
     while (true)
-      if (newColor != currentColor)
-        return colorArray[index];
-      else {
+      if (newColor != currentColor) {
+        activeColor = colorArray[index];
+        return activeColor;
+      } else {
         index = Random().nextInt(colorArray.length);
         newColor = colorArray[index];
       }
@@ -20,5 +21,5 @@ class Util {
 const smallSpace = SizedBox(height: 24);
 const bigSpace = SizedBox(
   height: 60,
-  width: 60,
+  width: 80,
 );

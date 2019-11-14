@@ -11,7 +11,7 @@ class HomeContentViewDesktop extends StatelessWidget {
           BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.8),
       child: Center(
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Flexible(
@@ -21,7 +21,11 @@ class HomeContentViewDesktop extends StatelessWidget {
               ),
             ),
             bigSpace,
-            Flexible(child: ContactWidget())
+            Flexible(
+                child: Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: ContactWidget(),
+            ))
           ],
         ),
       ),
